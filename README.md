@@ -114,7 +114,7 @@ Q1. How many api's we ae going to use?
   }
   ```
 
-  - Users api (For all the products)
+  - Profile api (For all the products)
 
   ```
     {
