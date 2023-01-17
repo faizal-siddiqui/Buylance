@@ -129,12 +129,7 @@ function Home() {
       </div>
       <div
         className="banner-2"
-        style={{
-          height: "425px",
-          width: "90%",
-          margin: "auto",
-          marginTop: "80px",
-        }}
+       
       >
         <div className="subbanner-1">
           <h1
