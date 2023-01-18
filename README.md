@@ -114,7 +114,7 @@ Q1. How many api's we ae going to use?
   }
   ```
 
-  - Users api (For all the products)
+  - Profile api (For all the products)
 
   ```
     {
@@ -186,7 +186,7 @@ Q1. How many api's we ae going to use?
      - GET /products/[id]
      - PATCH /products/[id]
 
-     - POST / profile[cart]
+     - (POST)-> PATCH / profile[cart]
      - PATCH / profile[cart]
 
      - PATCH / profile[orderedProducts]
