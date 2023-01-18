@@ -95,7 +95,7 @@ export default function LargeWithAppLinksAndSocial() {
             <Link href={'#'}>Shirts</Link>
             <Link href={'#'}>T-shirts</Link>
             <Link href={'#'}>Jeans</Link>
-            <Link href={'#'}>Lounge <br /> Pant </Link>
+            <Link href={'#'}>Lounge Pant </Link>
           </Stack>
           <Stack align={'flex-start'}>
             <ListHeader>WOMEN</ListHeader>
