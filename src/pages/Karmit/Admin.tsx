@@ -1,10 +1,10 @@
 import React from 'react'
-
+import SidebarWithHeader from '../../components/Admin/sidebar'
 type Props = {}
 
 const Admin = (props: Props) => {
   return (
-    <div>Admin</div>
+    <SidebarWithHeader children={undefined}/>
   )
 }
 
