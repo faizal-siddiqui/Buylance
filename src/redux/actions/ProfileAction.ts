@@ -28,7 +28,7 @@ export const postProfile = (data: ProfileTypo) => (dispatch: AppDispatch) => {
   dispatch({ type: PROFILE_LOADING });
   apiCall({
     method: "post",
-    url: "http://localhost:8080/profile",
+    url: `http://localhost:8080/profile`,
     data: {
       ...data,
     },
