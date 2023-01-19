@@ -7,12 +7,23 @@ import { BrowserRouter } from "react-router-dom";
 import { ChakraProvider } from "@chakra-ui/react";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
+import { extendTheme } from "@chakra-ui/react";
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
+
+const breakpoints = {
+  sm: "320px",
+  md: "750px",
+  lg: "1200px",
+};
+
+const theme = extendTheme({ breakpoints });
+console.log(theme);
+
 root.render(
   <Provider store={store}>
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <BrowserRouter>
         <App />
       </BrowserRouter>
