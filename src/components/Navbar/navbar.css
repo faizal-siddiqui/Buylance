@@ -1,0 +1,106 @@
+nav {
+    background-color: #fff;
+    padding: 20px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin-right: 20px;
+    position: relative;
+    flex: 1;
+}
+
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+}
+
+nav ul li a:hover {
+    color: #c9048f;
+}
+
+nav ul li .sub-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    width: 600px;
+    left: 0;
+    top: 40px;
+    z-index: 1;
+}
+
+nav ul li:hover .sub-menu {
+    display: block;
+}
+
+.sub-menu a {
+    white-space: nowrap;
+    display: block;
+    padding: 10px;
+}
+
+.sub-menu-col {
+   
+        width: 100%;
+        padding: 20px;
+        overflow: hidden;
+    
+    
+}
+
+.sub-menu-col h3 {
+    color: #c9048f;
+    font-size: 16px;
+    margin-bottom: 10px;
+    display: inline-block;
+    
+    text-align: center;
+
+}
+
+.sub-menu-col ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: block; 
+
+}
+
+.sub-menu-col ul li {
+    margin-top: 10px;
+    display: block;
+    text-align: center;
+    margin-top: 2px;
+}
+
+.sub-menu-col ul li a {
+    color: #333333;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 5px;
+}
+
+.sub-menu-col ul li a:hover {
+    color: #c9048f;
+}
+
+
+@media (max-width: 600px) {
+    nav ul {
+        flex-wrap: wrap; /* this allows the menu items to wrap to a new line */
+    }
+    nav ul li {
+        width: 100%; /* this makes each menu item take up the full width of the screen on smaller screens */
+    }
+}
