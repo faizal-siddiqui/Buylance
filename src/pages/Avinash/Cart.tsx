@@ -23,7 +23,6 @@ import {CloseIcon,AddIcon,MinusIcon} from "@chakra-ui/icons";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ProductsTypo } from "../../constants/ProductsTypo";
-import { ProfileTypo } from "../../constants/ProfileTypo";
 import { getProfile, updateCart } from "../../redux/actions/ProfileAction";
 import { useAppDispatch, useAppSelector } from "../../redux/store";
 import shoppingBag from "./image/shopping-bag.png";
@@ -35,7 +34,7 @@ const Cart = () => {
     let totalPrice: number = 0;
 
 useEffect(()=>{
- dispatch(getProfile("Amaan Siddiqui","Aman!234"))
+ dispatch(getProfile("amaansidp@gmail.com","Aman!234"))
   },[])
 
 
@@ -63,15 +62,15 @@ const handleDeleteCart=(prodId: number)=>{
 
 
 //clere cart items----------------------------------------------------------->
-// const handleClearCart=()=>{
-//   let id: number = profile[0].id
-//   const newCart: [] = [];
-//   dispatch(updateCart(id,newCart))
-// }
+const handleClearCart=()=>{
+  let id: number = profile[0].id
+  const newCart: [] = [];
+  dispatch(updateCart(id,newCart))
+}
 
 
 //while cart is empty-------------------------------------------------------->
-  if (profile.length === 0) {
+  if (profile[0]?.cart?.length === 0) {
     return (
       <>
       <Box m={"auto"} p={50} w={"60%"} mt={"50px"} boxShadow= "rgba(0, 0, 0, 0.35) 0px 5px 15px">
@@ -134,7 +133,7 @@ const handleDeleteCart=(prodId: number)=>{
                       <Tr key={el.id} >
                         <Td color={"gray.700"} fontWeight="semibold">
                           <Stack direction={{base:"column",xl:"row"}}>
-                            <Image w={{base:"50px",md:"100px"}} h={{base:"50px",md:"100px"}} src={el.images[0]}/>
+                            <Image objectFit={"contain"} w={{base:"50px",md:"100px"}} h={{base:"50px",md:"100px"}} src={el.images[0]}/>
                             <Box>
                               <Text>{el.type+el.category}</Text>
                               <Text>Size:-{el.sizes}</Text>
@@ -163,7 +162,7 @@ const handleDeleteCart=(prodId: number)=>{
         </Box>
 
         
-        <Box bg={"gray.200"} w={{ base: "full", md: "full", lg: "25%" }}>
+        <Box bg={"gray.200"} w={{ base: "full", md: "full", lg: "25%" }} h={"500px"}>
           <Box h={50} bg={"gray.700"}>
             <Heading p={3} fontWeight={"bold"} fontSize={15} color={"white"}>
               CART TOTAL
@@ -198,7 +197,7 @@ const handleDeleteCart=(prodId: number)=>{
             <Link to="/">
               <Button bg={"gray.700"}>Continue shopping</Button>
             </Link>
-            <Button  bg={"gray.700"}>Clear cart</Button>
+            <Button onClick={()=>handleClearCart()}  bg={"gray.700"}>Clear cart</Button>
           </Stack>
           <Divider orientation="horizontal" />
           <Box
