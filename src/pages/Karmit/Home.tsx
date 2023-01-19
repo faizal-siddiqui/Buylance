@@ -1,7 +1,8 @@
 import React from "react";
-import Carousel from "../components/Home/Carousel";
-import "../components/Home/CSS/home.css";
-
+import Carousel from "../../components/Home/Carousel";
+import '../../components/Home/CSS/home.css';
+import Footer from "../../components/Footer/footer/footer";
+import Navbar from "../../components/Navbar/navbar";
 const images = [
   "https://imagescdn.abof.com/img/app/shopmedia/production/1/13-62-10334.jpg?w=1898.75&auto=format",
   "https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8ZmFzaGlvbnxlbnwwfDB8MHx8&auto=format&fit=crop&w=500&q=60",
@@ -11,13 +12,9 @@ const images = [
 function Home() {
   return (
     <div>
+      <Navbar/>
       <div
-        style={{
-          width: "90%",
-          height: "480px",
-          margin: "auto",
-          marginTop: "30px",
-        }}
+        className="carousel"
       >
         <Carousel images={images} interval={5000} />
       </div>
@@ -102,49 +99,17 @@ function Home() {
           />
         </div>
       </div>
-      <div
-        className="banner-1"
-        style={{
-          height: "550px",
-          width: "90%",
-          margin: "auto",
-          marginTop: "20px",
-          backgroundColor: "#ebf9ff",
-        }}
-      >
+      <div className="banner-1">
         <div>
-          <img
-            style={{ height: "100%" }}
-            src="https://imagescdn.abof.com/img/app/shopmedia/production/1/13-62-10521.jpg?w=501.27000000000004&auto=format"
-            alt="img_alt"
-          />
+          <img style={{height:"100%",width:"100%"}} src="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZmFzaGlvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="" />
         </div>
         <div>
-          <img
-            style={{ height: "100%" }}
-            src="https://imagescdn.abof.com/img/app/shopmedia/production/1/13-62-10522.jpg?w=1002.5400000000001&auto=format"
-            alt="img_alt"
-          />
+          <img style={{height:"100%",width:"100%"}} src="https://images.unsplash.com/photo-1594969155368-f19485a9d88c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZmFzaGlvbiUyMGJ1eSUyMG5vd3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="" />
         </div>
       </div>
       <div
-        className="banner-2"
-        style={{
-          height: "425px",
-          width: "90%",
-          margin: "auto",
-          marginTop: "80px",
-        }}
-      >
-        <div className="subbanner-1">
-          <h1
-           
-          >
-            BEST BUY STORE
-          </h1>
-          <button>VIEW ALL</button>
-        </div>
-        <div className="subbanner-2">
+        className="banner-2">
+      
           <img
             src="https://imagescdn.abof.com/img/app/shopmedia/production/1/13-62-9972.jpg?w=190&auto=format"
             alt="img_alt"
@@ -161,8 +126,9 @@ function Home() {
             src="https://imagescdn.abof.com/img/app/shopmedia/production/1/13-62-9978.jpg?w=190&auto=format"
             alt="img_alt"
           />
-        </div>
+        
       </div>
+      <Footer/>
     </div>
   );
 }

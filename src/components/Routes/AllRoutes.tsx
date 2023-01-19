@@ -5,7 +5,7 @@ import Admin from "../../pages/Karmit/Admin";
 import AdminProducts from "../../pages/Avinash/AdminProducts";
 import Cart from "../../pages/Avinash/Cart";
 import Categories from "../../pages/Sama/Categories";
-import Home from "../../pages/Home";
+import Home from "../../pages/Karmit/Home";
 import Orders from "../../pages/Karmit/Orders";
 import Payment from "../../pages/rishu/Payment";
 import Products from "../../pages/faizal/Products";

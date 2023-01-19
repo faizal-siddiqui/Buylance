@@ -10,19 +10,20 @@ import {
 } from "../types/ProductsTypes";
 import { apiCall } from "./Action.api";
 
-export const getProducts = () => (dispatch: AppDispatch) => {
-  dispatch({ type: PRODUCTS_LOADING });
-  apiCall({
-    method: "get",
-    url: "http://localhost:8080/products",
-  })
-    .then((res) => {
-      dispatch({ type: GET_PRODUCTS_SUCCESS, payload: res });
+export const getProducts =
+  (page: number, filterStr: string) => (dispatch: AppDispatch) => {
+    dispatch({ type: PRODUCTS_LOADING });
+    apiCall({
+      method: "get",
+      url: `http://localhost:8080/products?_limit=10&_page=${page}${filterStr}`,
     })
-    .catch((err) => {
-      dispatch({ type: PRODUCTS_ERROR });
-    });
-};
+      .then((res) => {
+        dispatch({ type: GET_PRODUCTS_SUCCESS, payload: res });
+      })
+      .catch((err) => {
+        dispatch({ type: PRODUCTS_ERROR });
+      });
+  };
 
 export const postProducts = (data: ProductsTypo) => (dispatch: AppDispatch) => {
   dispatch({ type: PRODUCTS_LOADING });
