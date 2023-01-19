@@ -19,7 +19,7 @@ import Filters from "../../components/Products/Filters";
 
 import { BsSearch } from "react-icons/bs";
 
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { useApi } from "../../components/Hooks/useApi";
 import SkeletonLoading from "../../components/Products/SkeletonLoading";
 
@@ -197,6 +197,7 @@ const Products = (props: Props) => {
                 gap={{ lg: "30px", md: "20px", sm: "10px" }}
               >
                 {data?.map((prod) => (
+                  <Link to={`/men/t-shirt/${prod.id}`} key={prod.id}>
                   <GridItem
                     _hover={{
                       boxShadow:
@@ -204,10 +205,11 @@ const Products = (props: Props) => {
                     }}
                     border="1px"
                     borderColor="gray.300"
-                    key={prod.id}
+                    
                   >
                     <ProductsCard prod={prod} />
                   </GridItem>
+                </Link>
                 ))}
               </Grid>
             </Box>
