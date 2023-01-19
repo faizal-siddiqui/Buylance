@@ -22,17 +22,13 @@ const SingleProduct = (props: Props) => {
   }, []);
 
   return (
-    <Box>
+    <Box mx={{ lg: "2%", md: "3%", sm: "4%" }}>
       <Box></Box>
       <Flex flexDir={{ lg: "row", md: "row", sm: "column" }}>
         <Box w={{ lg: "50%", md: "50%", sm: "100%" }}>
           <ImagesCompo data={data} />
         </Box>
-        <Box
-          border="1px"
-          borderColor="red"
-          w={{ lg: "50%", md: "50%", sm: "100%" }}
-        >
+        <Box w={{ lg: "50%", md: "50%", sm: "100%" }}>
           <ProductDetails data={data} />
         </Box>
       </Flex>

@@ -2,10 +2,17 @@ import React, { useState } from "react";
 import axios, { AxiosResponse } from "axios";
 import { ProductsTypo } from "../../constants/ProductsTypo";
 
+type UpdateProductType = {
+  rating?: {
+    star: number;
+    count: number;
+  };
+};
+
 type ParamsObjType = {
   method: string;
   url: string;
-  data?: ProductsTypo;
+  data?: UpdateProductType;
 };
 
 export const useSingleProductApi = (): [

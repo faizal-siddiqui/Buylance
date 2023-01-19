@@ -2,6 +2,7 @@ import { Box, Button, Flex, Grid, GridItem, Text } from "@chakra-ui/react";
 import React from "react";
 import { Link } from "react-router-dom";
 import { ProductsTypo } from "../../constants/ProductsTypo";
+import { useAppDispatch, useAppSelector } from "../../redux/store";
 import Pincode from "./Pincode";
 import Rating from "./Rating";
 
@@ -12,8 +13,23 @@ type Props = {
 const style = {};
 
 const ProductDetails = ({ data }: Props) => {
+  const { loading, error, profile } = useAppSelector(
+    (store) => store.profileManager
+  );
+  const dispatch: any = useAppDispatch();
+
+  //   const addToCart = () => {
+  //     const id: number = +JSON.parse(localStorage.getItem("id") || "");
+  //     dispatch(
+  //       updateCart(id, {
+  //         ...profile?.cart,
+  //         data,
+  //       })
+  //     );
+  //   };
+
   return (
-    <Box>
+    <Box ml={{ lg: "20px", md: "20px", sm: "0px" }}>
       <Text fontSize="25px" fontWeight={"500"}>
         {data?.name}
       </Text>
@@ -36,6 +52,7 @@ const ProductDetails = ({ data }: Props) => {
       <Text fontSize="18px"> {data?.productDetails}</Text>
       <Link to="#">
         <Button
+          //   onClick={addToCart}
           fontSize="18px"
           my="30px"
           p="30px"
