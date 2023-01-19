@@ -67,6 +67,9 @@ const ProductDetails = ({ data }: Props) => {
         <Pincode />
       </Text>
       <Text>
+        <Rating data={data} />
+      </Text>
+      <Text>
         <Text my="20px" fontSize="25px" fontWeight={"500"}>
           Specification
         </Text>
@@ -90,9 +93,6 @@ const ProductDetails = ({ data }: Props) => {
           Material
         </Text>
         <Text>{data?.material}</Text>
-      </Text>
-      <Text>
-        <Rating data={data} />
       </Text>
     </Box>
   );

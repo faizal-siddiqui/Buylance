@@ -13,8 +13,9 @@ const ImagesCompo = ({ data }: Props) => {
     <Box>
       <Flex>
         <Box w={{ lg: "20%", md: "20%", sm: "20%" }}>
-          {data?.images.map((img: string, i) => (
+          {data?.images?.map((img: string, i) => (
             <Box
+              key={i * 2134}
               p="20px"
               border="2px"
               borderColor={index == i ? "gold" : "#fff"}

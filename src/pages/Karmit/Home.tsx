@@ -1,8 +1,9 @@
 import React from "react";
 import Carousel from "../../components/Home/Carousel";
-import '../../components/Home/CSS/home.css';
+import "../../components/Home/CSS/home.css";
 import Footer from "../../components/Footer/footer/footer";
 import Navbar from "../../components/Navbar/navbar";
+import { Link } from "react-router-dom";
 const images = [
   "https://imagescdn.abof.com/img/app/shopmedia/production/1/13-62-10334.jpg?w=1898.75&auto=format",
   "https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8ZmFzaGlvbnxlbnwwfDB8MHx8&auto=format&fit=crop&w=500&q=60",
@@ -12,10 +13,8 @@ const images = [
 function Home() {
   return (
     <div>
-      <Navbar/>
-      <div
-        className="carousel"
-      >
+      <Navbar />
+      <div className="carousel">
         <Carousel images={images} interval={5000} />
       </div>
       <h1
@@ -39,10 +38,12 @@ function Home() {
         }}
       >
         <div className="category">
-          <img
-            src="https://imagescdn.abof.com/img/app/shopmedia/production/1/13-62-10026.jpg?w=303.8&auto=format"
-            alt="alt_img"
-          />
+          <Link to="/men/t-shirt">
+            <img
+              src="https://imagescdn.abof.com/img/app/shopmedia/production/1/13-62-10026.jpg?w=303.8&auto=format"
+              alt="alt_img"
+            />
+          </Link>
         </div>
         <div className="category">
           <img
@@ -101,34 +102,39 @@ function Home() {
       </div>
       <div className="banner-1">
         <div>
-          <img style={{height:"100%",width:"100%"}} src="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZmFzaGlvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="" />
+          <img
+            style={{ height: "100%", width: "100%" }}
+            src="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZmFzaGlvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+            alt=""
+          />
         </div>
         <div>
-          <img style={{height:"100%",width:"100%"}} src="https://images.unsplash.com/photo-1594969155368-f19485a9d88c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZmFzaGlvbiUyMGJ1eSUyMG5vd3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="" />
+          <img
+            style={{ height: "100%", width: "100%" }}
+            src="https://images.unsplash.com/photo-1594969155368-f19485a9d88c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZmFzaGlvbiUyMGJ1eSUyMG5vd3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+            alt=""
+          />
         </div>
       </div>
-      <div
-        className="banner-2">
-      
-          <img
-            src="https://imagescdn.abof.com/img/app/shopmedia/production/1/13-62-9972.jpg?w=190&auto=format"
-            alt="img_alt"
-          />
-          <img
-            src="https://imagescdn.abof.com/img/app/shopmedia/production/1/13-62-9974.jpg?w=190&auto=format"
-            alt="img_alt"
-          />
-          <img
-            src="https://imagescdn.abof.com/img/app/shopmedia/production/1/13-62-9976.jpg?w=190&auto=format"
-            alt="img_alt"
-          />
-          <img
-            src="https://imagescdn.abof.com/img/app/shopmedia/production/1/13-62-9978.jpg?w=190&auto=format"
-            alt="img_alt"
-          />
-        
+      <div className="banner-2">
+        <img
+          src="https://imagescdn.abof.com/img/app/shopmedia/production/1/13-62-9972.jpg?w=190&auto=format"
+          alt="img_alt"
+        />
+        <img
+          src="https://imagescdn.abof.com/img/app/shopmedia/production/1/13-62-9974.jpg?w=190&auto=format"
+          alt="img_alt"
+        />
+        <img
+          src="https://imagescdn.abof.com/img/app/shopmedia/production/1/13-62-9976.jpg?w=190&auto=format"
+          alt="img_alt"
+        />
+        <img
+          src="https://imagescdn.abof.com/img/app/shopmedia/production/1/13-62-9978.jpg?w=190&auto=format"
+          alt="img_alt"
+        />
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
