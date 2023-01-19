@@ -1320,71 +1320,6 @@
       "cart": [
         {
           "carause": false,
-          "brand": "United Colors of Benetton",
-          "name": "Men Coral Red Pure Cotton Brand Logo Printed T-shirt",
-          "rating": {
-            "star": 4.1,
-            "count": 5644
-          },
-          "price": 844,
-          "mrp": 1299,
-          "discount": 35,
-          "sizes": "M",
-          "qty": 1,
-          "productDetails": "Coral Tshirt for men Brand logo printed Regular length Round neck Short, regular sleeves Knitted pure cotton fabric",
-          "size": "Regular Fit Size worn by the model: M Chest: 39.7\" Height: 6'1\"",
-          "material": "100% Cotoon Machine Wash",
-          "category": "tshirts",
-          "type": "men",
-          "specification": {
-            "fabric": "Pure Cotton",
-            "fit": "Regular Fit",
-            "length": "Regular",
-            "mainTrend": "Typography or Slogan Print"
-          },
-          "images": [
-            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/17784140/2022/8/2/1da21f32-1823-4c17-8ec1-d2acb0dae86b1659418569994-United-Colors-of-Benetton-Men-Tshirts-8541659418569633-5.jpg",
-            "https://assets.myntassets.com/assets/images/17784140/2022/8/2/1da21f32-1823-4c17-8ec1-d2acb0dae86b1659418569994-United-Colors-of-Benetton-Men-Tshirts-8541659418569633-5.jpg",
-            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/17784140/2022/8/2/3712d7a5-405b-4172-9b0c-513f9dd2c6981659418570071-United-Colors-of-Benetton-Men-Tshirts-8541659418569633-1.jpg",
-            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/17784140/2022/8/2/8ea79882-ab32-4b77-8d6f-b2a7ab7bd19c1659418570034-United-Colors-of-Benetton-Men-Tshirts-8541659418569633-3.jpg"
-          ],
-          "reviews": [],
-          "id": 37
-        },
-        {
-          "carause": false,
-          "brand": "United Colors of Benetton",
-          "name": "Men Burgundy Brand Logo Print T-shirt",
-          "rating": {
-            "star": 4.3,
-            "count": 54
-          },
-          "price": 444,
-          "mrp": 889,
-          "discount": 50,
-          "sizes": "M",
-          "qty": 4,
-          "productDetails": "Burgundy Tshirt for men Brand logo printed Regular length Round neck Short, regular sleeves Knitted cotton fabric",
-          "size": "Regular Fit Size worn by the model: M Chest: 37'' Height: 6'",
-          "material": "60% cotton, 40% polyester Machine-wash",
-          "category": "tshirts",
-          "type": "men",
-          "specification": {
-            "fabric": "Cotton",
-            "fit": "Regular Fit",
-            "length": "Regular",
-            "mainTrend": "New Basics"
-          },
-          "images": [
-            "https://assets.myntassets.com/assets/images/17565054/2022/4/27/03bd48aa-7e96-4bb2-9dc1-47afdeab4d061651050418113-United-Colors-of-Benetton-Men-Tshirts-8331651050417635-5.jpg",
-            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/17565054/2022/4/27/2b7f89f6-c9e4-40ee-ab7a-f0a7d11a6bd61651050418193-United-Colors-of-Benetton-Men-Tshirts-8331651050417635-1.jpg",
-            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/17565054/2022/4/27/9767758f-52f2-4d7c-87b2-2eca0e1189091651050418134-United-Colors-of-Benetton-Men-Tshirts-8331651050417635-4.jpg"
-          ],
-          "reviews": [],
-          "id": 40
-        },
-        {
-          "carause": false,
           "brand": "H&M",
           "name": "Men Beige Oversized Cotton T-shirt",
           "rating": {
@@ -1395,7 +1330,7 @@
           "mrp": 1299,
           "discount": 35,
           "sizes": "M",
-          "qty": 1,
+          "qty": 2,
           "productDetails": "Oversized T-shirt in cotton jersey with a round, rib-trimmed neckline and dropped shoulders.",
           "size": "The model (height 6') is wearing a size M",
           "material": "100% Cotton Machine Wash ",
@@ -1427,7 +1362,7 @@
           "mrp": 1899,
           "discount": 41,
           "sizes": "M",
-          "qty": 1,
+          "qty": 3,
           "productDetails": "Navy Blue solid T-shirt, has a polo collar, and short sleeves",
           "size": "The model (height 6') is wearing a size M",
           "material": "Material: Cotton Machine Wash",
@@ -1449,70 +1384,6 @@
         },
         {
           "carause": false,
-          "brand": "Nautica",
-          "name": "Men Pink Solid Polo Collar T-shirt",
-          "rating": {
-            "star": 4.5,
-            "count": 300
-          },
-          "price": 909,
-          "mrp": 2599,
-          "discount": 65,
-          "sizes": "M",
-          "qty": 1,
-          "productDetails": "Pink solid T-shirt, has a polo collar, and short sleeves",
-          "size": "The model (height 6') is wearing a size M",
-          "material": "Material: Cotton Machine Wash",
-          "category": "tshirts",
-          "type": "men",
-          "specification": {
-            "fabric": "Cotton",
-            "fit": "Regular Fit",
-            "length": "Regular",
-            "mainTrend": "New Basics"
-          },
-          "images": [
-            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/11487362/2020/6/17/41691827-5c85-47da-a58b-0aae603875f41592396707576-Nautica-Men-Tshirts-3811592396706267-3.jpg",
-            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/11487362/2020/6/17/f9f2b108-6915-4073-82e8-85a95b119a651592396707658-Nautica-Men-Tshirts-3811592396706267-1.jpg",
-            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/11487362/2020/6/17/fcce5f01-1d76-4437-8980-6da188627c8b1592396707491-Nautica-Men-Tshirts-3811592396706267-5.jpg"
-          ],
-          "reviews": [],
-          "id": 22
-        },
-        {
-          "carause": false,
-          "brand": "Force NXT",
-          "name": "Men Navy Blue Printed Round Neck Cotton T-shirt",
-          "rating": {
-            "star": 3,
-            "count": 5600
-          },
-          "price": 540,
-          "mrp": 569,
-          "discount": 5,
-          "sizes": "M",
-          "qty": 1,
-          "productDetails": "Navy blue Tshirt for men Typography printed Regular length Round neck Short, regular sleeves Knitted cotton fabric",
-          "size": "Regular Fit The model (height 6') is wearing a size M",
-          "material": "Cotton Machine Wash",
-          "category": "tshirts",
-          "type": "men",
-          "specification": {
-            "fabric": "Cotton",
-            "fit": "Regular Fit",
-            "length": "Regular",
-            "mainTrend": "Typography or Slogan Print"
-          },
-          "images": [
-            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/20816798/2022/11/19/43256217-32ea-4455-8090-476e70eb1dac1668824093504ForceNXTMenNavyBlueTypographyPrintedRawEdgeT-shirt4.jpg",
-            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/20816798/2022/12/1/879f6a31-5da3-4c57-bd54-2e491e3f15361669890012767-Force-NXT-Men-Navy-Blue-Printed-Round-Neck-Cotton-T-shirt-18-7.jpg",
-            "https://assets.myntassets.com/assets/images/20816798/2022/12/1/a8ec30a7-e8ad-489a-99ef-1240f97955a01669890012788-Force-NXT-Men-Navy-Blue-Printed-Round-Neck-Cotton-T-shirt-18-6.jpg"
-          ],
-          "reviews": [],
-          "id": 23
-        },
-        {
-          "carause": false,
           "brand": "Levis",
           "name": "Men Navy Blue & Brown Striped Pure Cotton T-shirt",
           "rating": {
@@ -1523,7 +1394,7 @@
           "mrp": 2299,
           "discount": 50,
           "sizes": "M",
-          "qty": 1,
+          "qty": 2,
           "productDetails": "Navy blue and brown T-shirt for men Striped striped Regular length Round neck Long, regular sleeves Knitted pure cotton fabric",
           "size": "Regular Fit Size worn by the model: M Chest: 39\" Height: 6'2\"",
           "material": "100% Cotton Machine-wash",

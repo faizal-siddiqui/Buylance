@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Address from "../../pages/rishu/Address";
 import Admin from "../../pages/Karmit/Admin";
 import AdminProducts from "../../pages/Avinash/AdminProducts";
-import Cart from "../../pages/Avinash/Cart";
+import Cart from "../../pages/Avinash/Cart/Cart";
 import Categories from "../../pages/Sama/Categories";
 import Home from "../../pages/Karmit/Home";
 import Orders from "../../pages/Karmit/Orders";
