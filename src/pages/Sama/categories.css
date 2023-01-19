@@ -1,0 +1,11 @@
+#men_categories {
+  width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+#men_categories img:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}

@@ -11,13 +11,13 @@ import {
 interface State {
   loading: boolean;
   error: boolean;
-  profile: ProfileTypo[] | [];
+  profile: ProfileTypo | {};
 }
 
 const initialState: State = {
   loading: false,
   error: false,
-  profile: [],
+  profile: {},
 };
 
 type Action = {
@@ -54,14 +54,14 @@ export const profileReducer = (
     case POST_PROFILE_SUCCESS: {
       return {
         ...state,
-        profile: payload,
+        // profile: payload,
         loading: false,
       };
     }
     case PATCH_PROFILE_SUCCESS: {
       return {
         ...state,
-        profile: [payload],
+        profile: payload,
         loading: false,
       };
     }

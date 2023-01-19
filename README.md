@@ -221,5 +221,3 @@ Q1. How many api's we ae going to use?
   - How many reducers do we need ? : 2
   - How many store do we need ? : 1
 - create all the files
-
-        
