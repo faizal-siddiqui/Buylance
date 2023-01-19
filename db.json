@@ -206,7 +206,7 @@
       "name": "Men Black Layered Cotton T-shirt",
       "rating": {
         "star": 4.2,
-        "count": 57001
+        "count": 57002
       },
       "price": 349,
       "mrp": 499,
@@ -1510,38 +1510,6 @@
           ],
           "reviews": [],
           "id": 23
-        },
-        {
-          "carause": false,
-          "brand": "Levis",
-          "name": "Men Navy Blue & Brown Striped Pure Cotton T-shirt",
-          "rating": {
-            "star": 4.6,
-            "count": 22
-          },
-          "price": 1149,
-          "mrp": 2299,
-          "discount": 50,
-          "sizes": "M",
-          "qty": 1,
-          "productDetails": "Navy blue and brown T-shirt for men Striped striped Regular length Round neck Long, regular sleeves Knitted pure cotton fabric",
-          "size": "Regular Fit Size worn by the model: M Chest: 39\" Height: 6'2\"",
-          "material": "100% Cotton Machine-wash",
-          "category": "tshirts",
-          "type": "men",
-          "specification": {
-            "fabric": "Pure Cotton",
-            "fit": "Regular Fit",
-            "length": "Regular",
-            "mainTrend": "New Basics"
-          },
-          "images": [
-            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/18984238/2022/12/7/364517c8-f3bd-4249-82d1-669c148a9f111670414661332-Levis-Men-Navy-Blue--Brown-Striped-Pure-Cotton-T-shirt-59416-2.jpg",
-            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/18984238/2022/12/7/4b93b01e-43b9-47fe-8ba1-23ee350df2411670414661284-Levis-Men-Navy-Blue--Brown-Striped-Pure-Cotton-T-shirt-59416-6.jpg",
-            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/18984238/2022/12/7/e63affa5-6374-469a-b9ff-ca51933efa9e1670414661307-Levis-Men-Navy-Blue--Brown-Striped-Pure-Cotton-T-shirt-59416-4.jpg"
-          ],
-          "reviews": [],
-          "id": 24
         }
       ],
       "orderedProducts": []
