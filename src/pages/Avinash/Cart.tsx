@@ -8,7 +8,6 @@ import {
   HStack,
   Image,
   Input,
-  Select,
   Stack,
   Table,
   TableCaption,
@@ -16,29 +15,63 @@ import {
   Tbody,
   Td,
   Text,
-  Tfoot,
   Th,
   Thead,
   Tr,
 } from "@chakra-ui/react";
-import React, { useEffect, useState } from "react";
-import { AiOutlineCloseCircle } from "react-icons/ai";
+import {CloseIcon,AddIcon,MinusIcon} from "@chakra-ui/icons";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ProductsTypo } from "../../constants/ProductsTypo";
 import { ProfileTypo } from "../../constants/ProfileTypo";
-import { getProfile } from "../../redux/actions/ProfileAction";
+import { getProfile, updateCart } from "../../redux/actions/ProfileAction";
 import { useAppDispatch, useAppSelector } from "../../redux/store";
 import shoppingBag from "./image/shopping-bag.png";
 
 const Cart = () => {
-  const dispatch = useAppDispatch();
-  const [cartData, setCartData] = useState<ProfileTypo>();
+  const dispatch:any = useAppDispatch();
+
   const { profile } = useAppSelector((store) => store.profileManager);
-  const data: ProductsTypo[] = [];
+    let totalPrice: number = 0;
 
-  let totalPrice: number = 0;
+useEffect(()=>{
+ dispatch(getProfile("Amaan Siddiqui","Aman!234"))
+  },[])
 
-  if (data.length === 0) {
+
+//update cart products quantity---------------------------------------------->
+const handleUpdateCart=(val:number, prodId: number)=>{
+  let id: number = profile[0].id
+  const newCart: ProductsTypo[] = profile[0].cart.map((prod) => {
+    if(prod.id === prodId){
+      prod.qty = val
+      return prod
+    }
+    return prod
+})
+  dispatch(updateCart(id, newCart))
+}
+
+//Delete cart products from cart--------------------------------------------->
+const handleDeleteCart=(prodId: number)=>{
+  let id: number = profile[0].id
+  const newCart: ProductsTypo[] = profile[0].cart.filter((prod) => {
+      return prod.id !== prodId
+})
+  dispatch(updateCart(id, newCart))
+}
+
+
+//clere cart items----------------------------------------------------------->
+// const handleClearCart=()=>{
+//   let id: number = profile[0].id
+//   const newCart: [] = [];
+//   dispatch(updateCart(id,newCart))
+// }
+
+
+//while cart is empty-------------------------------------------------------->
+  if (profile.length === 0) {
     return (
       <>
       <Box m={"auto"} p={50} w={"60%"} mt={"50px"} boxShadow= "rgba(0, 0, 0, 0.35) 0px 5px 15px">
@@ -64,6 +97,8 @@ const Cart = () => {
       </>
     );
   }
+
+  // while products is added to cart-------------------------------------------->
   return (
     <>
       <Flex
@@ -73,75 +108,51 @@ const Cart = () => {
         p={{ base: 0, lg: 10 }}
         gap={5}
       >
-        <Box w={{ base: "full", md: "full", lg: "70%" }} bg={"pink.600"}>
-          <TableContainer>
+  {/* Products details in Table formate        */}
+        <Box w={{ base: "full", md: "full", lg: "70%" }} bg={"gray.200"}>
+          <TableContainer overflowX={"auto"}>
             <Table
               variant="simple"
               size={{ base: "xs", md: "md", lg: "lg" }}
-              textAlign="center"
-              align="center"
+              textAlign="left"
             >
-              <TableCaption color={"white"}>30 days Free Return</TableCaption>
-              <Thead bg={"gray.300"}>
+              <TableCaption  color={"gray.700"} fontWeight="semibold">30 days Free Return</TableCaption>
+              <Thead bg={"gray.700"} >
                 <Tr>
-                  <Th fontSize={{ base: "xs", md: "md", lg: "lg" }}>Product</Th>
-                  <Th fontSize={{ base: "xs", md: "md", lg: "lg" }}>Price</Th>
-                  <Th fontSize={{ base: "xs", md: "md", lg: "lg" }}>
-                    Quantity
-                  </Th>
-                  <Th fontSize={{ base: "xs", md: "md", lg: "lg" }}>
-                    Subtotal
-                  </Th>
-                  <Th fontSize={{ base: "xs", md: "md", lg: "lg" }}>Remove</Th>
+                  <Th color="white" fontSize={{ base: "xs", md: "md", lg: "lg" }}>Product</Th>
+                  <Th color="white" fontSize={{ base: "xs", md: "md", lg: "lg" }}>Price</Th>
+                  <Th color="white" fontSize={{ base: "xs", md: "md", lg: "lg" }}>Quantity</Th>
+                  <Th color="white" fontSize={{ base: "xs", md: "md", lg: "lg" }}>Subtotal</Th>
+                  <Th color="white" fontSize={{ base: "xs", md: "md", lg: "lg" }}>Remove</Th>
                 </Tr>
               </Thead>
               <Tbody>
-                {data &&
-                  data.map((el) => {
+                {profile &&
+                  profile[0]?.cart?.map((el) => {
                     totalPrice += el.price * el.qty;
                     return (
-                      <Tr key={el.id}>
-                        <Td color={"white"}>
-                          <Stack direction={{base:"column",md:"row"}}>
-                            <Image src={el.images[0]}/>
+                      <Tr key={el.id} >
+                        <Td color={"gray.700"} fontWeight="semibold">
+                          <Stack direction={{base:"column",xl:"row"}}>
+                            <Image w={{base:"50px",md:"100px"}} h={{base:"50px",md:"100px"}} src={el.images[0]}/>
                             <Box>
-                              <Text>{el.type}+{el.category}</Text>
-                              <Text>{el.sizes}</Text>
+                              <Text>{el.type+el.category}</Text>
+                              <Text>Size:-{el.sizes}</Text>
+                              <Text>{el.specification.fabric}</Text>
                             </Box>
                           </Stack>
                         </Td>
-                        <Td color={"white"}>{el.price}</Td>
-                        <Td>
+                        <Td  color={"gray.700"} fontWeight="semibold">{el.price}</Td>
+                        <Td  color={"gray.700"} fontWeight="semibold">
                           <Stack direction={{ base: "column", md: "row" }}>
-                            <Button
-                              fontSize={20}
-                              fontWeight={"bold"}
-                              bg={"whiteAlpha.400"}
-                              w={{ sm: "10px", md: "30px", lg: "30px" }}
-                            >
-                              -
-                            </Button>
-                            <Box
-                              color={"white"}
-                              w={{ sm: "10px", md: "30px", lg: "30px" }}
-                              p={2}
-                              textAlign="center"
-                            >
-                              {el.qty}
-                            </Box>
-                            <Button
-                              fontSize={20}
-                              fontWeight={"bold"}
-                              bg={"whiteAlpha.400"}
-                              w={{ sm: "10px", md: "30px", lg: "30px" }}
-                            >
-                              +
-                            </Button>
+                            <Box onClick={()=>handleUpdateCart(el.qty-1, el.id)}><MinusIcon bg={"whiteAlpha.300"} cursor={"pointer"} /></Box>
+                              <Box   color={"gray.700"} fontWeight="semibold">{el.qty}</Box>
+                            <Box onClick={()=>handleUpdateCart(el.qty+1, el.id)}><AddIcon bg={"whiteAlpha.300"} cursor={"pointer"} /></Box>
                           </Stack>
                         </Td>
-                        <Td color={"white"}>{el.price * el.qty}</Td>
-                        <Td>
-                          <AiOutlineCloseCircle color="white" />
+                        <Td  color={"gray.700"} fontWeight="semibold">{el.price * el.qty}</Td>
+                        <Td  color={"gray.700"} fontWeight="semibold">
+                          <Box onClick={()=>handleDeleteCart(el.id)}><CloseIcon cursor={"pointer"}  /></Box>
                         </Td>
                       </Tr>
                     );
@@ -150,9 +161,11 @@ const Cart = () => {
             </Table>
           </TableContainer>
         </Box>
-        <Box bg={"yellow.600"} w={{ base: "full", md: "full", lg: "25%" }}>
-          <Box h={50} bg={"gray.300"}>
-            <Heading p={3} fontWeight={"bold"} fontSize={15} color={"gray.600"}>
+
+        
+        <Box bg={"gray.200"} w={{ base: "full", md: "full", lg: "25%" }}>
+          <Box h={50} bg={"gray.700"}>
+            <Heading p={3} fontWeight={"bold"} fontSize={15} color={"white"}>
               CART TOTAL
             </Heading>
           </Box>
@@ -162,17 +175,17 @@ const Cart = () => {
             fontWeight={"bold"}
             h={50}
             m={5}
-            color={"white"}
+            color={"gray.700"}
           >
             <Text>Total price</Text>
             <Text>{totalPrice}</Text>
           </HStack>
-          <Divider orientation="horizontal" />
-          <HStack color={"white"} p={5}>
-            <Input placeholder="Apply Promocode" />{" "}
-            <Button bg={"pink.600"}>Apply</Button>
+          <Divider  orientation="horizontal" />
+          <HStack  color={"white"} fontWeight="semibold" p={5}>
+            <Input placeholder="Apply Promocode" autoFocus={true} />
+            <Button bg={"gray.700"}>Apply</Button>
           </HStack>
-          <Divider orientation="horizontal" />
+          <Divider  orientation="horizontal" />
           <Stack
             direction={{ base: "row", lg: "column", xl: "row" }}
             fontSize={{ base: "xs", md: "sm", lg: "md", xl: "lg" }}
@@ -180,12 +193,12 @@ const Cart = () => {
             fontWeight={"bold"}
             h={50}
             m={5}
-            color={"white"}
+            color={"white"} 
           >
             <Link to="/">
-              <Button bg={"pink.600"}>Continue shopping</Button>
+              <Button bg={"gray.700"}>Continue shopping</Button>
             </Link>
-            <Button bg={"pink.600"}>Clear cart</Button>
+            <Button  bg={"gray.700"}>Clear cart</Button>
           </Stack>
           <Divider orientation="horizontal" />
           <Box
@@ -196,7 +209,7 @@ const Cart = () => {
             color={"white"}
           >
             <Link to="/address">
-              <Button bg={"pink.600"} w={"full"}>
+              <Button bg={"gray.700"} w={"full"}>
                 Proceed to checkout
               </Button>
             </Link>
