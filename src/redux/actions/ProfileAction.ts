@@ -1,5 +1,5 @@
 import { ProductsTypo } from "../../constants/ProductsTypo";
-import { ProfileTypo } from "../../constants/ProfileTypo";
+import { AddressType, ProfileTypo } from "../../constants/ProfileTypo";
 import { AppDispatch } from "../store";
 import {
   GET_PROFILE_SUCCESS,
@@ -57,6 +57,25 @@ export const getProfile =
       },
     })
       .then((res) => {
+        dispatch({ type: PATCH_PROFILE_SUCCESS, payload: res });
+      })
+      .catch((err) => {
+        dispatch({ type: PROFILE_ERROR });
+      });
+  };
+
+  export const updateAddress = (id:number, changeAddress:AddressType) => (dispatch: AppDispatch) => {
+    dispatch({ type: PROFILE_LOADING });
+
+    apiCall({
+      method: "patch",
+      url: `http://localhost:8080/profile/${id}`,
+      data: {
+        location: changeAddress
+      },
+    })
+      .then((res) => {
+        console.log(res)
         dispatch({ type: PATCH_PROFILE_SUCCESS, payload: res });
       })
       .catch((err) => {

@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Address from "../../pages/rishu/Address";
+import Address from "../../pages/rishu/address/Address";
 import Admin from "../../pages/Karmit/Admin";
 import AdminProducts from "../../pages/Avinash/AdminProducts";
 import Cart from "../../pages/Avinash/Cart";
