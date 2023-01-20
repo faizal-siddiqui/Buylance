@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Address from "../../pages/rishu/Address";
-import Admin from "../../pages/Karmit/Admin";
+import Admin from "../../pages/faizal/Admin";
 import AdminProducts from "../../pages/Avinash/AdminProducts";
 import Cart from "../../pages/Avinash/Cart";
 import Categories from "../../pages/Sama/Categories";
@@ -12,6 +12,7 @@ import Products from "../../pages/faizal/Products";
 import SingleProduct from "../../pages/faizal/SingleProduct";
 import Login from "../../pages/Sama/Login";
 import Signup from "../../pages/Sama/Signup";
+import AdminUsers from "../../pages/faizal/AdminUsers";
 
 type Props = {};
 
@@ -31,6 +32,7 @@ const AllRoutes = (props: Props) => {
         <Route path="/orders" element={<Orders />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/admin/products" element={<AdminProducts />} />
+        <Route path="/admin/users" element={<AdminUsers />} />
       </Routes>
     </div>
   );
