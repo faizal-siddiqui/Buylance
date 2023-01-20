@@ -23,7 +23,7 @@ const CartTotal = () => {
     const[inputText,setInputText]=useState<string>("");
     const [discount,setDiscount]= useState<number>(0);
 
-const handleChange = (e: { target: { value: React.SetStateAction<string>; }; })=>{
+const handleChange = (e: { target: { value: React.SetStateAction<string> } })=>{
  setInputText(e.target.value)
 } 
 
