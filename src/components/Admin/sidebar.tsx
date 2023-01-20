@@ -25,7 +25,6 @@ import {
 import {
   FiHome,
   FiTrendingUp,
-  FiCompass,
   FiStar,
   FiSettings,
   FiMenu,
@@ -42,8 +41,6 @@ interface LinkItemProps {
 const LinkItems: Array<LinkItemProps> = [
   { name: 'Home', icon: FiHome },
   { name: 'Trending', icon: FiTrendingUp },
-  { name: 'Explore', icon: FiCompass },
-  { name: 'Favourites', icon: FiStar },
   { name: 'Settings', icon: FiSettings },
 ];
 
@@ -199,7 +196,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
                   alignItems="flex-start"
                   spacing="1px"
                   ml="2">
-                  <Text fontSize="sm">Justina Clark</Text>
+                  <Text fontSize="sm">Karmit Verma</Text>
                   <Text fontSize="xs" color="gray.600">
                     Admin
                   </Text>

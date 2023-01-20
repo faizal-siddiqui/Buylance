@@ -96,11 +96,76 @@ nav ul li:hover .sub-menu {
 }
 
 
-@media (max-width: 600px) {
+/* hamburger menu */
+.hamburger {
+    display: none; /* hide the hamburger menu by default */
+    cursor: pointer; /* change the cursor to a pointer when hovering over the menu */
+  }
+  
+  /* hamburger line */
+  .hamburger-line {
+    width: 30px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: #000;
+    transition: all 0.3s ease;
+  }
+  
+  /* change the hamburger lines' color and position when the menu is open */
+  .open .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .open .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .open .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+  
+  /* navbar items */
+  nav ul {
+    list-style: none; /* remove the bullet points */
+    margin: 0; /* remove the margin */
+    padding: 0; /* remove the padding */
+    display: flex; /* display the items as a flex container */
+    align-items: center; /* align the items horizontally */
+  }
+  
+  nav li {
+    margin: 0 15px; 
+  }
+  
+
+  
+  nav ul.visible {
+    display: flex;
+  }
+  
+  @media only screen and (max-width: 600px) {
     nav ul {
-        flex-wrap: wrap; /* this allows the menu items to wrap to a new line */
+      display: none;
     }
-    nav ul li {
-        width: 100%; /* this makes each menu item take up the full width of the screen on smaller screens */
+    
+    .hamburger {
+      display: block;
     }
-}
+    nav ul li .sub-menu {
+        width: 300px; 
+    }
+    nav ul li .sub-menu a {
+        font-size: 12px; 
+    }
+    nav ul li .sub-menu {
+        position: relative; 
+        top: -40px; 
+        background-color: #fff;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        width: 100%;
+        left: 0;
+        z-index: 1;
+        display: none;
+    }
+  }
+  

@@ -51,4 +51,7 @@ nav {
       width: 100%;
       justify-content: center;
       }
+      .searchbar{
+        display: none;
+      }
       }
