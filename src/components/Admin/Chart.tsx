@@ -45,8 +45,6 @@ const Chart = () => {
     <Flex
       mt="30px"
       flexDir={{ lg: "row", md: "row", sm: "column" }}
-      border="1px"
-      borderColor="red"
       align="center"
       justify="space-around"
     >

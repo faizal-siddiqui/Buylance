@@ -11,6 +11,7 @@ export interface AddressType {
 }
 export interface ProfileTypo {
   id: number;
+  isActive?: boolean;
   name: string;
   email: string;
   mobile: number;
