@@ -1,13 +1,16 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Address from "../../pages/rishu/Address";
+
+import AdminProducts from "../../pages/Avinash/Admin/AdminProducts";
+import Cart from "../../pages/Avinash/Cart/Cart";
+
 import Admin from "../../pages/faizal/Admin";
-import AdminProducts from "../../pages/Avinash/AdminProducts";
-import Cart from "../../pages/Avinash/Cart";
+
 import Categories from "../../pages/Sama/Categories";
 import Home from "../../pages/Karmit/Home";
 import Orders from "../../pages/Karmit/Orders";
-import Payment from "../../pages/rishu/Payment";
+import Payment from "../../pages/Avinash/Payment/Payment";
 import Products from "../../pages/faizal/Products";
 import SingleProduct from "../../pages/faizal/SingleProduct";
 import Login from "../../pages/Sama/Login";
