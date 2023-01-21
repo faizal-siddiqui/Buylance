@@ -1,5 +1,11 @@
 ## Complete till FRIDAY NIGHT I will update the further work after that.
-
+toast({
+                    title: "Account created.",
+                    description: "We've created your account for you.",
+                    status: "success",
+                    duration: 3000,
+                    isClosable: true,
+                  });
 1. Login Page / SignUp Page - **Sama sarun reddy**
 
    - using (firebase)
@@ -221,3 +227,5 @@ Q1. How many api's we ae going to use?
   - How many reducers do we need ? : 2
   - How many store do we need ? : 1
 - create all the files
+
+        
