@@ -1,4 +1,3 @@
-import React from 'react'
 import {
   Box,
   Image,
@@ -45,15 +44,16 @@ const handleUpdateCart=(val:number, prodId: number)=>{
     dispatch(updateCart(id, newCart))
   }
   return (
-    <Box w={{ base: "full",lg: "70%" }} bg={"gray.200"}>
+    <Box w={{ base: "full",lg: "70%" }}
+      boxShadow= "rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset">
           <TableContainer overflowX={"auto"}>
             <Table
-              variant="simple"
               size={{ base: "xs", md: "md", lg: "lg" }}
               textAlign="left"
+              variant='striped' colorScheme='teal'
             >
-              <TableCaption  color={"gray.700"} fontWeight="semibold">30 days Free Return</TableCaption>
-              <Thead bg={"gray.700"} >
+              <TableCaption  color={"blue.500"} fontWeight="bold">30 days Free Return</TableCaption>
+              <Thead bg={"blue.500"} >
                 <Tr>
                   <Th color="white" fontSize={{ base: "xs", md: "md", lg: "lg" }}>Product</Th>
                   <Th color="white" fontSize={{ base: "xs", md: "md", lg: "lg" }}>Price</Th>
@@ -86,19 +86,19 @@ const handleUpdateCart=(val:number, prodId: number)=>{
                         <Td  color={"gray.700"} fontWeight="semibold">
                            <Stack direction={"column"}>
                             <Text color={"red.400"} as='s'>RS {el.mrp}/-</Text>
-                            <Text>RS {el.price}/-</Text>
+                            <Text color="blue.500">RS {el.price}/-</Text>
                            </Stack> 
                         </Td>
                         <Td  color={"gray.700"} fontWeight="semibold">
                           <Stack direction={{ base: "column", md: "row" }}>
-                            <Box onClick={()=>handleUpdateCart(el.qty-1, el.id)}><MinusIcon bg={"whiteAlpha.900"} cursor={"pointer"} /></Box>
+                            <Box onClick={()=>handleUpdateCart(el.qty-1, el.id)}><MinusIcon  cursor={"pointer"} /></Box>
                               <Box   color={"gray.700"} fontWeight="semibold">{el.qty}</Box>
-                            <Box onClick={()=>handleUpdateCart(el.qty+1, el.id)}><AddIcon bg={"whiteAlpha.900"} cursor={"pointer"} /></Box>
+                            <Box onClick={()=>handleUpdateCart(el.qty+1, el.id)}><AddIcon  cursor={"pointer"} /></Box>
                           </Stack>
                         </Td>
-                        <Td  color={"gray.700"} fontWeight="semibold">{el.price * el.qty}</Td>
+                        <Td color="blue.500" fontWeight="semibold">{el.price * el.qty}/-</Td>
                         <Td  color={"gray.700"} fontWeight="semibold">
-                          <Box onClick={()=>handleDeleteCart(el.id)}><CloseIcon bg={"whiteAlpha.900"} cursor={"pointer"}  /></Box>
+                          <Box onClick={()=>handleDeleteCart(el.id)}><CloseIcon color={"red.500"}  cursor={"pointer"}  /></Box>
                         </Td>
                       </Tr>
                     );
