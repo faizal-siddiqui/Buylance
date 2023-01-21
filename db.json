@@ -1321,39 +1321,6 @@
         {
           "delivered": false,
           "brand": "United Colors of Benetton",
-          "name": "Men Coral Red Pure Cotton Brand Logo Printed T-shirt",
-          "rating": {
-            "star": 4.1,
-            "count": 5644
-          },
-          "price": 844,
-          "mrp": 1299,
-          "discount": 35,
-          "sizes": "M",
-          "qty": 1,
-          "productDetails": "Coral Tshirt for men Brand logo printed Regular length Round neck Short, regular sleeves Knitted pure cotton fabric",
-          "size": "Regular Fit Size worn by the model: M Chest: 39.7\" Height: 6'1\"",
-          "material": "100% Cotoon Machine Wash",
-          "category": "tshirts",
-          "type": "men",
-          "specification": {
-            "fabric": "Pure Cotton",
-            "fit": "Regular Fit",
-            "length": "Regular",
-            "mainTrend": "Typography or Slogan Print"
-          },
-          "images": [
-            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/17784140/2022/8/2/1da21f32-1823-4c17-8ec1-d2acb0dae86b1659418569994-United-Colors-of-Benetton-Men-Tshirts-8541659418569633-5.jpg",
-            "https://assets.myntassets.com/assets/images/17784140/2022/8/2/1da21f32-1823-4c17-8ec1-d2acb0dae86b1659418569994-United-Colors-of-Benetton-Men-Tshirts-8541659418569633-5.jpg",
-            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/17784140/2022/8/2/3712d7a5-405b-4172-9b0c-513f9dd2c6981659418570071-United-Colors-of-Benetton-Men-Tshirts-8541659418569633-1.jpg",
-            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/17784140/2022/8/2/8ea79882-ab32-4b77-8d6f-b2a7ab7bd19c1659418570034-United-Colors-of-Benetton-Men-Tshirts-8541659418569633-3.jpg"
-          ],
-          "reviews": [],
-          "id": 37
-        },
-        {
-          "delivered": false,
-          "brand": "United Colors of Benetton",
           "name": "Men Burgundy Brand Logo Print T-shirt",
           "rating": {
             "star": 4.3,
@@ -1363,7 +1330,7 @@
           "mrp": 889,
           "discount": 50,
           "sizes": "M",
-          "qty": 5,
+          "qty": 6,
           "productDetails": "Burgundy Tshirt for men Brand logo printed Regular length Round neck Short, regular sleeves Knitted cotton fabric",
           "size": "Regular Fit Size worn by the model: M Chest: 37'' Height: 6'",
           "material": "60% cotton, 40% polyester Machine-wash",
