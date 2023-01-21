@@ -10,7 +10,7 @@ type Props = {
 const OrderedProductsCard = ({prod}: Props) => {
 
     return <div>
-        
+        {prod.delivered}
     </div>
 }
 

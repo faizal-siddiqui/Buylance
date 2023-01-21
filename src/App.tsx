@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 import AllRoutes from "./components/Routes/AllRoutes";
 function App() {
   return (
