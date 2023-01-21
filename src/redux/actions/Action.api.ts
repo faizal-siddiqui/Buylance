@@ -8,9 +8,9 @@ interface Params {
   data?: any;
 }
 
-type Res = ProductsTypo[] | ProfileTypo | ProfileTypo[] | string | any;
+type Res = ProductsTypo[] | ProfileTypo | ProfileTypo[] | string;
 
-export const apiCall =async (params: Params) => {
+export const apiCall = async (params: Params) => {
   const response: AxiosResponse<Res> = await axios({ ...params });
   return response.data;
 };

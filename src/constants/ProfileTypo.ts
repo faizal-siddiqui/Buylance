@@ -1,7 +1,7 @@
 import { ProductsTypo } from "./ProductsTypo";
 
 export interface ProfileTypo {
-  id: number;
+  id?: number;
   name: string;
   email: string;
   mobile: number;
