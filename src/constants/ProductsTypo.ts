@@ -2,7 +2,7 @@ import React from "react";
 
 // Products Interface
 export interface ProductsTypo {
-  delivered?: boolean;
+  carause?: false;
   brand: string;
   name: string;
   rating: {

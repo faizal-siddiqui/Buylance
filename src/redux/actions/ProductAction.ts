@@ -14,7 +14,7 @@ export const getProducts = () => (dispatch: AppDispatch) => {
   dispatch({ type: PRODUCTS_LOADING });
   apiCall({
     method: "get",
-    url: `http://localhost:8080/products`,
+    url: "http://localhost:8080/products",
   })
     .then((res) => {
       dispatch({ type: GET_PRODUCTS_SUCCESS, payload: res });

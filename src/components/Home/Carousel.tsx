@@ -18,7 +18,8 @@ const Carousel: React.FC<Props> = ({ images, interval }) => {
   return (
     <div style={{height:"100%"}} className="carousel-container">
       <img src={images[currentIndex]} alt="slide" className="carousel-image" />
-     
+      <button className="carousel-button" onClick={() => setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)}>Next</button>
+      <button className="carousel-button" onClick={() => setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length)}>Prev</button>
     </div>
   );
 };

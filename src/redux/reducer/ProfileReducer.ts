@@ -1,7 +1,6 @@
 import { ProfileTypo } from "../../constants/ProfileTypo";
 import { PRODUCTS_RESET } from "../types/ProductsTypes";
 import {
-  GET_ALLPROFILE_SUCCESS,
   GET_PROFILE_SUCCESS,
   PATCH_PROFILE_SUCCESS,
   POST_PROFILE_SUCCESS,
@@ -13,14 +12,16 @@ interface State {
   loading: boolean;
   error: boolean;
   profile: ProfileTypo[] | [];
-  allProfiles: ProfileTypo[];
+  auth: boolean;
+  id: number | string;
 }
 
 const initialState: State = {
   loading: false,
   error: false,
   profile: [],
-  allProfiles: [],
+  auth: localStorage.getItem("id") ? true : false,
+  id: localStorage.getItem("id") || 0,
 };
 
 type Action = {
@@ -57,21 +58,14 @@ export const profileReducer = (
     case POST_PROFILE_SUCCESS: {
       return {
         ...state,
-        profile: payload,
+        // profile: payload,
         loading: false,
       };
     }
     case PATCH_PROFILE_SUCCESS: {
       return {
         ...state,
-        profile: [payload],
-        loading: false,
-      };
-    }
-    case GET_ALLPROFILE_SUCCESS: {
-      return {
-        ...state,
-        allProfiles: payload,
+        profile: payload,
         loading: false,
       };
     }
