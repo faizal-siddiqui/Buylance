@@ -5,7 +5,7 @@ import { GiConsoleController } from "react-icons/gi";
 import DashboardCards from "./DashboardCards";
 
 type Props = {};
-
+ 
 const AdminPanel = (props: Props) => {
   const handleDate = (e: React.ChangeEvent<HTMLInputElement>) => {
     console.log(e.target.value);
