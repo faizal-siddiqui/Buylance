@@ -24,28 +24,34 @@ import {
 } from "@chakra-ui/react";
 import {
   FiHome,
-  FiTrendingUp,
-  FiCompass,
   FiStar,
   FiSettings,
   FiMenu,
   FiBell,
   FiChevronDown,
+  FiUsers,
 } from "react-icons/fi";
+import { MdOutlineInventory } from "react-icons/md";
 import { IconType } from "react-icons";
 import { ReactText } from "react";
 import AdminPanel from "./AdminPanel";
+import { Link as Routerlink } from "react-router-dom";
 
 interface LinkItemProps {
   name: string;
   icon: IconType;
+  link: string;
 }
 const LinkItems: Array<LinkItemProps> = [
-  { name: "Home", icon: FiHome },
-  { name: "Trending", icon: FiTrendingUp },
-  { name: "Explore", icon: FiCompass },
-  { name: "Favourites", icon: FiStar },
-  { name: "Settings", icon: FiSettings },
+  { name: "Dashboard", icon: FiHome, link: "/admin" },
+  { name: "Users", icon: FiUsers, link: "/admin/users" },
+  {
+    name: "Inventory Manage",
+    icon: MdOutlineInventory,
+    link: "/admin/products",
+  },
+  { name: "Favourites", icon: FiStar, link: "" },
+  { name: "Settings", icon: FiSettings, link: "" },
 ];
 
 export default function SidebarWithHeader({
@@ -55,7 +61,10 @@ export default function SidebarWithHeader({
 }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <Box minH="100vh" bg={useColorModeValue("gray.100", "gray.900")}>
+    <Box
+      minH="100vh"
+      bgGradient="linear(cyan.100 0%, teal.100 25%, yellow.100 50%)"
+    >
       <SidebarContent
         onClose={() => onClose}
         display={{ base: "none", md: "block" }}
@@ -75,7 +84,11 @@ export default function SidebarWithHeader({
       </Drawer>
       {/* mobilenav */}
       <MobileNav onOpen={onOpen} />
-      <Box border="1px" borderColor="red" ml={{ base: 0, md: 60 }} p="4">
+      <Box
+        bgGradient="linear(cyan.100 0%, teal.100 25%, yellow.100 50%)"
+        ml={{ base: 0, md: 60 }}
+        p="4"
+      >
         {children}
       </Box>
     </Box>
@@ -103,9 +116,9 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex>
       {LinkItems.map((link) => (
-        <NavItem key={link.name} icon={link.icon}>
-          {link.name}
-        </NavItem>
+        <Routerlink to={link.link} key={link.name}>
+          <NavItem icon={link.icon}>{link.name}</NavItem>
+        </Routerlink>
       ))}
     </Box>
   );

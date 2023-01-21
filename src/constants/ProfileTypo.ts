@@ -2,6 +2,7 @@ import { ProductsTypo } from "./ProductsTypo";
 
 export interface ProfileTypo {
   id: number;
+  isActive?: boolean;
   name: string;
   email: string;
   mobile: number;

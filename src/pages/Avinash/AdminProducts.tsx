@@ -1,11 +1,9 @@
-import React from 'react'
+import React from "react";
 
-type Props = {}
+type Props = {};
 
 const AdminProducts = (props: Props) => {
-  return (
-    <div>AdminProducts</div>
-  )
-}
+  return <div>AdminProducts</div>;
+};
 
-export default AdminProducts
+export default AdminProducts;
