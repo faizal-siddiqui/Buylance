@@ -9,7 +9,7 @@ function Navbar() {
 
 
   return (
-    <div>
+    <div className='top-fix'>
       
     <Topbar/>
     <nav>

@@ -10,7 +10,7 @@ const Topbar= () => {
 
     }
   return (
-    <nav>
+    <nav >
         <img src={process.env.PUBLIC_URL + './logo.png'} alt="Logo" />
         <div className='creds'>
         <div className="searchbar">
