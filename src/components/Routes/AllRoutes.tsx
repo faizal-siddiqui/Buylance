@@ -1,10 +1,9 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Address from "../../pages/rishu/Address";
+import Address from "../../pages/rishu/address/Address";
 
 import AdminProducts from "../../pages/Avinash/Admin/AdminProducts";
 import Cart from "../../pages/Avinash/Cart/Cart";
-
 import Admin from "../../pages/faizal/Admin";
 
 import Categories from "../../pages/Sama/Categories";

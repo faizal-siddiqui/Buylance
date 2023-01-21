@@ -1,5 +1,5 @@
 import { ProductsTypo } from "../../constants/ProductsTypo";
-import { ProfileTypo } from "../../constants/ProfileTypo";
+import { AddressType, ProfileTypo } from "../../constants/ProfileTypo";
 import { AppDispatch } from "../store";
 import {
   GET_ALLPROFILE_SUCCESS,
@@ -66,6 +66,26 @@ export const updateCart =
       });
   };
 
+
+  export const updateAddress = (id:number, changeAddress:AddressType) => (dispatch: AppDispatch) => {
+    dispatch({ type: PROFILE_LOADING });
+
+    apiCall({
+      method: "patch",
+      url: `http://localhost:8080/profile/${id}`,
+      data: {
+        location: changeAddress
+      },
+    })
+      .then((res) => {
+        console.log(res)
+        dispatch({ type: PATCH_PROFILE_SUCCESS, payload: res });
+      })
+      .catch((err) => {
+        dispatch({ type: PROFILE_ERROR });
+      });
+  };
+
 //delete cart product------------------------------------------>
 export const deleteProduct = (id: number) => (dispatch: AppDispatch) => {
   dispatch({ type: PROFILE_LOADING });
@@ -99,6 +119,7 @@ export const getAllProfile = () => (dispatch: AppDispatch) => {
 //update cart------------------------------------------->
 export const patchOrderedProducts =
   (id: number, data: ProductsTypo[]) => (dispatch: AppDispatch) => {
+
     dispatch({ type: PROFILE_LOADING });
 
     apiCall({

@@ -1314,7 +1314,15 @@
       "mobile": 7867789867,
       "gender": "Male",
       "birthDate": "23-09-2002",
-      "location": "Delhi",
+      "location": {
+        "street": "Gandhi Nagar, Dehri ,Rohtas, Bihar",
+        "city": "maharastra",
+        "state": "mumbai",
+        "postal_code": "821307",
+        "country": "United States",
+        "social": "www.ex.com",
+        "email": "hj.gmail.com"
+      },
       "cardDetails": "89878676565441",
       "password": "Aman!234",
       "cart": [
