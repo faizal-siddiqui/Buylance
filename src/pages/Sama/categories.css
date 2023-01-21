@@ -1,0 +1,46 @@
+#container {
+  margin-top: 10%;
+}
+#men_categories {
+  width: 1000px;
+  margin: auto;
+  margin-top: 2%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+#men_categories img {
+  transition: opacity 0.25s;
+}
+#men_categories img:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+#men_categories button {
+  position: relative;
+  bottom: 50%;
+  font-size: x-small;
+  background-color: teal;
+  padding: 2% 6% 2% 6%;
+  border-radius: 12px;
+  color: whitesmoke;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+#men_categories button > * {
+  transform: translateY(20px);
+}
+#men_categories button:hover {
+  opacity: 1;
+  transform: translateY(0);
+}
+#men {
+  font-size: x-large;
+  margin-right: 50%;
+}
+#line {
+  width: 1000px;
+  margin: auto;
+  border: 1.5px solid black;
+  height: 1px;
+}
