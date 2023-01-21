@@ -22,8 +22,6 @@ import {
 } from "@chakra-ui/react";
 
 import { useToast } from "@chakra-ui/react";
-import Form2 from "./Form2";
-import Form3 from "./Form3";
 import { updateAddress } from "../../../redux/actions/ProfileAction";
 import { store, useAppDispatch, useAppSelector } from "../../../redux/store";
 import { AddressType } from "../../../constants/ProfileTypo";
