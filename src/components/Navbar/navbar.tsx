@@ -7,11 +7,18 @@ function Navbar() {
     womens: false,
   });
 
+
   return (
-    <div>
+    <div className='top-fix'>
+      
     <Topbar/>
     <nav>
-    <ul>
+    <div className="hamburger" onClick={() => setIsOpen({mens: !isOpen.mens, womens: !isOpen.womens })}>
+          <div className="hamburger-line"></div>
+          <div className="hamburger-line"></div>
+          <div className="hamburger-line"></div>
+        </div>
+    <ul className={isOpen.mens ? "visible" : "hidden"}>
       <li><a href="#">Home</a></li>
       <li><a href="#">Men</a>
         <div className="sub-menu">

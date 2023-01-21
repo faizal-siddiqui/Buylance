@@ -1788,40 +1788,7 @@
           "id": 23
         }
       ],
-      "orderedProducts": [
-        {
-          "delivered": false,
-          "brand": " Allen Solly",
-          "name": "Men Black Colourblocked Polo Collar Pure Cotton T-shirt",
-          "rating": {
-            "star": 4.3,
-            "count": 306
-          },
-          "price": 349,
-          "mrp": 1049,
-          "discount": 70,
-          "sizes": "M",
-          "qty": 1,
-          "productDetails": "Black and Yellow colourblocked T-shirt, has a polo collar, and short sleeves",
-          "size": "The model (height 6') is wearing a size M",
-          "material": "100% Cotton Machine-wash",
-          "category": "tshirts",
-          "type": "men",
-          "specification": {
-            "fabric": "Pure Cotton",
-            "fit": "Regular Fit",
-            "length": "Regular",
-            "mainTrend": "Colour Blocked"
-          },
-          "images": [
-            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/productimage/2019/9/28/44cc7348-bfa2-44f8-8a0d-3f7a0a96d6551569660347449-5.jpg",
-            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/productimage/2019/9/28/2cf30dc8-6abb-433f-8f98-a13541030df31569660347411-4.jpg",
-            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/productimage/2019/9/28/6fed9be0-6cdf-43fa-875d-17443645232c1569660347277-1.jpg"
-          ],
-          "reviews": [],
-          "id": 5
-        }
-      ]
+      "orderedProducts": []
     }
   ]
 }

@@ -25,7 +25,6 @@ import {
 import {
   FiHome,
   FiTrendingUp,
-  FiCompass,
   FiStar,
   FiSettings,
   FiMenu,
@@ -41,11 +40,17 @@ interface LinkItemProps {
   icon: IconType;
 }
 const LinkItems: Array<LinkItemProps> = [
+<<<<<<< HEAD
+  { name: 'Home', icon: FiHome },
+  { name: 'Trending', icon: FiTrendingUp },
+  { name: 'Settings', icon: FiSettings },
+=======
   { name: "Home", icon: FiHome },
   { name: "Trending", icon: FiTrendingUp },
   { name: "Explore", icon: FiCompass },
   { name: "Favourites", icon: FiStar },
   { name: "Settings", icon: FiSettings },
+>>>>>>> 2a676c7a6d38e84b2166c4a9a84232eff08e4c85
 ];
 
 export default function SidebarWithHeader({
@@ -209,9 +214,14 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
                   display={{ base: "none", md: "flex" }}
                   alignItems="flex-start"
                   spacing="1px"
+<<<<<<< HEAD
+                  ml="2">
+                  <Text fontSize="sm">Karmit Verma</Text>
+=======
                   ml="2"
                 >
                   <Text fontSize="sm">Justina Clark</Text>
+>>>>>>> 2a676c7a6d38e84b2166c4a9a84232eff08e4c85
                   <Text fontSize="xs" color="gray.600">
                     Admin
                   </Text>
