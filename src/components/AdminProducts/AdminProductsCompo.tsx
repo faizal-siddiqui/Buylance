@@ -6,7 +6,7 @@ import AdminProductsTable from "./AdminProductsTable";
 
 type Props = {};
 
-const AdminProductscompo = (props: Props) => {
+const AdminProductsCompo = (props: Props) => {
   const { products } = useAppSelector((store) => store.productManager);
   console.log("products:", products);
 
@@ -19,4 +19,4 @@ const AdminProductscompo = (props: Props) => {
   );
 };
 
-export default AdminProductscompo;
+export default AdminProductsCompo;

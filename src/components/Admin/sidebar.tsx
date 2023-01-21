@@ -34,7 +34,6 @@ import {
 import { MdOutlineInventory } from "react-icons/md";
 import { IconType } from "react-icons";
 import { ReactText } from "react";
-import AdminPanel from "./AdminPanel";
 import { Link as Routerlink } from "react-router-dom";
 
 interface LinkItemProps {
