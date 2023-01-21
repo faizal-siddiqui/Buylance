@@ -10,10 +10,10 @@ const Topbar= () => {
 
     }
   return (
-    <nav>
+    <nav >
         <img src={process.env.PUBLIC_URL + './logo.png'} alt="Logo" />
         <div className='creds'>
-        <div>
+        <div className="searchbar">
         <input type="text" placeholder="Search" />
       </div>
       <div style={{display:"flex",justifyContent:"space-around",alignItems:"center",width:"150px"}} className="nav-right">
