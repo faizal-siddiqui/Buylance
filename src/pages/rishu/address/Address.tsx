@@ -1,10 +1,10 @@
+
 import Navbar from "../../../components/Navbar/navbar";
 import LargeWithAppLinksAndSocial from "../../../components/Footer/footer/footer";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Progress,
   Box,
-  ButtonGroup,
   Button,
   Flex,
   Heading,
@@ -12,20 +12,15 @@ import {
   GridItem,
   FormLabel,
   Input,
-  Select,
-  SimpleGrid,
-  InputLeftAddon,
-  InputGroup,
-  Textarea,
-  FormHelperText,
+  Select
  
 } from "@chakra-ui/react";
 
 import { useToast } from "@chakra-ui/react";
-import { updateAddress } from "../../../redux/actions/ProfileAction";
+import { updateAddress, getProfile } from "../../../redux/actions/ProfileAction";
 import { store, useAppDispatch, useAppSelector } from "../../../redux/store";
 import { AddressType } from "../../../constants/ProfileTypo";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 type Props = {
 
 };
@@ -47,12 +42,26 @@ const Address = (props: Props) => {
   const [step, setStep] = useState<number>(1);
   const [progress, setProgress] = useState<number>(50);
   const {profile}= useAppSelector((store)=>store.profileManager);
+  const profileState = useAppSelector((store)=>store.profileManager)
   const dispatch:any= useAppDispatch();
+  const navigate = useNavigate()
 
-  const addAddress = () =>{
+
+  useEffect(() => {
+    dispatch(getProfile("amaansidp@gmail.com", "Aman!234"))
+  }, [dispatch])
+
+
+  const addAddress = async() =>{
     let id:number=2;
     //id=profile[0].id
-    dispatch(updateAddress(id,address))
+    dispatch(updateAddress(id,address));
+
+    setTimeout(() => {
+      setLocation()
+
+    }, 2000)
+    
   }
 
   const handleChange = (e: { target: { value: string, name: string } }) =>{
@@ -60,6 +69,20 @@ const Address = (props: Props) => {
     setAddress({...address,[name]:value})
   }
 
+  const setLocation=()=>{
+    if(profileState.error){
+      toast({
+        title: "Server Error.",
+        description: "Check Your Server.",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+      })
+    } else if(profileState.loading === false && profileState.error === false){
+      navigate("/payment")
+     }
+  
+}
   
   return (
     <>
@@ -68,7 +91,7 @@ const Address = (props: Props) => {
       <Box
         borderWidth="1px"
         rounded="lg"
-        shadow="sm"
+        shadow="xl"
         maxWidth={800}
         p={6}
         m="50px auto"
@@ -81,16 +104,17 @@ const Address = (props: Props) => {
           mx="5%"
           isAnimated
         ></Progress>
-        {step === 1 ?<> <Heading w="100%" textAlign={"center"} fontWeight="normal" mb="2%">
-          User Details
+        {<> <Heading color="white" bg={"teal.500"} borderRadius={"20px"}
+         w="100%" textAlign={"center"} fontWeight="bold" mb="2%">
+        Shipping Address
         </Heading>
   
         <FormControl as={GridItem} colSpan={6}>
           <FormLabel
             htmlFor="street_address"
             fontSize="sm"
-            fontWeight="md"
-            color="gray.700"
+            color="teal.500"
+            fontWeight="bold"
             _dark={{
               color: "gray.50",
             }}
@@ -117,8 +141,8 @@ const Address = (props: Props) => {
             <FormLabel
               htmlFor="city"
               fontSize="sm"
-              fontWeight="md"
-              color="gray.700"
+               color="teal.500"
+             fontWeight="bold"
               _dark={{
                 color: "gray.50",
               }}
@@ -144,14 +168,14 @@ const Address = (props: Props) => {
             <FormLabel
               htmlFor="state"
               fontSize="sm"
-              fontWeight="md"
-              color="gray.700"
+               color="teal.500"
+             fontWeight="bold"
               _dark={{
                 color: "gray.50",
               }}
               mt="2%"
             >
-              State / Province
+              Country / Region
             </FormLabel>
             <Input
               type="text"
@@ -173,8 +197,8 @@ const Address = (props: Props) => {
             <FormLabel
               htmlFor="postal_code"
               fontSize="sm"
-              fontWeight="md"
-              color="gray.700"
+               color="teal.500"
+             fontWeight="bold"
               _dark={{
                 color: "gray.50",
               }}
@@ -197,17 +221,19 @@ const Address = (props: Props) => {
   
           <FormControl>
             <FormLabel
+             color="teal.500"
+             fontWeight="bold"
               htmlFor="country"
               fontSize="sm"
-              fontWeight="md"
-              color="gray.700"
               _dark={{
                 color: "gray.50",
               }}
             >
-              Country / Region
+              State / Province
             </FormLabel>
             <Select
+              color="blue.500"
+              fontWeight="bold"
               id="country"
               name="country"
               autoComplete="country"
@@ -219,130 +245,38 @@ const Address = (props: Props) => {
               rounded="md"
               onChange={handleChange}
             >
-              <option>United States</option>
-              <option>Canada</option>
-              <option>Mexico</option>
+              <option>Karnatka</option>
+              <option>Maharastra</option>
+              <option>Bihar</option>
+              <option>Uttar Pradesh</option>
+              <option>Delhi</option>
+              <option>Tamil Nadu</option>
+              <option>Jharkhand</option>
+              <option>Andhra Pradesh</option>
+              <option>West Bengal</option>
+              <option>Gujrat</option>
+              <option>Assam</option>
+
             </Select>
           </FormControl>
         </Flex>
         </>
-         :
-         <>
-         <Heading w="100%" textAlign={"center"} fontWeight="normal">
-          Social Handles
-        </Heading>
-        <SimpleGrid columns={1} spacing={6}>
-          <FormControl as={GridItem} colSpan={[3, 2]}>
-            <FormLabel
-              fontSize="sm"
-              fontWeight="md"
-              color="gray.700"
-              _dark={{
-                color: "gray.50",
-              }}
-            >
-              Website
-            </FormLabel>
-            <InputGroup size="sm">
-              <InputLeftAddon
-                bg="gray.50"
-                _dark={{
-                  bg: "gray.800",
-                }}
-                color="gray.500"
-                rounded="md"
-              >
-                http://
-              </InputLeftAddon>
-              <Input
-                name="social"
-                type="tel"
-                placeholder="www.example.com"
-                focusBorderColor="brand.400"
-                rounded="md"
-                onChange={handleChange}
-              />
-            </InputGroup>
-          </FormControl>
-          <FormControl id="email" mt={1}>
-            <FormLabel
-              fontSize="sm"
-              fontWeight="md"
-              color="gray.700"
-              _dark={{
-                color: "gray.50",
-              }}
-            >
-              About
-            </FormLabel>
-            <Textarea
-              placeholder="you@example.com"
-              name="email"
-              rows={3}
-              shadow="sm"
-              focusBorderColor="brand.400"
-              fontSize={{
-                sm: "sm", 
-              }}
-              onChange={handleChange}
-            />
-            <FormHelperText>
-              Brief description for your profile. URLs are hyperlinked.
-            </FormHelperText>
-          </FormControl>
-        </SimpleGrid>
-        </>
-        
         }
-        <ButtonGroup mt="5%" w="100%">
-          <Flex w="100%" justifyContent="space-between">
-            <Flex>
-              <Button
-                onClick={() => {
-                  setStep(step - 1);
-                  setProgress(progress - 50);
-                }}
-                isDisabled={step === 1}
-                colorScheme="teal"
-                variant="solid"
-                w="7rem"
-                mr="5%"
-              >
-                Back
-              </Button>
-              <Button
-                w="7rem"
-                isDisabled={step === 2}
-                onClick={() => {
-                  setStep(step + 1);
-                  if (step === 2) {
-                    setProgress(100);
-                  } else {
-                    setProgress(progress + 50);
-                  }
-                }}
-                colorScheme="teal"
-                variant="outline"
-              >
-                Next
-              </Button>
-            </Flex>
-            {step === 2 ? (
-              <Link to={"/payment"}><Button
-                w="7rem"
-                colorScheme="red"
+          <Button 
+                   isLoading= {profileState.loading}
+                   loadingText='Submitting'
+                  mt="5%"
+                 color="white"
+                 fontWeight="bold"
+                colorScheme="blue"
                 variant="solid"
                 onClick={() => {
                   addAddress()
                 }}
               >
-                Submit
+                Proceed To Payment
               </Button>
-              </Link>
-
-            ) : null}
-          </Flex>
-        </ButtonGroup>
+              
       </Box>
 
       <LargeWithAppLinksAndSocial />

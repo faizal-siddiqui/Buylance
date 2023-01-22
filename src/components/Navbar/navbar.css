@@ -4,7 +4,13 @@ nav {
     border-bottom: 1px solid #e5e5e5;
   
 }
-
+.top-fix{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
 
 nav ul {
     list-style-type: none;
@@ -170,4 +176,3 @@ nav ul li:hover .sub-menu {
         display: none;
     }
   }
-  

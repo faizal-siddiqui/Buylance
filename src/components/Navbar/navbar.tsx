@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import "./navbar.css";
 import Topbar from './Topbar';
+import {Link} from "react-router-dom";
 function Navbar() {
   const [isOpen, setIsOpen] = useState({
     mens: false,
@@ -19,13 +20,13 @@ function Navbar() {
           <div className="hamburger-line"></div>
         </div>
     <ul className={isOpen.mens ? "visible" : "hidden"}>
-      <li><a href="#">Home</a></li>
+      <li><Link to="/">Home</Link></li>
       <li><a href="#">Men</a>
         <div className="sub-menu">
           <div className="sub-menu-col">
             <h3>Topwear</h3>
             <ul>
-            <li><a href="#">Casual Shirts</a></li>
+            <li><Link to="/men/t-shirt">Casual Shirts</Link></li>
               <li><a href="#">T-Shirts</a></li>
               <li><a href="#">Polo T-Shirts</a></li>
               <li><a href="#">Sweatshirts</a></li>
@@ -133,7 +134,7 @@ function Navbar() {
             <h3>Shop by Age</h3>
             <ul>
               <li><a href="#">3 to 10 Years</a></li>
-              <li><a href="#">11 to `16 Years</a></li>
+              <li><a href="#">11 to 16 Years</a></li>
             
 
             </ul>
@@ -142,6 +143,8 @@ function Navbar() {
       </li>
      
       <li><a href="#">Contact</a></li>
+           <Link to="/orders"> <li>Orders</li></Link>
+
     </ul>
   </nav>
   </div>
@@ -149,4 +152,3 @@ function Navbar() {
 }
 
 export default Navbar;
-

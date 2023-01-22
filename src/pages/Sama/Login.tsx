@@ -93,12 +93,14 @@ const Login = () => {
   const navigate = useNavigate();
   const signInWithGoogle = async () => {
     setAuthing(true);
-    signInWithPopup(auths, new GoogleAuthProvider())
-      .then((res) => {
+
+    signInWithPopup(auth, new GoogleAuthProvider())
+      .then((res:any) => {
+
         console.log(res.user.uid);
         navigate("/");
       })
-      .catch((err) => {
+      .catch((err:any) => {
         console.log(err);
         setAuthing(false);
       });
