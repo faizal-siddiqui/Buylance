@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionPanel,
   Box,
+  Flex,
   Grid,
   GridItem,
   Image,
@@ -23,14 +24,13 @@ import {
   Tr,
   Icon,
   Button,
-  Flex,
 } from "@chakra-ui/react";
 import React from "react";
 import { ProductsTypo } from "../../constants/ProductsTypo";
 import { ProfileTypo } from "../../constants/ProfileTypo";
 import { patchOrderedProducts } from "../../redux/actions/ProfileAction";
 import { useAppDispatch } from "../../redux/store";
-
+ 
 type Props = {
   profile: ProfileTypo;
 };
@@ -67,11 +67,7 @@ const UsersAccordion = ({ profile }: Props) => {
   return (
     <AccordionItem>
       <h2>
-        <AccordionButton
-          bgColor="#fff"
-          p="4"
-          _expanded={{ bg: "cyan.400", color: "white" }}
-        >
+        <AccordionButton bgColor="#fff" p="4" _expanded={{ bg: "cyan.400", color: "white" }}>
           <Box as="span" flex="1" textAlign="left">
             <Grid
               templateColumns={{
@@ -80,24 +76,23 @@ const UsersAccordion = ({ profile }: Props) => {
                 sm: "repeat(2, 1fr)",
               }}
             >
-              {/* <GridItem></GridItem> */}
               <GridItem>
-                <Flex align="center">
-                  <Text mr="7px">{profile.name}</Text>
-                  <Text>
-                    {profile.isActive ? (
-                      <CircleIcon boxSize={4} color="green" />
-                    ) : (
-                      <CircleIcon boxSize={4} color="red.400" />
-                    )}
-                  </Text>
-                </Flex>
+                <Text>{profile.name}</Text>
               </GridItem>
               <GridItem>
                 <Text>{profile.email}</Text>
               </GridItem>
               <GridItem>
                 <Text>{profile.mobile}</Text>
+              </GridItem>
+              <GridItem>
+                {/* <Text>
+                  {profile.active ? (
+                    <CircleIcon boxSize={8} color="green" />
+                  ) : (
+                    <CircleIcon boxSize={8} color="red.500" />
+                  )}
+                </Text> */}
               </GridItem>
             </Grid>
           </Box>

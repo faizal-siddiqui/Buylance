@@ -9,7 +9,7 @@ import CartTotal from "./components/CartTotal";
 const Cart = () => {
   const dispatch:any = useAppDispatch();
   const { profile } = useAppSelector((store) => store.profileManager);
-    
+     
 
 useEffect(()=>{
  dispatch(getProfile("amaansidp@gmail.com","Aman!234"))

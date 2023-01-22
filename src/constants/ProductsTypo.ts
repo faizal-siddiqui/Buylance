@@ -8,7 +8,7 @@ export interface ProductsTypo {
   rating: {
     star: number;
     count: number;
-  };
+  }; 
   price: number;
   mrp: number;
   discount: number;

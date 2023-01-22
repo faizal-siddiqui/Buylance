@@ -5,6 +5,7 @@
     overflow: hidden;
     height: 100%;
     width: 100%;
+    margin-top: 160px;
   }
   
   .carousel-image {
@@ -25,6 +26,8 @@
 
    .carousel-container{
     height: auto;
+    margin-top: 200px;
+
    }
    .carousel-image{
     height: auto;

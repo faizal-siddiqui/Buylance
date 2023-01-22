@@ -2,7 +2,7 @@ import React from 'react'
 import { Box, Button, Center, Image, Stack, Text } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 import shoppingBag from "../image/shopping-bag.png";
-
+ 
 const EmptyCart = () => {
   return (
     <Box m={"auto"} p={50} w={"60%"} mt={"50px"} boxShadow= "rgba(0, 0, 0, 0.35) 0px 5px 15px">

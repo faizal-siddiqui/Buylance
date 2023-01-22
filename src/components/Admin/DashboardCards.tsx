@@ -11,7 +11,7 @@ import {
   getAllPrice,
   getAllPurchasedPrice,
 } from "./DashboardCard";
-
+ 
 interface PanelObj {
   id: number;
   label: string;

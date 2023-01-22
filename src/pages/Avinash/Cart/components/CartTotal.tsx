@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../../../redux/store';
 import { updateCart } from '../../../../redux/actions/ProfileAction';
 import { ProductsTypo } from '../../../../constants/ProductsTypo';
-
+ 
 
 const CartTotal = () => {
     const dispatch:any = useAppDispatch();
