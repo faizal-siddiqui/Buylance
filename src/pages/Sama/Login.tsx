@@ -49,7 +49,7 @@ const Login = () => {
 
       data.map((el: ProfileTypo) => {
         if (el.email === email && el.password === password) {
-          UserLogin();
+          dispatch(UserLogin());
           toast({
             title: "Logged In.",
             description: "You're Logged in Succefully.",
@@ -79,7 +79,7 @@ const Login = () => {
     if (email === "faizalsid123@gmail.com" && password === "Faizal@123") {
       localStorage.setItem("adminId", `16743830916890`);
       localStorage.setItem("id", `16743830916890`);
-      AdminLogin();
+      dispatch(AdminLogin());
       toast({
         title: "Admin Logged In",
         description: "Hello Admin",
@@ -111,11 +111,11 @@ const Login = () => {
   };
 
   const handleLogout = () => {
-    AdminLogout();
-    UserLogout();
+    dispatch(AdminLogout());
+    dispatch(UserLogout());
     localStorage.clear();
-    console.log(localStorage.getItem("adminId"));
-    // console.log(localStorage.getItem("id"));
+
+    
     navigate("/login");
   };
 

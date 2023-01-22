@@ -72,7 +72,7 @@
       "name": "Men Burgundy Solid Polo Collar T-shirt",
       "rating": {
         "star": 4.5,
-        "count": 5.5
+        "count": 6.5
       },
       "price": 766,
       "mrp": 1299,
@@ -1335,38 +1335,6 @@
       ],
       "reviews": [],
       "id": 42
-    },
-    {
-      "delivered": false,
-      "brand": "Force NXT",
-      "name": "Men Navy Blue Printed Round Neck Cotton T-shirt",
-      "rating": {
-        "star": 3,
-        "count": 5600
-      },
-      "price": 540,
-      "mrp": 569,
-      "discount": 5,
-      "sizes": "M",
-      "qty": 1,
-      "productDetails": "Navy blue Tshirt for men Typography printed Regular length Round neck Short, regular sleeves Knitted cotton fabric",
-      "size": "Regular Fit The model (height 6') is wearing a size M",
-      "material": "Cotton Machine Wash",
-      "category": "tshirts",
-      "type": "men",
-      "specification": {
-        "fabric": "Cotton",
-        "fit": "Regular Fit",
-        "length": "Regular",
-        "mainTrend": "Typography or Slogan Print"
-      },
-      "images": [
-        "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/20816798/2022/11/19/43256217-32ea-4455-8090-476e70eb1dac1668824093504ForceNXTMenNavyBlueTypographyPrintedRawEdgeT-shirt4.jpg",
-        "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/20816798/2022/12/1/879f6a31-5da3-4c57-bd54-2e491e3f15361669890012767-Force-NXT-Men-Navy-Blue-Printed-Round-Neck-Cotton-T-shirt-18-7.jpg",
-        "https://assets.myntassets.com/assets/images/20816798/2022/12/1/a8ec30a7-e8ad-489a-99ef-1240f97955a01669890012788-Force-NXT-Men-Navy-Blue-Printed-Round-Neck-Cotton-T-shirt-18-6.jpg"
-      ],
-      "reviews": [],
-      "id": 43
     }
   ],
   "categories": [],
@@ -1919,18 +1887,85 @@
       "gender": "",
       "birthDate": "",
       "location": {
-        "street": "",
-        "city": "",
-        "state": "",
-        "postal_code": "",
-        "country": "",
+        "street": "15 A Vasant Vihar",
+        "city": "Hyderabad",
+        "state": "India",
+        "postal_code": "786875",
+        "country": "Andhra Pradesh",
         "social": "",
         "email": ""
       },
       "cardDetails": "",
       "password": "123456789",
       "cart": [],
-      "orderedProducts": []
+      "orderedProducts": [
+        {
+          "id": 1,
+          "delivered": false,
+          "brand": "Allen Solly",
+          "name": "Men Blue Solid Polo Collar Pure Cotton T-shirt",
+          "rating": {
+            "star": 4.4,
+            "count": 571
+          },
+          "price": 399,
+          "mrp": 999,
+          "discount": 60,
+          "sizes": "M",
+          "qty": 3,
+          "category": "tshirts",
+          "type": "men",
+          "productDetails": "Blue solid T-shirt, has a polo collar, and short sleeves",
+          "size": "The model (height 6') is wearing a size M",
+          "material": "100% Cotton",
+          "specification": {
+            "fabric": "Pure Cotton",
+            "fit": "Regular Fit",
+            "length": "Regular",
+            "mainTrend": "New Basics"
+          },
+          "images": [
+            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/productimage/2019/10/3/09814e9d-8388-4857-8f41-a03c9d9698701570086314065-1.jpg",
+            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/productimage/2019/10/3/9da11bfc-527c-44b2-8a2f-1e5d0cd85e121570086314135-3.jpg",
+            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/productimage/2019/10/3/bbdddcfc-4e61-4b2b-ac93-873c94f8235d1570086314170-4.jpg"
+          ],
+          "reviews": [
+            "Best Product"
+          ]
+        },
+        {
+          "delivered": false,
+          "brand": "HIGHLANDER",
+          "name": "Men White Navy Slim Fit Round Neck Pure Cotton T-shirt",
+          "rating": {
+            "star": 3.8,
+            "count": 1802
+          },
+          "price": 279,
+          "mrp": 699,
+          "discount": 45,
+          "sizes": "M",
+          "qty": 2,
+          "category": "tshirts",
+          "type": "men",
+          "productDetails": "White and navy blue T-shirt, has a round neck, long raglan sleeves",
+          "size": "Slim fit",
+          "material": "100% cotton",
+          "specification": {
+            "fabric": "Pure Cotton",
+            "fit": "Slim Fit",
+            "length": "Regular",
+            "mainTrend": "Nautical"
+          },
+          "images": [
+            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/1923231/2018/3/27/11522150765599-HIGHLANDER-Men-White--Navy-Slim-Fit-Round-Neck-T-shirt-5801522150765458-5.jpg",
+            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/1923231/2018/3/27/11522150765620-HIGHLANDER-Men-White--Navy-Slim-Fit-Round-Neck-T-shirt-5801522150765458-4.jpg",
+            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/1923231/2018/3/27/11522150765639-HIGHLANDER-Men-White--Navy-Slim-Fit-Round-Neck-T-shirt-5801522150765458-3.jpg"
+          ],
+          "reviews": [],
+          "id": 2
+        }
+      ]
     },
     {
       "id": 1674383091624,
@@ -1961,119 +1996,105 @@
       "gender": "",
       "birthDate": "",
       "location": {
-        "street": "15 A Vasant Vihar",
-        "city": "Delhi",
-        "state": "India",
-        "postal_code": "409878",
-        "country": "Delhi",
+        "street": "",
+        "city": "",
+        "state": "",
+        "postal_code": "",
+        "country": "",
         "social": "",
         "email": ""
       },
       "cardDetails": "",
       "password": "Faizal@123",
       "cart": [],
-      "orderedProducts": [
+      "orderedProducts": []
+    },
+    {
+      "id": 1674411961336,
+      "name": "Avinash Singh",
+      "email": "avinash6@gmail.com",
+      "mobile": 0,
+      "gender": "",
+      "birthDate": "",
+      "location": {
+        "street": "15 A Vasant Vihar",
+        "city": "adasfd",
+        "state": "safsad",
+        "postal_code": "asfas",
+        "country": "West Bengal",
+        "social": "",
+        "email": ""
+      },
+      "cardDetails": "",
+      "password": "Avinash!123",
+      "cart": [
         {
-          "delivered": true,
-          "brand": " Allen Solly",
-          "name": "Men Black Colourblocked Polo Collar Pure Cotton T-shirt",
+          "id": 1,
+          "delivered": false,
+          "brand": "Allen Solly",
+          "name": "Men Blue Solid Polo Collar Pure Cotton T-shirt",
           "rating": {
-            "star": 4.3,
-            "count": 306
+            "star": 4.4,
+            "count": 571
           },
-          "price": 349,
-          "mrp": 1049,
-          "discount": 70,
+          "price": 399,
+          "mrp": 999,
+          "discount": 60,
           "sizes": "M",
-          "qty": 3,
-          "productDetails": "Black and Yellow colourblocked T-shirt, has a polo collar, and short sleeves",
-          "size": "The model (height 6') is wearing a size M",
-          "material": "100% Cotton Machine-wash",
+          "qty": 2,
           "category": "tshirts",
           "type": "men",
+          "productDetails": "Blue solid T-shirt, has a polo collar, and short sleeves",
+          "size": "The model (height 6') is wearing a size M",
+          "material": "100% Cotton",
           "specification": {
             "fabric": "Pure Cotton",
-            "fit": "Regular Fit",
-            "length": "Regular",
-            "mainTrend": "Colour Blocked"
-          },
-          "images": [
-            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/productimage/2019/9/28/44cc7348-bfa2-44f8-8a0d-3f7a0a96d6551569660347449-5.jpg",
-            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/productimage/2019/9/28/2cf30dc8-6abb-433f-8f98-a13541030df31569660347411-4.jpg",
-            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/productimage/2019/9/28/6fed9be0-6cdf-43fa-875d-17443645232c1569660347277-1.jpg"
-          ],
-          "reviews": [],
-          "id": 5
-        },
-        {
-          "delivered": false,
-          "brand": "Huetrap",
-          "name": "Men Beige & Black Typography Printed Sustainable T-shirt",
-          "rating": {
-            "star": 4,
-            "count": 12904
-          },
-          "price": 296,
-          "mrp": 1099,
-          "discount": 73,
-          "sizes": "M",
-          "qty": 3,
-          "productDetails": "Beige and Black printed T-shirt, has a round neck, and short sleeves",
-          "size": "The model (height 6') is wearing a size M",
-          "material": "Material: 52% Cotton 48% Polyester Machine Wash",
-          "category": "tshirts",
-          "type": "men",
-          "specification": {
-            "fabric": "Cotton",
-            "fit": "Regular Fit",
-            "length": "Regular",
-            "mainTrend": "Typography or Slogan Print"
-          },
-          "images": [
-            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/productimage/2019/12/12/1aab2a18-6774-4f83-b292-fe301755a3351576102551329-1.jpg",
-            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/productimage/2019/12/12/3e3af82e-a465-46c0-8c52-19e27c063d611576102551460-4.jpg",
-            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/productimage/2019/12/12/512f9dba-fdc5-4e84-a3bf-a430dc3889821576102551501-5.jpg"
-          ],
-          "reviews": [
-            "Best Product",
-            "Best Buy",
-            "jhgasdgasgd"
-          ],
-          "id": 6
-        },
-        {
-          "delivered": false,
-          "brand": "Louis Philippe Sport",
-          "name": "Men Burgundy Solid Polo Collar T-shirt",
-          "rating": {
-            "star": 4.5,
-            "count": 5.5
-          },
-          "price": 766,
-          "mrp": 1299,
-          "discount": 41,
-          "sizes": "M",
-          "qty": 3,
-          "productDetails": "Burgundy Tshirt for men",
-          "size": "Regular Fit",
-          "material": "60% Cotton, 40% Polyester, Machine wash",
-          "category": "tshirts",
-          "type": "men",
-          "specification": {
-            "fabric": "Cotton",
             "fit": "Regular Fit",
             "length": "Regular",
             "mainTrend": "New Basics"
           },
           "images": [
-            "https://assets.myntassets.com/assets/images/18221326/2022/6/4/0a415645-6c74-444a-ab5a-84fd3eeca25b1654320478325-Louis-Philippe-Sport-Men-Tshirts-7611654320477824-5.jpg",
-            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/18221326/2022/6/4/17d5d5c4-1f6c-4ba7-9498-224441fb9fcf1654320478345-Louis-Philippe-Sport-Men-Tshirts-7611654320477824-4.jpg",
-            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/18221326/2022/6/4/f204b069-0fd7-4184-a32f-9215c0ac62541654320478388-Louis-Philippe-Sport-Men-Tshirts-7611654320477824-2.jpg"
+            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/productimage/2019/10/3/09814e9d-8388-4857-8f41-a03c9d9698701570086314065-1.jpg",
+            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/productimage/2019/10/3/9da11bfc-527c-44b2-8a2f-1e5d0cd85e121570086314135-3.jpg",
+            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/productimage/2019/10/3/bbdddcfc-4e61-4b2b-ac93-873c94f8235d1570086314170-4.jpg"
           ],
           "reviews": [
-            "Nice T shirt"
+            "Best Product"
+          ]
+        }
+      ],
+      "orderedProducts": [
+        {
+          "delivered": false,
+          "brand": "WROGN",
+          "name": "Men Cream-Coloured Solid Polo Collar Pure Cotton T-shirt",
+          "rating": {
+            "star": 4.1,
+            "count": 12000
+          },
+          "price": 839,
+          "mrp": 1399,
+          "discount": 40,
+          "sizes": "M",
+          "qty": 3,
+          "productDetails": "Cream-coloured solid T-shirt, has a polo collar, and short sleeves",
+          "size": "The model (height 6') is wearing a size M",
+          "material": "100% cotton Machine-wash",
+          "category": "tshirts",
+          "type": "men",
+          "specification": {
+            "fabric": "Pure Cotton",
+            "fit": "Slim Fit",
+            "length": "Regular",
+            "mainTrend": "New Basics"
+          },
+          "images": [
+            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/10188369/2019/9/16/1d4b3b82-4ae8-4f1d-9208-dcd17f87b8e21568616476617-WROGN-Men-Tshirts-2611568616475829-3.jpg",
+            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/10188369/2019/9/16/508d517e-08c7-4a20-bd8e-20acf07aa4c31568616476657-WROGN-Men-Tshirts-2611568616475829-1.jpg",
+            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/10188369/2019/9/16/740845c6-3f3e-4a09-8a40-5c0c722430ce1568616476590-WROGN-Men-Tshirts-2611568616475829-4.jpg"
           ],
-          "id": 3
+          "reviews": [],
+          "id": 11
         }
       ]
     }

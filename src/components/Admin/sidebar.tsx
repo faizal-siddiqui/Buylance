@@ -37,7 +37,9 @@ import { MdOutlineInventory } from "react-icons/md";
 import { IconType } from "react-icons";
 import { ReactText } from "react";
 import AdminPanel from "./AdminPanel";
-import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink, useNavigate } from "react-router-dom";
+import { useAppDispatch, useAppSelector } from "../../redux/store";
+import { AdminLogout, UserLogout } from "../../redux/actions/ProfileAction";
 
 interface LinkItemProps {
   name: string;
@@ -60,6 +62,7 @@ export default function SidebarWithHeader({
   children: ReactNode;
 }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <Box minH="100vh" bg={useColorModeValue("gray.100", "gray.900")}>
       <SidebarContent
@@ -163,6 +166,18 @@ interface MobileProps extends FlexProps {
   onOpen: () => void;
 }
 const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
+  const dispatch: any = useAppDispatch();
+  const navigate = useNavigate();
+  const { profile } = useAppSelector((store) => store.profileManager);
+
+  const handleLogout = () => {
+    dispatch(AdminLogout());
+    dispatch(UserLogout());
+    localStorage.clear();
+
+    navigate("/login");
+  };
+
   return (
     <Flex
       ml={{ base: 0, md: 60 }}
@@ -219,7 +234,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
                   spacing="1px"
                   ml="2"
                 >
-                  <Text fontSize="sm">Justina Clark</Text>
+                  <Text fontSize="sm">{profile[0]?.name}</Text>
                   <Text fontSize="xs" color="gray.600">
                     Admin
                   </Text>
@@ -237,7 +252,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
               <MenuItem>Settings</MenuItem>
               <MenuItem>Billing</MenuItem>
               <MenuDivider />
-              <MenuItem>Sign out</MenuItem>
+              <MenuItem onClick={handleLogout}>Sign out</MenuItem>
             </MenuList>
           </Menu>
         </Flex>
