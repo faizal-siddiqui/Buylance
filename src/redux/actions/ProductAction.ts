@@ -66,7 +66,7 @@ export const deleteProducts = (id: number) => (dispatch: AppDispatch) => {
     url: `http://localhost:8080/products/${id}`,
   })
     .then((res) => {
-      dispatch({ type: DELETE_PRODUCTS_SUCCESS, payload: res });
+      dispatch({ type: DELETE_PRODUCTS_SUCCESS, payload: id });
     })
     .catch((err) => {
       dispatch({ type: PRODUCTS_ERROR });

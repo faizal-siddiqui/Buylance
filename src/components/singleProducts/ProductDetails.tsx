@@ -22,15 +22,15 @@ const ProductDetails = ({ data }: Props) => {
   const dispatch: any = useAppDispatch();
 
   useEffect(() => {
-    getProfile(id);
-  }, []);
+    dispatch(getProfile(id));
+  }, [dispatch]);
 
   const addToCart = () => {
     let updatedCart: ProductsTypo[] | [] = [];
+    const cart: ProductsTypo[] = profile[0]?.cart;
     if (data) {
-      updatedCart = [...profile[0]?.cart, data];
+      updatedCart = [...cart, data];
     }
-
     dispatch(updateCart(id, updatedCart));
   };
 

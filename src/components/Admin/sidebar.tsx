@@ -30,22 +30,28 @@ import {
   FiMenu,
   FiBell,
   FiChevronDown,
-  FiCompass
+  FiCompass,
+  FiUsers,
 } from "react-icons/fi";
+import { MdOutlineInventory } from "react-icons/md";
 import { IconType } from "react-icons";
 import { ReactText } from "react";
 import AdminPanel from "./AdminPanel";
+import { Link as RouterLink } from "react-router-dom";
 
 interface LinkItemProps {
   name: string;
   icon: IconType;
+  link: string;
 }
 const LinkItems: Array<LinkItemProps> = [
-  { name: "Home", icon: FiHome },
-  { name: "Trending", icon: FiTrendingUp },
-  { name: "Explore", icon: FiCompass },
-  { name: "Favourites", icon: FiStar },
-  { name: "Settings", icon: FiSettings },
+  { name: "Home", icon: FiHome, link: "/admin" },
+  { name: "Users", icon: FiUsers, link: "/admin/users" },
+  {
+    name: "Products Manage",
+    icon: MdOutlineInventory,
+    link: "/admin/products",
+  },
 ];
 
 export default function SidebarWithHeader({
@@ -75,7 +81,7 @@ export default function SidebarWithHeader({
       </Drawer>
       {/* mobilenav */}
       <MobileNav onOpen={onOpen} />
-      <Box border="1px" borderColor="red" ml={{ base: 0, md: 60 }} p="4">
+      <Box ml={{ base: 0, md: 60 }} p="4">
         {children}
       </Box>
     </Box>
@@ -103,9 +109,11 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex>
       {LinkItems.map((link) => (
-        <NavItem key={link.name} icon={link.icon}>
-          {link.name}
-        </NavItem>
+        <RouterLink to={`${link.link}`}>
+          <NavItem key={link.name} icon={link.icon}>
+            {link.name}
+          </NavItem>
+        </RouterLink>
       ))}
     </Box>
   );
@@ -190,7 +198,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
           variant="ghost"
           aria-label="open menu"
           icon={<FiBell />}
-        /> 
+        />
         <Flex alignItems={"center"}>
           <Menu>
             <MenuButton

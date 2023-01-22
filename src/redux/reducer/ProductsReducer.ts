@@ -72,10 +72,11 @@ export const productsReducer = (
       };
     }
     case DELETE_PRODUCTS_SUCCESS: {
+      console.log(state.products);
       return {
         ...state,
         products: state.products.filter((prod) => {
-          return prod.id != payload.id;
+          return prod.id !== payload;
         }),
         loading: false,
       };

@@ -30,7 +30,7 @@ import { ProductsTypo } from "../../constants/ProductsTypo";
 import { ProfileTypo } from "../../constants/ProfileTypo";
 import { patchOrderedProducts } from "../../redux/actions/ProfileAction";
 import { useAppDispatch } from "../../redux/store";
- 
+
 type Props = {
   profile: ProfileTypo;
 };
@@ -52,7 +52,7 @@ const UsersAccordion = ({ profile }: Props) => {
   };
 
   const totalPriceCalc = (arr: ProductsTypo[]) => {
-    return arr.reduce((acc: number, el: ProductsTypo) => acc + el.price, 0);
+    return arr?.reduce((acc: number, el: ProductsTypo) => acc + el.price, 0);
   };
 
   const CircleIcon = (props: { boxSize: number; color: string }) => (
@@ -67,7 +67,11 @@ const UsersAccordion = ({ profile }: Props) => {
   return (
     <AccordionItem>
       <h2>
-        <AccordionButton bgColor="#fff" p="4" _expanded={{ bg: "cyan.400", color: "white" }}>
+        <AccordionButton
+          bgColor="#fff"
+          p="4"
+          _expanded={{ bg: "cyan.400", color: "white" }}
+        >
           <Box as="span" flex="1" textAlign="left">
             <Grid
               templateColumns={{

@@ -11,7 +11,7 @@ import {
   getAllPrice,
   getAllPurchasedPrice,
 } from "./DashboardCard";
- 
+
 interface PanelObj {
   id: number;
   label: string;
@@ -57,9 +57,7 @@ const DashboardCards = (props: Props) => {
       label: "Reached checkout",
       percentage: `${addedToCheckout(allProfiles)}`,
       smallIcon: "./downwardArrow.png",
-      incDec: `${
-        (addedToCart(allProfiles) / addedToCheckout(allProfiles)) * 10
-      } %`,
+      incDec: `${addedToCheckout(allProfiles) / addedToCart(allProfiles)} %`,
       largeIcon: "./checkout.png",
     },
     {

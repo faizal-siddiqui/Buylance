@@ -9,7 +9,7 @@ import {
   getAllPurchasedPrice,
 } from "./DashboardCard";
 import { Box, Flex } from "@chakra-ui/react";
- 
+
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const Chart = () => {
@@ -45,8 +45,6 @@ const Chart = () => {
     <Flex
       mt="30px"
       flexDir={{ lg: "row", md: "row", sm: "column" }}
-      border="1px"
-      borderColor="red"
       align="center"
       justify="space-around"
     >
