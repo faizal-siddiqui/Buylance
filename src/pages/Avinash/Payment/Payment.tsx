@@ -8,16 +8,16 @@ import React, { useEffect, useState } from 'react'
 import { BsCreditCard2FrontFill,BsGlobe2 } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
 import { ProductsTypo } from '../../../constants/ProductsTypo'
-import { getProfile } from '../../../redux/actions/ProfileAction'
+import { getProfile,patchOrderedProducts, updateCart } from '../../../redux/actions/ProfileAction'
 import { useAppDispatch, useAppSelector } from '../../../redux/store'
 
 
-type userDetail = {
-  firstName:string,
-  lastName:string,
-  mobile:number,
-  email:string
-}
+// type userDetail = {
+//   firstName:string,
+//   lastName:string,
+//   mobile:number,
+//   email:string
+// }
 
 type AccountDetails={
   card:number,
@@ -27,18 +27,20 @@ type AccountDetails={
 }
 
 const Payment = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [paymentLoad, setPaymentLoad]= useState<boolean>(false);
+  const [paymentStatus, setPaymentStatus]= useState<boolean>(false);
     const initialRef = React.useRef(null);
        
   const [modalValue, setModalValue] =useState<string>('');
-const [userDetails,setUserDetails]=useState<userDetail>({
-  firstName:"",
-  lastName:"",
-  mobile:0,
-  email:""
-})
+// const [userDetails,setUserDetails]=useState<userDetail>({
+//   firstName:"",
+//   lastName:"",
+//   mobile:0,
+//   email:""
+// })
 
+let id:number = Number(JSON.parse(localStorage.getItem("id")||""))
 const [accountDetails,setAccountDetails]=useState<AccountDetails>({
   card:0,
   UPI:"",
@@ -49,35 +51,56 @@ const [accountDetails,setAccountDetails]=useState<AccountDetails>({
 const handleModalClick = (val:string) => {
   setModalValue(val)
   onOpen()
-};
-const handleChange2=(e:React.ChangeEvent<HTMLInputElement>)=>{
-  const {name,value}=e.target;
-  setAccountDetails({...accountDetails,[name]:value})
- }
+}
 
 // console.log(userDetails)
-const [finalData,setFinalData]=useState<userDetail>();
+//const [finalData,setFinalData]=useState<userDetail>();
 
 const dispatch:any = useAppDispatch()
 const {profile}= useAppSelector((store)=>store.profileManager);
 
 useEffect(()=>{
-    dispatch(getProfile("amaansidp@gmail.com","Aman!234"))
+    dispatch(getProfile(id))
      },[dispatch])
 let totalPrice:number=0;
  
 
 const handleChange=(e: React.ChangeEvent<HTMLInputElement>)=>{
  const {name,value}=e.target;
- setUserDetails({...userDetails,[name]:value})
+ setAccountDetails({...accountDetails,[name]:value})
 }
-const saveUserDetails=()=>{
-  setFinalData(userDetails);
-  onClose()
+
+const triggerPayment=()=>{
+  setPaymentLoad(true)
+  setTimeout(()=>{
+    setPaymentLoad(false);
+    setPaymentStatus(true);
+  
+  },2000);
+  dispatch(patchOrderedProducts(id,profile[0].cart))
+  dispatch(updateCart(id, []))
+  onClose();
 }
 
 
 const btnValue :string[] = ['Debit Card', 'UPI', 'Net Banking'];
+
+if(paymentStatus){
+  return<>
+   <Box w={{base:"100%",md:"50%"}} m="auto">
+    <Heading color={"green.500"}>Products Ordered</Heading>
+    <Image h={100} w={100} objectFit="contain" src='https://i.gifer.com/origin/41/41340ab1a4529c7dd753f03268087e08.gif' />
+    <Link to={"/"}><Button>Go To Home</Button></Link>
+   </Box>
+  </>
+}
+if(paymentLoad){
+  return<>
+   <Box w={{base:"100%",md:"50%"}} m="auto">
+    <Image h={100} w={100} objectFit="contain" src='https://cdn.dribbble.com/users/2973561/screenshots/5757826/loading__.gif' />
+   </Box>
+  </>
+}
   return (
     <Box w={{base:"full",lg:"75%"}} m={"auto"} mt={"50px"} mb="50px" borderRadius={10}>
     <Heading borderRadius={10} bg="blue.500" p={2} color={"white"} mb={10}>Payment</Heading>
@@ -94,9 +117,9 @@ const btnValue :string[] = ['Debit Card', 'UPI', 'Net Banking'];
       <Stack p={5} color={"gray.500"}>
        <Text fontWeight={"bold"} color={"blue.500"}>Login <CheckIcon color={"green.500"}/></Text>
         <Stack><Text color={"ActiveBorder"} fontWeight={"bold"} fontSize={"xl"} fontStyle={"italic"}>
-          {finalData?(finalData.firstName +" "+ finalData.lastName): profile[0]?.name}</Text>
-        <Text><EmailIcon/> {finalData?(finalData.email): profile[0]?.email}</Text>
-        <Text><PhoneIcon/> {finalData?(finalData.mobile): profile[0]?.mobile}</Text>
+          { profile[0]?.name}</Text>
+        <Text><EmailIcon/> { profile[0]?.email}</Text>
+        <Text><PhoneIcon/> { profile[0]?.mobile}</Text>
         </Stack>
       </Stack>
       {/* --------------------------------------------------------------------------------------------> */}
@@ -178,7 +201,7 @@ const btnValue :string[] = ['Debit Card', 'UPI', 'Net Banking'];
           <ModalBody pb={6}>
             <FormControl>
               <FormLabel>Enter Card Number</FormLabel>
-              <Input ref={initialRef} placeholder='Card Number' />
+              <Input name='card' onChange={handleChange} ref={initialRef} placeholder='Card Number' />
             </FormControl>
             <HStack justifyContent={"space-between"}>
             <FormControl mt={4}>
@@ -198,8 +221,8 @@ const btnValue :string[] = ['Debit Card', 'UPI', 'Net Banking'];
           </ModalBody>
 
           <ModalFooter>
-            <Button onClick={onOpen} colorScheme='blue' mr={3}>
-              Save
+            <Button onClick={triggerPayment} colorScheme='blue' mr={3}>
+              Pay {totalPrice}/-
             </Button>
             <Button onClick={onClose}>Cancel</Button>
           </ModalFooter>
@@ -207,33 +230,18 @@ const btnValue :string[] = ['Debit Card', 'UPI', 'Net Banking'];
 
         {modalValue==="UPI" && 
         <ModalContent>
-          <ModalHeader>Card Details</ModalHeader>
+          <ModalHeader>Verify UPI ID</ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6}>
             <FormControl>
-              <FormLabel>Enter Card Number</FormLabel>
-              <Input ref={initialRef} placeholder='Card Number' />
+              <FormLabel>Enter UPI ID</FormLabel>
+              <Input name='UPI' onChange={handleChange} ref={initialRef} placeholder='Card Number' />
             </FormControl>
-            <HStack justifyContent={"space-between"}>
-            <FormControl mt={4}>
-              <FormLabel>Valid Date</FormLabel>
-              <Input
-              ref={initialRef}
-               placeholder="Select Date"
-               size="md"
-               type="date"/>
-            </FormControl>
-
-            <FormControl>
-            <FormLabel>CVV</FormLabel>
-              <Input ref={initialRef}/>
-            </FormControl>
-            </HStack>
           </ModalBody>
 
           <ModalFooter>
             <Button onClick={onOpen} colorScheme='blue' mr={3}>
-              Save
+              Verify
             </Button>
             <Button onClick={onClose}>Cancel</Button>
           </ModalFooter>
@@ -242,33 +250,24 @@ const btnValue :string[] = ['Debit Card', 'UPI', 'Net Banking'];
 
         {modalValue==="Net Banking" && 
         <ModalContent>
-          <ModalHeader>Card Details</ModalHeader>
+          <ModalHeader>Login Your Bank Account</ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6}>
             <FormControl>
-              <FormLabel>Enter Card Number</FormLabel>
-              <Input ref={initialRef} placeholder='Card Number' />
+              <FormLabel>Enter User Name</FormLabel>
+              <Input name='userName' onChange={handleChange} ref={initialRef} placeholder='User Name' />
             </FormControl>
-            <HStack justifyContent={"space-between"}>
-            <FormControl mt={4}>
-              <FormLabel>Valid Date</FormLabel>
-              <Input
-              ref={initialRef}
-               placeholder="Select Date"
-               size="md"
-               type="date"/>
-            </FormControl>
-
+           
             <FormControl>
-            <FormLabel>CVV</FormLabel>
-              <Input ref={initialRef}/>
+            <FormLabel>Password</FormLabel>
+              <Input name='password' onChange={handleChange} ref={initialRef}/>
             </FormControl>
-            </HStack>
+    
           </ModalBody>
 
           <ModalFooter>
             <Button onClick={onOpen} colorScheme='blue' mr={3}>
-              Save
+              Login
             </Button>
             <Button onClick={onClose}>Cancel</Button>
           </ModalFooter>
