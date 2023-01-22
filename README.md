@@ -229,3 +229,10 @@ Q1. How many api's we ae going to use?
 - create all the files
 
         
+
+
+
+
+# Admin Login Creds
+Email: faizalsid123@gmail.com
+Password: Faizal@123

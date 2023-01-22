@@ -1760,6 +1760,27 @@
       "password": "123456789",
       "cart": [],
       "orderedProducts": []
+    },
+    {
+      "id": 1674383091624,
+      "name": "faiza gfg",
+      "email": "faiz@gmail.com",
+      "mobile": 0,
+      "gender": "",
+      "birthDate": "",
+      "location": {
+        "street": "",
+        "city": "",
+        "state": "",
+        "postal_code": "",
+        "country": "",
+        "social": "",
+        "email": ""
+      },
+      "cardDetails": "",
+      "password": "123456789",
+      "cart": [],
+      "orderedProducts": []
     }
   ]
 }
