@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 import "./top.css"
 const Topbar= () => {
     const changecolor=(e:React.MouseEvent<HTMLButtonElement>)=>{
@@ -11,7 +12,7 @@ const Topbar= () => {
     }
   return (
     <nav>
-        <img src={process.env.PUBLIC_URL + './logo.png'} alt="Logo" />
+      <Link to="/">  <img src={process.env.PUBLIC_URL + './logo.png'} alt="Logo" /></Link>
         <div className='creds'>
         <div>
         <input type="text" placeholder="Search" />
