@@ -1,12 +1,16 @@
 import { ProfileTypo } from "../../constants/ProfileTypo";
 import { PRODUCTS_RESET } from "../types/ProductsTypes";
 import {
+  ADMIN_LOGIN_SUCCESS,
+  ADMIN_LOGOUT_SUCCESS,
   GET_ALLPROFILE_SUCCESS,
   GET_PROFILE_SUCCESS,
   PATCH_PROFILE_SUCCESS,
   POST_PROFILE_SUCCESS,
   PROFILE_ERROR,
   PROFILE_LOADING,
+  USER_LOGIN_SUCCESS,
+  USER_LOGOUT_SUCCESS,
 } from "../types/ProfileTypes";
 
 interface State {
@@ -16,6 +20,8 @@ interface State {
   allProfiles: ProfileTypo[];
   auth: boolean;
   id: number | string;
+  adminAuth: boolean;
+  adminId: number | string;
 }
 
 const initialState: State = {
@@ -25,6 +31,8 @@ const initialState: State = {
   allProfiles: [],
   auth: localStorage.getItem("id") ? true : false,
   id: localStorage.getItem("id") || 0,
+  adminAuth: localStorage.getItem("adminId") ? true : false,
+  adminId: localStorage.getItem("adminId") || 0,
 };
 
 type Action = {
@@ -77,6 +85,34 @@ export const profileReducer = (
         ...state,
         allProfiles: payload,
         loading: false,
+      };
+    }
+    case USER_LOGIN_SUCCESS: {
+      return {
+        ...state,
+        auth: true,
+        id: localStorage.getItem("id") || 0,
+      };
+    }
+    case USER_LOGOUT_SUCCESS: {
+      return {
+        ...state,
+        auth: false,
+        id: 0,
+      };
+    }
+    case ADMIN_LOGIN_SUCCESS: {
+      return {
+        ...state,
+        adminAuth: true,
+        adminId: localStorage.getItem("adminId") || 0,
+      };
+    }
+    case ADMIN_LOGOUT_SUCCESS: {
+      return {
+        ...state,
+        adminAuth: false,
+        adminId: 0,
       };
     }
     case PRODUCTS_RESET: {
