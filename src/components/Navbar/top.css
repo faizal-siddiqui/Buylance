@@ -1,3 +1,4 @@
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -62,4 +63,5 @@ nav {
       .searchbar{
         display: none;
       }
-      }
+
+      
