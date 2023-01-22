@@ -22,7 +22,7 @@ const OrderedProductsCard = ({prod, handleCancelOrder}: Props) => {
             <p className='quantity'>Quantity: {prod.qty}</p>
             <p className='size'>Size: {prod.sizes}</p>
             <p className='price'>Price: {prod.price}</p>
-            <h1 className='order-status'>Delivery status: {prod.delivered===true?"Delivered":"Pending"}</h1>
+            <h1 className='order-status'>Delivery status: {prod.delivered===true?"DELIVERED":"PENDING"}</h1>
 <h1 className='cancel-order' onClick={() =>handleCancelOrder(prod.id)}>Cancel Order</h1>
 
             </div>
