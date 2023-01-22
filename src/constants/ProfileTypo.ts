@@ -8,10 +8,9 @@ export interface AddressType {
   country: string;
   social:string,
   email:string
-}
+} 
 export interface ProfileTypo {
   id: number;
-  isActive?: boolean;
   name: string;
   email: string;
   mobile: number;

@@ -9,7 +9,7 @@ import {
   Tbody,
   Td,
   Text,
-  Th,
+  Th, 
   Thead,
   Tr,
 } from "@chakra-ui/react"

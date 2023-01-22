@@ -8,7 +8,7 @@ import {
     Image,
     Button,
   } from '@chakra-ui/react';
-  
+   
     type CardProps={
         id:number,
        image:string,

@@ -31,7 +31,7 @@ const SingleProduct = (props: Props) => {
   useEffect(() => {
     apifn2({
       method: "get",
-      url: `http://localhost:8080/products?_limit=20&_page=${2}`,
+      url: `http://localhost:8080/products?_limit=12&_page=${2}`,
     });
   }, []);
 
