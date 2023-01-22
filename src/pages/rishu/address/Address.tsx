@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import {
   Progress,
   Box,
-  ButtonGroup,
   Button,
   Flex,
   Heading,
@@ -12,12 +11,7 @@ import {
   GridItem,
   FormLabel,
   Input,
-  Select,
-  SimpleGrid,
-  InputLeftAddon,
-  InputGroup,
-  Textarea,
-  FormHelperText,
+  Select
  
 } from "@chakra-ui/react";
 
@@ -81,8 +75,8 @@ const Address = (props: Props) => {
           mx="5%"
           isAnimated
         ></Progress>
-        {step === 1 ?<> <Heading w="100%" textAlign={"center"} fontWeight="normal" mb="2%">
-          User Details
+        {<> <Heading w="100%" textAlign={"center"} fontWeight="normal" mb="2%">
+        Shipping Address
         </Heading>
   
         <FormControl as={GridItem} colSpan={6}>
@@ -151,7 +145,7 @@ const Address = (props: Props) => {
               }}
               mt="2%"
             >
-              State / Province
+              Country / Region
             </FormLabel>
             <Input
               type="text"
@@ -205,7 +199,7 @@ const Address = (props: Props) => {
                 color: "gray.50",
               }}
             >
-              Country / Region
+              State / Province
             </FormLabel>
             <Select
               id="country"
@@ -219,116 +213,24 @@ const Address = (props: Props) => {
               rounded="md"
               onChange={handleChange}
             >
-              <option>United States</option>
-              <option>Canada</option>
-              <option>Mexico</option>
+              <option>Karnatka</option>
+              <option>Maharastra</option>
+              <option>Bihar</option>
+              <option>Uttar Pradesh</option>
+              <option>Delhi</option>
+              <option>Tamil Nadu</option>
+              <option>Jharkhand</option>
+              <option>Andhra Pradesh</option>
+              <option>West Bengal</option>
+              <option>Gujrat</option>
+              <option>Assam</option>
+
             </Select>
           </FormControl>
         </Flex>
         </>
-         :
-         <>
-         <Heading w="100%" textAlign={"center"} fontWeight="normal">
-          Social Handles
-        </Heading>
-        <SimpleGrid columns={1} spacing={6}>
-          <FormControl as={GridItem} colSpan={[3, 2]}>
-            <FormLabel
-              fontSize="sm"
-              fontWeight="md"
-              color="gray.700"
-              _dark={{
-                color: "gray.50",
-              }}
-            >
-              Website
-            </FormLabel>
-            <InputGroup size="sm">
-              <InputLeftAddon
-                bg="gray.50"
-                _dark={{
-                  bg: "gray.800",
-                }}
-                color="gray.500"
-                rounded="md"
-              >
-                http://
-              </InputLeftAddon>
-              <Input
-                name="social"
-                type="tel"
-                placeholder="www.example.com"
-                focusBorderColor="brand.400"
-                rounded="md"
-                onChange={handleChange}
-              />
-            </InputGroup>
-          </FormControl>
-          <FormControl id="email" mt={1}>
-            <FormLabel
-              fontSize="sm"
-              fontWeight="md"
-              color="gray.700"
-              _dark={{
-                color: "gray.50",
-              }}
-            >
-              About
-            </FormLabel>
-            <Textarea
-              placeholder="you@example.com"
-              name="email"
-              rows={3}
-              shadow="sm"
-              focusBorderColor="brand.400"
-              fontSize={{
-                sm: "sm", 
-              }}
-              onChange={handleChange}
-            />
-            <FormHelperText>
-              Brief description for your profile. URLs are hyperlinked.
-            </FormHelperText>
-          </FormControl>
-        </SimpleGrid>
-        </>
-        
         }
-        <ButtonGroup mt="5%" w="100%">
-          <Flex w="100%" justifyContent="space-between">
-            <Flex>
-              <Button
-                onClick={() => {
-                  setStep(step - 1);
-                  setProgress(progress - 50);
-                }}
-                isDisabled={step === 1}
-                colorScheme="teal"
-                variant="solid"
-                w="7rem"
-                mr="5%"
-              >
-                Back
-              </Button>
-              <Button
-                w="7rem"
-                isDisabled={step === 2}
-                onClick={() => {
-                  setStep(step + 1);
-                  if (step === 2) {
-                    setProgress(100);
-                  } else {
-                    setProgress(progress + 50);
-                  }
-                }}
-                colorScheme="teal"
-                variant="outline"
-              >
-                Next
-              </Button>
-            </Flex>
-            {step === 2 ? (
-              <Link to={"/payment"}><Button
+          <Link to={"/payment"}><Button mt="5%"
                 w="7rem"
                 colorScheme="red"
                 variant="solid"
@@ -339,10 +241,6 @@ const Address = (props: Props) => {
                 Submit
               </Button>
               </Link>
-
-            ) : null}
-          </Flex>
-        </ButtonGroup>
       </Box>
 
       <LargeWithAppLinksAndSocial />
