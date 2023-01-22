@@ -25,12 +25,12 @@ import {
 import {
   FiHome,
   FiTrendingUp,
-  FiCompass,
   FiStar,
   FiSettings,
   FiMenu,
   FiBell,
   FiChevronDown,
+  FiCompass
 } from "react-icons/fi";
 import { IconType } from "react-icons";
 import { ReactText } from "react";
@@ -190,7 +190,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
           variant="ghost"
           aria-label="open menu"
           icon={<FiBell />}
-        />
+        /> 
         <Flex alignItems={"center"}>
           <Menu>
             <MenuButton

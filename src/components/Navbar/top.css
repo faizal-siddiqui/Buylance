@@ -4,6 +4,14 @@ nav {
     align-items: center;
     padding: 10px 20px;
     background-color: #ffffff;
+   
+  }
+  .top-fix{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
   }
   
   nav img {
@@ -50,5 +58,8 @@ nav {
       .nav-right {
       width: 100%;
       justify-content: center;
+      }
+      .searchbar{
+        display: none;
       }
       }

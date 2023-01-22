@@ -51,7 +51,7 @@ const SocialButton = ({
     </chakra.button>
   );
 };
-
+ 
 export default function LargeWithAppLinksAndSocial() {
   return (
     <Box

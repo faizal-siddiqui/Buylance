@@ -8,7 +8,7 @@ export const getAllPrice = (products: ProductsTypo[]): number => {
 
   return totalPrice;
 };
-
+ 
 export const getAllPurchasedPrice = (allProfiles: ProfileTypo[]): number => {
   let totalPurchasePrice = allProfiles?.reduce(
     (acc: number, el: ProfileTypo) => {

@@ -30,7 +30,7 @@ import { ProductsTypo } from "../../constants/ProductsTypo";
 import { ProfileTypo } from "../../constants/ProfileTypo";
 import { patchOrderedProducts } from "../../redux/actions/ProfileAction";
 import { useAppDispatch } from "../../redux/store";
-
+ 
 type Props = {
   profile: ProfileTypo;
 };

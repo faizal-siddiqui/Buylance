@@ -9,7 +9,7 @@ import {
   getAllPurchasedPrice,
 } from "./DashboardCard";
 import { Box, Flex } from "@chakra-ui/react";
-
+ 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const Chart = () => {
