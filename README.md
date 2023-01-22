@@ -229,3 +229,54 @@ Q1. How many api's we ae going to use?
 - create all the files
 
         
+
+
+        <Tabs size={"sm"} isFitted variant='enclosed'>
+  <TabList>
+    <Tab>
+    <Button size={{base:"xs",md:"sm",lg:"md"}} colorScheme='facebook' leftIcon={<BsCreditCard2FrontFill />}>
+       Credit Card / Debit Card
+    </Button>
+    </Tab>
+    <Tab>
+    <Button size={{base:"xs",md:"sm",lg:"md"}} colorScheme='facebook' leftIcon={<Image objectFit={"contain"}
+     borderRadius="10"  h={5}
+     src='https://play-lh.googleusercontent.com/B5cNBA15IxjCT-8UTXEWgiPcGkJ1C07iHKwm2Hbs8xR3PnJvZ0swTag3abdC_Fj5OfnP'/>}>
+       UPI
+    </Button>
+    </Tab>
+    <Tab>
+    <Button size={{base:"xs",md:"sm",lg:"md"}} colorScheme='facebook' leftIcon={<BsGlobe2 />}>
+       Net Banking
+    </Button>
+    </Tab>
+  </TabList>
+  <TabPanels>
+    <TabPanel>
+      <Stack p={"10"}>
+      <FormLabel>Enter Card Number</FormLabel>
+      <Input/>
+      <HStack justifyContent={"space-between"}>
+      <Box>
+      <FormLabel>Valid Date</FormLabel>
+      <Input
+        placeholder="Select Date"
+        size="md"
+        type="date"/>
+      </Box>
+      <Box>
+      <FormLabel>CVV</FormLabel>
+      <Input/>
+      </Box>
+      </HStack>
+      <Button fontWeight={"bold"} colorScheme={"facebook"}>RS {totalPrice}/- Pay Now</Button>
+      </Stack>
+    </TabPanel>
+    <TabPanel>
+      <p>two!</p>
+    </TabPanel>
+    <TabPanel>
+      <p>three!</p>
+    </TabPanel>
+  </TabPanels>
+</Tabs>
