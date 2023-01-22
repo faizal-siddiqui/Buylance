@@ -21,7 +21,7 @@ function Navbar() {
         </div>
     <ul className={isOpen.mens ? "visible" : "hidden"}>
       <li><Link to="/">Home</Link></li>
-      <li><a href="#">Men</a>
+      <li><Link to="/men">Men</Link>
         <div className="sub-menu">
           <div className="sub-menu-col">
             <h3>Topwear</h3>
