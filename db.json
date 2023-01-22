@@ -2126,38 +2126,6 @@
           ],
           "reviews": [],
           "id": 34
-        },
-        {
-          "delivered": false,
-          "brand": "98 Degree North",
-          "name": "Men Plus Size Red Striped Polo Collar Regular Fit T-shirt",
-          "rating": {
-            "star": 3.9,
-            "count": 5433
-          },
-          "price": 848,
-          "mrp": 2495,
-          "discount": 66,
-          "sizes": "M",
-          "qty": 1,
-          "productDetails": "Red and white Tshirt for men Striped Regular length Polo collar Short, regular sleeves Knitted cotton fabric",
-          "size": "Regular Fit The model (height 6') is wearing a size M",
-          "material": "(60% Cotton 40% Polyester) Cotton Blend PQ Fabric Regular Machine Wash",
-          "category": "tshirts",
-          "type": "men",
-          "specification": {
-            "fabric": "Cotton",
-            "fit": "Regular Fit",
-            "length": "Regular",
-            "mainTrend": "Multi or Variegated Stripes"
-          },
-          "images": [
-            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/17325560/2022/2/28/796f87c6-a1d9-4cf8-8a27-fe1f6ca3df84164602937683198DegreeNorthMenRedStripedPoloCollarT-shirt1.jpg",
-            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/17325560/2022/2/28/796f87c6-a1d9-4cf8-8a27-fe1f6ca3df84164602937683198DegreeNorthMenRedStripedPoloCollarT-shirt1.jpg",
-            "https://assets.myntassets.com/assets/images/17325560/2022/2/28/9f4752a1-8e61-45e2-b9c2-24ccabf47234164602937682398DegreeNorthMenRedStripedPoloCollarT-shirt6.jpg"
-          ],
-          "reviews": [],
-          "id": 35
         }
       ]
     },
