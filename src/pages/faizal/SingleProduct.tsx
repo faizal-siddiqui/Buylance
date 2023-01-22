@@ -40,7 +40,7 @@ const SingleProduct = (props: Props) => {
       <Navbar />
 
       <Box
-        my={{ lg: "50px", md: "50px", sm: "50px" }}
+        my={{ lg: "160px", md: "90px", sm: "50px" }}
         mx={{ lg: "2%", md: "3%", sm: "4%" }}
       >
         <Box></Box>

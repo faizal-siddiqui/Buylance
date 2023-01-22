@@ -1971,9 +1971,10 @@
       },
       "cardDetails": "",
       "password": "Faizal@123",
-      "cart": [
+      "cart": [],
+      "orderedProducts": [
         {
-          "delivered": false,
+          "delivered": true,
           "brand": " Allen Solly",
           "name": "Men Black Colourblocked Polo Collar Pure Cotton T-shirt",
           "rating": {
@@ -2074,8 +2075,7 @@
           ],
           "id": 3
         }
-      ],
-      "orderedProducts": []
+      ]
     }
   ]
 }

@@ -28,7 +28,7 @@ const Cart = () => {
   // while products is added to cart-------------------------------------------->
   return (
     <>
-      <Box>
+      <Box my={{lg: "150px", md: "100px", sm: "70px"}}>
         <Navbar />
         <Flex
           justifyContent={"space-evenly"}

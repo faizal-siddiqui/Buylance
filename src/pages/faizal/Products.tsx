@@ -124,7 +124,10 @@ const Products = (props: Props) => {
   return (
     <Box>
       <Navbar />
-      <Box mx={{ lg: "2%", md: "3%", sm: "4%" }}>
+      <Box
+        my={{ lg: "150px", md: "100px", sm: "70px" }}
+        mx={{ lg: "2%", md: "3%", sm: "4%" }}
+      >
         <Box my="30px">
           <Flex align="center">
             <Text fontSize={"25px"} fontWeight={"bold"}>
