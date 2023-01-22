@@ -19,20 +19,19 @@ import {
 import { apiCall } from "./Action.api";
 
 //get profile----------------------------------->
-export const getProfile =
-  (email: string, password: string) => (dispatch: AppDispatch) => {
-    dispatch({ type: PROFILE_LOADING });
-    apiCall({
-      method: "get",
-      url: `http://localhost:8080/profile?email=${email}&password=${password}`,
+export const getProfile = (id: number) => (dispatch: AppDispatch) => {
+  dispatch({ type: PROFILE_LOADING });
+  apiCall({
+    method: "get",
+    url: `http://localhost:8080/profile/${id}`,
+  })
+    .then((res: ProfileTypo) => {
+      dispatch({ type: GET_PROFILE_SUCCESS, payload: res });
     })
-      .then((res) => {
-        dispatch({ type: GET_PROFILE_SUCCESS, payload: res });
-      })
-      .catch((err) => {
-        dispatch({ type: PROFILE_ERROR });
-      });
-  };
+    .catch((err) => {
+      dispatch({ type: PROFILE_ERROR });
+    });
+};
 
 //Post profile------------------------------------------>
 export const postProfile = (data: ProfileTypo) => (dispatch: AppDispatch) => {

@@ -62,14 +62,14 @@ export const profileReducer = (
     case GET_PROFILE_SUCCESS: {
       return {
         ...state,
-        profile: payload,
+        profile: [payload],
         loading: false,
       };
     }
     case POST_PROFILE_SUCCESS: {
       return {
         ...state,
-        profile: payload,
+        profile: [payload],
         loading: false,
       };
     }

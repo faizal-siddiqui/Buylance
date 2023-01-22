@@ -23,13 +23,14 @@ import { useToast } from "@chakra-ui/react";
 import "firebase/auth";
 import { ProfileTypo } from "../../constants/ProfileTypo";
 import Navbar from "../../components/Navbar/navbar";
-import { useAppSelector } from "../../redux/store";
+import { useAppDispatch, useAppSelector } from "../../redux/store";
 
 import {
   AdminLogin,
   AdminLogout,
   UserLogin,
   UserLogout,
+  getProfile,
 } from "../../redux/actions/ProfileAction";
 
 const Login = () => {
@@ -37,6 +38,7 @@ const Login = () => {
   const [authing, setAuthing] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const dispatch: any = useAppDispatch();
 
   // const { adminAuth, auth } = useAppSelector((store) => store.profileManager);
   const handleLogin = async () => {
@@ -55,8 +57,10 @@ const Login = () => {
             duration: 9000,
             isClosable: true,
           });
+          dispatch(getProfile(el.id));
           localStorage.setItem("id", `${el.id}`);
-          console.log(localStorage.getItem("id"));
+          // console.log(localStorage.getItem("id"));
+
           navigate("/");
         }
       });
@@ -73,16 +77,17 @@ const Login = () => {
 
   const handleCheck = () => {
     if (email === "faizalsid123@gmail.com" && password === "Faizal@123") {
-      localStorage.setItem("adminId", `${Date.now()}`);
-      localStorage.setItem("id", `${Date.now()}`);
+      localStorage.setItem("adminId", `16743830916890`);
+      localStorage.setItem("id", `16743830916890`);
       AdminLogin();
       toast({
         title: "Admin Logged In",
         description: "Hello Admin",
         status: "success",
-        duration: 9000,
+        duration: 3000,
         isClosable: true,
       });
+      dispatch(getProfile(16743830916890));
       navigate("/admin");
     } else {
       handleLogin();
@@ -94,13 +99,12 @@ const Login = () => {
   const signInWithGoogle = async () => {
     setAuthing(true);
 
-    signInWithPopup(auth, new GoogleAuthProvider())
-      .then((res:any) => {
-
+    signInWithPopup(auths, new GoogleAuthProvider())
+      .then((res: any) => {
         console.log(res.user.uid);
         navigate("/");
       })
-      .catch((err:any) => {
+      .catch((err: any) => {
         console.log(err);
         setAuthing(false);
       });
