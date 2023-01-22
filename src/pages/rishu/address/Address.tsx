@@ -1,7 +1,7 @@
 
 import Navbar from "../../../components/Navbar/navbar";
 import LargeWithAppLinksAndSocial from "../../../components/Footer/footer/footer";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Progress,
   Box,
@@ -17,10 +17,10 @@ import {
 } from "@chakra-ui/react";
 
 import { useToast } from "@chakra-ui/react";
-import { updateAddress } from "../../../redux/actions/ProfileAction";
+import { updateAddress, getProfile } from "../../../redux/actions/ProfileAction";
 import { store, useAppDispatch, useAppSelector } from "../../../redux/store";
 import { AddressType } from "../../../constants/ProfileTypo";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 type Props = {
 
 };
@@ -42,12 +42,26 @@ const Address = (props: Props) => {
   const [step, setStep] = useState<number>(1);
   const [progress, setProgress] = useState<number>(50);
   const {profile}= useAppSelector((store)=>store.profileManager);
+  const profileState = useAppSelector((store)=>store.profileManager)
   const dispatch:any= useAppDispatch();
+  const navigate = useNavigate()
 
-  const addAddress = () =>{
+
+  useEffect(() => {
+    dispatch(getProfile("amaansidp@gmail.com", "Aman!234"))
+  }, [dispatch])
+
+
+  const addAddress = async() =>{
     let id:number=2;
     //id=profile[0].id
-    dispatch(updateAddress(id,address))
+    dispatch(updateAddress(id,address));
+
+    setTimeout(() => {
+      setLocation()
+
+    }, 2000)
+    
   }
 
   const handleChange = (e: { target: { value: string, name: string } }) =>{
@@ -55,6 +69,20 @@ const Address = (props: Props) => {
     setAddress({...address,[name]:value})
   }
 
+  const setLocation=()=>{
+    if(profileState.error){
+      toast({
+        title: "Server Error.",
+        description: "Check Your Server.",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+      })
+    } else if(profileState.loading === false && profileState.error === false){
+      navigate("/payment")
+     }
+  
+}
   
   return (
     <>
@@ -63,7 +91,7 @@ const Address = (props: Props) => {
       <Box
         borderWidth="1px"
         rounded="lg"
-        shadow="sm"
+        shadow="xl"
         maxWidth={800}
         p={6}
         m="50px auto"
@@ -76,7 +104,8 @@ const Address = (props: Props) => {
           mx="5%"
           isAnimated
         ></Progress>
-        {<> <Heading w="100%" textAlign={"center"} fontWeight="normal" mb="2%">
+        {<> <Heading color="white" bg={"teal.500"} borderRadius={"20px"}
+         w="100%" textAlign={"center"} fontWeight="bold" mb="2%">
         Shipping Address
         </Heading>
   
@@ -84,8 +113,8 @@ const Address = (props: Props) => {
           <FormLabel
             htmlFor="street_address"
             fontSize="sm"
-            fontWeight="md"
-            color="gray.700"
+            color="teal.500"
+            fontWeight="bold"
             _dark={{
               color: "gray.50",
             }}
@@ -112,8 +141,8 @@ const Address = (props: Props) => {
             <FormLabel
               htmlFor="city"
               fontSize="sm"
-              fontWeight="md"
-              color="gray.700"
+               color="teal.500"
+             fontWeight="bold"
               _dark={{
                 color: "gray.50",
               }}
@@ -139,8 +168,8 @@ const Address = (props: Props) => {
             <FormLabel
               htmlFor="state"
               fontSize="sm"
-              fontWeight="md"
-              color="gray.700"
+               color="teal.500"
+             fontWeight="bold"
               _dark={{
                 color: "gray.50",
               }}
@@ -168,8 +197,8 @@ const Address = (props: Props) => {
             <FormLabel
               htmlFor="postal_code"
               fontSize="sm"
-              fontWeight="md"
-              color="gray.700"
+               color="teal.500"
+             fontWeight="bold"
               _dark={{
                 color: "gray.50",
               }}
@@ -192,10 +221,10 @@ const Address = (props: Props) => {
   
           <FormControl>
             <FormLabel
+             color="teal.500"
+             fontWeight="bold"
               htmlFor="country"
               fontSize="sm"
-              fontWeight="md"
-              color="gray.700"
               _dark={{
                 color: "gray.50",
               }}
@@ -203,6 +232,8 @@ const Address = (props: Props) => {
               State / Province
             </FormLabel>
             <Select
+              color="blue.500"
+              fontWeight="bold"
               id="country"
               name="country"
               autoComplete="country"
@@ -231,17 +262,21 @@ const Address = (props: Props) => {
         </Flex>
         </>
         }
-          <Link to={"/payment"}><Button mt="5%"
-                w="7rem"
-                colorScheme="red"
+          <Button 
+                   isLoading= {profileState.loading}
+                   loadingText='Submitting'
+                  mt="5%"
+                 color="white"
+                 fontWeight="bold"
+                colorScheme="blue"
                 variant="solid"
                 onClick={() => {
                   addAddress()
                 }}
               >
-                Submit
+                Proceed To Payment
               </Button>
-              </Link>
+              
       </Box>
 
       <LargeWithAppLinksAndSocial />

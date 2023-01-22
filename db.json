@@ -1315,11 +1315,11 @@
       "gender": "Male",
       "birthDate": "23-09-2002",
       "location": {
-        "street": "jioujojno",
-        "city": "delhi",
-        "state": "new delhi",
-        "postal_code": "58699",
-        "country": "Uttar Pradesh",
+        "street": "cfgbcfhvgdf",
+        "city": "dfgdfgd",
+        "state": "gdfgdg",
+        "postal_code": "gdfgdgd",
+        "country": "Maharastra",
         "social": "",
         "email": ""
       },
@@ -1361,8 +1361,7 @@
         },
         {
           "delivered": false,
-          "rating": {
-          },
+          "rating": {},
           "sizes": "M",
           "qty": 5,
           "productDetails": "Burgundy Tshirt for men Brand logo printed Regular length Round neck Short, regular sleeves Knitted cotton fabric",
@@ -1376,9 +1375,8 @@
             "length": "Regular",
             "mainTrend": "New Basics"
           },
-          "images": [
-          ],
-          "reviews": [],
+          "images": [],
+          "reviews": []
         },
         {
           "delivered": false,
@@ -1507,7 +1505,7 @@
           ],
           "reviews": [],
           "id": 23
-        }
+        },
         {
           "delivered": true,
           "brand": " Allen Solly",

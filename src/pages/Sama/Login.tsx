@@ -72,11 +72,11 @@ const Login = () => {
   const signInWithGoogle = async () => {
     setAuthing(true);
     signInWithPopup(auth, new GoogleAuthProvider())
-      .then((res) => {
+      .then((res:any) => {
         console.log(res.user.uid);
         navigate("/");
       })
-      .catch((err) => {
+      .catch((err:any) => {
         console.log(err);
         setAuthing(false);
       });
