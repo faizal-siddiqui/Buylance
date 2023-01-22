@@ -1,0 +1,111 @@
+.order-summary-card {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 5px 5px 10px #8b0000;
+    width: 80%;
+    max-width: 400px;
+    min-height: 300px;
+    margin: auto;
+    margin-top: 30px;
+    }
+    
+    .order-image {
+    width: 150px;
+    background-color: white;
+    box-shadow: 2px 2px 5px #8b0000;
+    }
+    
+    .order-details {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 20px;
+    }
+    
+    .order-name {
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+    margin-left: 5px;
+    font-size: 18px;
+    }
+    
+    .quantity, .price {
+        font-size: 0.75em;
+        padding: 10px;
+        margin: 10px;
+        text-align: center;
+        border-radius: 10px;
+        background-color: white;
+        color: #c9048f;
+        width: 100%;
+        box-shadow: 2px 2px 5px #8b0000;
+        text-transform: uppercase;
+        font-weight: bold;
+        }
+
+        .size{
+            font-size: 0.75em;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+            border-radius: 10px;
+            background-color: white;
+            color: #c9048f;
+            width: 50%;
+            box-shadow: 2px 2px 5px #8b0000;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-left: 60px;
+        }
+        
+        .order-status {
+        font-size: 0.75em;
+        text-align: center;
+        padding: 10px;
+        margin: 10px;
+        border-radius: 10px;
+        width: 100%;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: white;
+        background-color: #006400;
+        box-shadow: 2px 2px 5px #006400;
+        height: 50px;
+        width: fit-content;
+        margin-left: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+        
+        .cancel-order {
+        font-size: 0.75em;
+        padding: 10px 20px;
+        margin: 10px;
+        border-radius: 10px;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: #fff;
+        background-color: #ff69b4;
+        box-shadow: 2px 2px 5px #8b0000;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        text-align: center;
+        height: 50px;
+        width: 100%;
+        }
+        
+        
+        .cancel-order:hover {
+        background-color: #ffffff;
+        box-shadow: 2px 2px 5px #b22222;
+        color: #ff69b4;
+        }
+
+        

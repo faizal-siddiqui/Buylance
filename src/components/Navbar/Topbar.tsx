@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 import "./top.css"
 const Topbar= () => {
     const changecolor=(e:React.MouseEvent<HTMLButtonElement>)=>{
@@ -10,10 +11,10 @@ const Topbar= () => {
 
     }
   return (
-    <nav >
-        <img src={process.env.PUBLIC_URL + './logo.png'} alt="Logo" />
+    <nav>
+      <Link to="/">  <img src={process.env.PUBLIC_URL + './logo.png'} alt="Logo" /></Link>
         <div className='creds'>
-        <div className="searchbar">
+        <div>
         <input type="text" placeholder="Search" />
       </div>
       <div style={{display:"flex",justifyContent:"space-around",alignItems:"center",width:"150px"}} className="nav-right">
