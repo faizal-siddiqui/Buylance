@@ -14,6 +14,8 @@ interface State {
   error: boolean;
   profile: ProfileTypo[] | [];
   allProfiles: ProfileTypo[];
+  auth: boolean;
+  id: number | string;
 }
 
 const initialState: State = {
@@ -21,6 +23,8 @@ const initialState: State = {
   error: false,
   profile: [],
   allProfiles: [],
+  auth: localStorage.getItem("id") ? true : false,
+  id: localStorage.getItem("id") || 0,
 };
 
 type Action = {
