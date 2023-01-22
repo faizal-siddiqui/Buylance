@@ -12,7 +12,7 @@ const Topbar= () => {
     }
   return (
     <nav>
-      <Link to="/">  <img src={process.env.PUBLIC_URL + './logo.png'} alt="Logo" /></Link>
+      <Link to="/">  <img src={'/logo.png'} alt="Logo" /></Link>
         <div className='creds'>
         <div>
         <input type="text" placeholder="Search" />
