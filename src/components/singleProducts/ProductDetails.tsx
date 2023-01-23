@@ -1,12 +1,4 @@
-import {
-  Box,
-  Button,
-  Flex,
-  Grid,
-  GridItem,
-  Text,
-  useToast,
-} from "@chakra-ui/react";
+import { Box, Button, Flex, Grid, GridItem, Text } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ProductsTypo } from "../../constants/ProductsTypo";
@@ -28,7 +20,6 @@ const ProductDetails = ({ data }: Props) => {
 
   const id: number = Number(JSON.parse(localStorage.getItem("id") || ""));
   const dispatch: any = useAppDispatch();
-  const toast = useToast();
 
   useEffect(() => {
     dispatch(getProfile(id));
@@ -67,17 +58,7 @@ const ProductDetails = ({ data }: Props) => {
       <Text fontSize="18px"> {data?.productDetails}</Text>
       <Link to="#">
         <Button
-          onClick={() => {
-            addToCart();
-            toast({
-              title: "Added to Cart.",
-              description: "",
-              position: "top",
-              status: "success",
-              duration: 2000,
-              isClosable: true,
-            });
-          }}
+          onClick={addToCart}
           fontSize="18px"
           my="30px"
           p="30px"

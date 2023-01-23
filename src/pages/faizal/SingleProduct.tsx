@@ -24,14 +24,14 @@ const SingleProduct = (props: Props) => {
   useEffect(() => {
     apifn({
       method: "get",
-      url: `https://buylance-com.onrender.com/products/${id}`,
+      url: `http://localhost:8080/products/${id}`,
     });
   }, []);
 
   useEffect(() => {
     apifn2({
       method: "get",
-      url: `https://buylance-com.onrender.com/products?_limit=12&_page=${2}`,
+      url: `http://localhost:8080/products?_limit=12&_page=${2}`,
     });
   }, []);
 

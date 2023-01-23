@@ -21,7 +21,7 @@ const Rating = ({ data }: Props) => {
   const updateRating = (rate: number) => {
     apifn({
       method: "patch",
-      url: `https://buylance-com.onrender.com/products/${data?.id}`,
+      url: `http://localhost:8080/products/${data?.id}`,
       data: {
         rating: {
           star: Number(data?.rating?.star),

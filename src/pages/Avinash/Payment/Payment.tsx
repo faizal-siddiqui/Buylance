@@ -115,7 +115,12 @@ const Payment = () => {
       <>
         <Box w={{ base: "100%", md: "50%" }} m="auto">
           <Heading color={"green.500"}>Products Ordered</Heading>
-          <Image src="https://i.gifer.com/origin/41/41340ab1a4529c7dd753f03268087e08.gif" />
+          <Image
+            h={100}
+            w={100}
+            objectFit="contain"
+            src="https://i.gifer.com/origin/41/41340ab1a4529c7dd753f03268087e08.gif"
+          />
           <Link to={"/"}>
             <Button>Go To Home</Button>
           </Link>
@@ -127,7 +132,12 @@ const Payment = () => {
     return (
       <>
         <Box w={{ base: "100%", md: "50%" }} m="auto">
-          <Image src="https://cdn.dribbble.com/users/2973561/screenshots/5757826/loading__.gif" />
+          <Image
+            h={100}
+            w={100}
+            objectFit="contain"
+            src="https://cdn.dribbble.com/users/2973561/screenshots/5757826/loading__.gif"
+          />
         </Box>
       </>
     );
@@ -246,10 +256,8 @@ const Payment = () => {
                   Shipping Address <CheckIcon color={"green.500"} />
                 </Text>
                 <Box w={"70%"} textAlign="left">
-                  {`${profile[0]?.location?.street} ${
-                    profile[0]?.location?.city
-                  } ${profile[0]?.location?.state} ${profile[0]?.location
-                    ?.country} ${profile[0]?.location?.postal_code}`}
+                  {/* {/* {profile[0]?.location?.street+", "+profile[0]?.location?.city+", "+profile[0]?.location?.city */}
+                  {/* +", "+profile[0]?.location?.state+", "+profile[0]?.location?.country+", "+profile[0]?.location?.postal_code} */}
                 </Box>
               </Box>
             </Stack>

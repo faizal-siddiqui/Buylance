@@ -31,7 +31,6 @@ import {
   UserLogin,
   UserLogout,
   getProfile,
-  ChangeActiveStatus,
 } from "../../redux/actions/ProfileAction";
 
 const Login = () => {
@@ -44,7 +43,7 @@ const Login = () => {
   // const { adminAuth, auth } = useAppSelector((store) => store.profileManager);
   const handleLogin = async () => {
     try {
-      const res = await axios.get("https://buylance-com.onrender.com/profile");
+      const res = await axios.get("http://localhost:8080/profile");
       const data = await res.data;
       console.log(data);
 
@@ -61,7 +60,6 @@ const Login = () => {
           dispatch(getProfile(el.id));
           localStorage.setItem("id", `${el.id}`);
           // console.log(localStorage.getItem("id"));
-          dispatch(ChangeActiveStatus(Number(el.id), true));
 
           navigate("/");
         }
@@ -90,7 +88,6 @@ const Login = () => {
         isClosable: true,
       });
       dispatch(getProfile(16743830916890));
-      dispatch(ChangeActiveStatus(16743830916890, true));
       navigate("/admin");
     } else {
       handleLogin();
@@ -114,16 +111,11 @@ const Login = () => {
   };
 
   const handleLogout = () => {
-    dispatch(
-      ChangeActiveStatus(
-        Number(JSON.parse(localStorage.getItem("id") || "")),
-        false
-      )
-    );
     dispatch(AdminLogout());
     dispatch(UserLogout());
     localStorage.clear();
 
+    
     navigate("/login");
   };
 
