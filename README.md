@@ -1,12 +1,6 @@
 
-## Complete till FRIDAY NIGHT I will update the further work after that.
-toast({
-                    title: "Account created.",
-                    description: "We've created your account for you.",
-                    status: "success",
-                    duration: 3000,
-                    isClosable: true,
-                  });
+# BUYLANCE.COM
+
 1. Login Page / SignUp Page - **Sama sarun reddy**
 
    - using (firebase)
