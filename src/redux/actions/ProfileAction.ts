@@ -23,7 +23,7 @@ export const getProfile = (id: number) => (dispatch: AppDispatch) => {
   dispatch({ type: PROFILE_LOADING });
   apiCall({
     method: "get",
-    url: `http://localhost:8080/profile/${id}`,
+    url: `https://buylance-com.onrender.com/profile/${id}`,
   })
     .then((res: ProfileTypo) => {
       dispatch({ type: GET_PROFILE_SUCCESS, payload: res });
@@ -38,7 +38,7 @@ export const postProfile = (data: ProfileTypo) => (dispatch: AppDispatch) => {
   dispatch({ type: PROFILE_LOADING });
   apiCall({
     method: "post",
-    url: `http://localhost:8080/profile`,
+    url: `https://buylance-com.onrender.com/profile`,
     data: {
       ...data,
     },
@@ -58,7 +58,7 @@ export const updateCart =
 
     apiCall({
       method: "patch",
-      url: `http://localhost:8080/profile/${id}`,
+      url: `https://buylance-com.onrender.com/profile/${id}`,
       data: {
         cart: data,
       },
@@ -77,7 +77,7 @@ export const updateAddress =
 
     apiCall({
       method: "patch",
-      url: `http://localhost:8080/profile/${id}`,
+      url: `https://buylance-com.onrender.com/profile/${id}`,
       data: {
         location: changeAddress,
       },
@@ -96,7 +96,7 @@ export const deleteProduct = (id: number) => (dispatch: AppDispatch) => {
   dispatch({ type: PROFILE_LOADING });
   apiCall({
     method: "patch",
-    url: `http://localhost:8080/profile/${id}`,
+    url: `https://buylance-com.onrender.com/profile/${id}`,
   })
     .then((res) => {
       dispatch({ type: POST_PROFILE_SUCCESS, payload: res });
@@ -111,7 +111,7 @@ export const getAllProfile = () => (dispatch: AppDispatch) => {
   dispatch({ type: PROFILE_LOADING });
   apiCall({
     method: "get",
-    url: `http://localhost:8080/profile`,
+    url: `https://buylance-com.onrender.com/profile`,
   })
     .then((res) => {
       dispatch({ type: GET_ALLPROFILE_SUCCESS, payload: res });
@@ -128,7 +128,7 @@ export const patchOrderedProducts =
 
     apiCall({
       method: "patch",
-      url: `http://localhost:8080/profile/${id}`,
+      url: `https://buylance-com.onrender.com/profile/${id}`,
       data: {
         orderedProducts: data,
       },
@@ -168,3 +168,24 @@ export const AdminLogout = () => (dispatch: AppDispatch) => {
   dispatch({ type: PROFILE_RESET });
   dispatch({ type: PRODUCTS_RESET });
 };
+
+//................................Change Active Status
+
+export const ChangeActiveStatus =
+  (id: number, status: boolean) => (dispatch: AppDispatch) => {
+    dispatch({ type: PROFILE_LOADING });
+
+    apiCall({
+      method: "patch",
+      url: `https://buylance-com.onrender.com/profile/${id}`,
+      data: {
+        isActive: status,
+      },
+    })
+      .then((res) => {
+        dispatch({ type: PATCH_PROFILE_SUCCESS, payload: res });
+      })
+      .catch((err) => {
+        dispatch({ type: PROFILE_ERROR });
+      });
+  };

@@ -108,7 +108,9 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
       {...rest}
     >
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
-        <img style={{ width: "80px" }} src="/logo.png" alt="img_alt" />
+        <RouterLink to="/">
+          <img style={{ width: "80px" }} src="/logo.png" alt="img_alt" />
+        </RouterLink>
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex>
       {LinkItems.map((link) => (

@@ -16,3 +16,5 @@ export const USER_LOGIN_SUCCESS: string = "user/login/success";
 export const USER_LOGOUT_SUCCESS: string = "user/logout/success";
 export const ADMIN_LOGIN_SUCCESS: string = "admin/login/success";
 export const ADMIN_LOGOUT_SUCCESS: string = "admin/logout/success";
+
+// export const CHANGE_ACTIVE: string = "change/active";
