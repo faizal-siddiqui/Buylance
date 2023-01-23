@@ -24,6 +24,7 @@ import {
   Tr,
   Icon,
   Button,
+  Code,
 } from "@chakra-ui/react";
 import React from "react";
 import { ProductsTypo } from "../../constants/ProductsTypo";
@@ -81,7 +82,14 @@ const UsersAccordion = ({ profile }: Props) => {
               }}
             >
               <GridItem>
-                <Text>{profile.name}</Text>
+                <Flex align={"center"}>
+                  <Text>{profile.name}</Text>
+                  {profile.isActive ? (
+                    <Code children="ONLINE" colorScheme="green" />
+                  ) : (
+                    <Code children="OFFLINE" colorScheme="red" />
+                  )}
+                </Flex>
               </GridItem>
               <GridItem>
                 <Text>{profile.email}</Text>

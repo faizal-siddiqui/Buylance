@@ -6,12 +6,13 @@ export interface AddressType {
   state: string;
   postal_code: string;
   country: string;
-  social: string;
-  email: string;
+  mobile: string;
+  name: string;
 }
 export interface ProfileTypo {
   id: number;
-  isActive?: boolean;
+  isActive: boolean;
+  isAdmin: boolean;
   name: string;
   email: string;
   mobile: number;

@@ -73,7 +73,7 @@ const Products = (props: Props) => {
     const ids = setTimeout(() => {
       apifn({
         method: "get",
-        url: `http://localhost:8080/products?q=${debounceText}&_page=${page}_limit=10`,
+        url: `https://buylance-com.onrender.com/products?q=${debounceText}&_page=${page}_limit=10`,
       });
     }, 1500);
 
@@ -85,7 +85,7 @@ const Products = (props: Props) => {
   useEffect(() => {
     apifn({
       method: "get",
-      url: `http://localhost:8080/products?_limit=10&_page=${page}${filterStr}`,
+      url: `https://buylance-com.onrender.com/products?_limit=10&_page=${page}${filterStr}`,
     });
   }, [page, filterStr]);
 

@@ -14,7 +14,7 @@ export const getProducts = () => (dispatch: AppDispatch) => {
   dispatch({ type: PRODUCTS_LOADING });
   apiCall({
     method: "get",
-    url: `http://localhost:8080/products`,
+    url: `https://buylance-com.onrender.com/products`,
   })
     .then((res) => {
       dispatch({ type: GET_PRODUCTS_SUCCESS, payload: res });
@@ -28,7 +28,7 @@ export const postProducts = (data: ProductsTypo) => (dispatch: AppDispatch) => {
   dispatch({ type: PRODUCTS_LOADING });
   apiCall({
     method: "post",
-    url: "http://localhost:8080/products",
+    url: "https://buylance-com.onrender.com/products",
     data: {
       ...data,
     },
@@ -46,7 +46,7 @@ export const patchProducts =
     dispatch({ type: PRODUCTS_LOADING });
     apiCall({
       method: "patch",
-      url: `http://localhost:8080/products/${id}`,
+      url: `https://buylance-com.onrender.com/products/${id}`,
       data: {
         ...data,
       },
@@ -63,7 +63,7 @@ export const deleteProducts = (id: number) => (dispatch: AppDispatch) => {
   dispatch({ type: PRODUCTS_LOADING });
   apiCall({
     method: "delete",
-    url: `http://localhost:8080/products/${id}`,
+    url: `https://buylance-com.onrender.com/products/${id}`,
   })
     .then((res) => {
       dispatch({ type: DELETE_PRODUCTS_SUCCESS, payload: id });

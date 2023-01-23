@@ -30,8 +30,8 @@ const adress: AddressType = {
   state: "",
   postal_code: "",
   country: "",
-  social: "",
-  email: "",
+  mobile: "",
+  name: "",
 };
 const Address = (props: Props) => {
   const [address, setAddress] = useState<AddressType>(adress);
