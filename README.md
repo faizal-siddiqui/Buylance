@@ -116,8 +116,7 @@ Q1. How many api's we ae going to use?
 
 - Products api (For all products)
 
-  ```
- {
+``` {
       "delivered": false,
       "brand": "SELECTED",
       "name": "Men White Printed Round Neck Organic Cotton T-shirt",
@@ -148,8 +147,7 @@ Q1. How many api's we ae going to use?
       ],
       "reviews": [],
       "id": 33
-    }
-  ```
+    }```
 
   - Profile api (For all the products)
 
