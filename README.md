@@ -9,6 +9,7 @@ An ecommerce platform that provides user-friendly interface that enables custome
    - Redux thunk
    - Chart Js
    - Axios
+   - CSS
    - Chakra Ui (External Css)
    - Chakra Icons (External Icons)
    - React Icons (External Icons)
