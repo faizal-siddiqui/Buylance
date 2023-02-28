@@ -1,5 +1,34 @@
 
 # BUYLANCE.COM
+An ecommerce platform that provides user-friendly interface that enables customers to browse products, add them to their cart, and checkout seamlessly. It also includes admin panel where admin can track and manage the products as well as users.
+
+
+## Tech Stacks Used
+   - Typescript
+   - React Redux
+   - Redux thunk
+   - Chart Js
+   - Axios
+   - Chakra Ui (External Css)
+   - Chakra Icons (External Icons)
+   - React Icons (External Icons)
+
+## Pages
+- 11 Pages
+  - Login / SignUp
+  - Home
+  - Products Category
+  - Products
+  - Products Details
+  - Cart
+  - Address
+  - Payment
+  - Order Summary
+  - Admin Dashboard
+  - Admin Products Manage Page
+
+## Key Responsibilities
+ 
 1. Home Page - **karmit Verma**
 
    - Navbar
