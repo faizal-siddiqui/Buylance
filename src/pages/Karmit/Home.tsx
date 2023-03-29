@@ -5,8 +5,8 @@ import Footer from "../../components/Footer/footer/footer";
 import Navbar from "../../components/Navbar/navbar";
 import { Link } from "react-router-dom";
 const images = [
-  "https://imagescdn.abof.com/img/app/shopmedia/production/1/13-62-10334.jpg?w=1898.75&auto=format",
-  "https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8ZmFzaGlvbnxlbnwwfDB8MHx8&auto=format&fit=crop&w=500&q=60",
+  "https://cdn.shopify.com/s/files/1/0420/7073/7058/files/summer_loading_1728x.webp?v=1678446322",
+  "https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGZhc2hpb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
   "https://images.unsplash.com/photo-1463100099107-aa0980c362e6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGZhc2hpb24lMjBsYW5kc2NhcGUlMjBzaXplfGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
 ];
 
@@ -40,62 +40,62 @@ function Home() {
         <div className="category">
           <Link to="/men/t-shirt">
             <img
-              src="https://imagescdn.abof.com/img/app/shopmedia/production/1/13-62-10026.jpg?w=303.8&auto=format"
+              src="https://assets.ajio.com/cms/AJIO/WEB/D-UHP-PremiumPicks-Superdry-BHPC-3050-Revised%20.jpg"
               alt="alt_img"
             />
           </Link>
         </div>
         <div className="category">
           <img
-            src="https://imagescdn.abof.com/img/app/shopmedia/production/1/13-62-10027.jpg?w=303.8&auto=format"
+            src="https://assets.ajio.com/cms/AJIO/WEB/D-UHP-Premiumpicks-P1-Min60.jpg"
             alt="alt_img"
           />
         </div>
         <div className="category">
           <img
-            src="https://imagescdn.abof.com/img/app/shopmedia/production/1/13-62-10028.jpg?w=303.8&auto=format"
+            src="https://assets.ajio.com/cms/AJIO/WEB/D-UHP-PremiumPicks-AldoSteveMadden-3050.jpg"
             alt="alt_img"
           />
         </div>
         <div className="category">
           <img
-            src="https://imagescdn.abof.com/img/app/shopmedia/production/1/13-62-9682.jpg?w=303.8&auto=format"
+            src="https://assets.ajio.com/cms/AJIO/WEB/D-UHP-PremiumPicks-DieselGstarraw-Upto40.jpg"
             alt="alt_img"
           />
         </div>
         <div className="category">
           <img
-            src="https://imagescdn.abof.com/img/app/shopmedia/production/1/13-62-10029.jpg?w=303.8&auto=format"
+            src="https://assets.ajio.com/cms/AJIO/WEB/D-UHP-PremiumPicks-DieselGstarraw-Upto40.jpg"
             alt="alt_img"
           />
         </div>
         <div className="category">
           <img
-            src="https://imagescdn.abof.com/img/app/shopmedia/production/1/13-62-9683.jpg?w=303.8&auto=format"
+            src="https://assets.ajio.com/cms/AJIO/WEB/D-UHP-PremiumPicks-MnS-Upto50.jpg"
             alt="alt_img"
           />
         </div>
         <div className="category">
           <img
-            src="https://imagescdn.abof.com/img/app/shopmedia/production/1/13-62-10030.jpg?w=303.8&auto=format"
+            src="https://assets.ajio.com/cms/AJIO/WEB/D-UHP-PremiumPicks-GuessKennethCole-Upto60ff.jpg"
             alt="alt_img"
           />
         </div>
         <div className="category">
           <img
-            src="https://imagescdn.abof.com/img/app/shopmedia/production/1/13-62-10103.jpg?w=303.8&auto=format"
+            src="https://assets.ajio.com/cms/AJIO/WEB/D-UHP-The%20Ethnic%20Affair-P3-Starting499.jpg"
             alt="alt_img"
           />
         </div>
         <div className="category">
           <img
-            src="https://imagescdn.abof.com/img/app/shopmedia/production/1/13-62-10032.ords?w=303.8&auto=format"
+            src="https://assets.ajio.com/cms/AJIO/WEB/D-UHP-The%20Ethnic%20Affair-P5-Upto80.jpg"
             alt="alt_img"
           />
         </div>
         <div className="category">
           <img
-            src="https://imagescdn.abof.com/img/app/shopmedia/production/1/13-62-9970.jpg?w=303.8&auto=format"
+            src="https://assets.ajio.com/cms/AJIO/WEB/D-UHP-The%20Ethnic%20Affair-P1-Starting599.jpg"
             alt="alt_img"
           />
         </div>
@@ -104,33 +104,33 @@ function Home() {
         <div>
           <img
             style={{ height: "100%", width: "100%" }}
-            src="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZmFzaGlvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+            src="https://assets.ajio.com/cms/AJIO/WEB/29032023-UHP-D-Daily-P2-IntBrands-KennethColeGrimelange-Min50.jpg"
             alt=""
           />
         </div>
         <div>
           <img
             style={{ height: "100%", width: "100%" }}
-            src="https://images.unsplash.com/photo-1594969155368-f19485a9d88c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZmFzaGlvbiUyMGJ1eSUyMG5vd3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+            src="https://assets.ajio.com/cms/AJIO/WEB/29032023-UHP-D-Daily-P4-AllenSollyVanheusen-Min40.jpg"
             alt=""
           />
         </div>
       </div>
       <div className="banner-2">
         <img
-          src="https://imagescdn.abof.com/img/app/shopmedia/production/1/13-62-9972.jpg?w=190&auto=format"
+          src="https://assets.ajio.com/cms/AJIO/WEB/D-UHP-Aim%20For%20The%20Stars-Brands-P9-Min50%20(1).jpg"
           alt="img_alt"
         />
         <img
-          src="https://imagescdn.abof.com/img/app/shopmedia/production/1/13-62-9974.jpg?w=190&auto=format"
+          src="https://assets.ajio.com/cms/AJIO/WEB/D-UHP-Aim%20For%20The%20Stars-Brands-P2-Min50.jpg"
           alt="img_alt"
         />
         <img
-          src="https://imagescdn.abof.com/img/app/shopmedia/production/1/13-62-9976.jpg?w=190&auto=format"
+          src="https://assets.ajio.com/cms/AJIO/WEB/D-UHP-Aim%20For%20The%20Stars-Brands-P1-Min55.jpg"
           alt="img_alt"
         />
         <img
-          src="https://imagescdn.abof.com/img/app/shopmedia/production/1/13-62-9978.jpg?w=190&auto=format"
+          src="https://assets.ajio.com/cms/AJIO/WEB/D-UHP-MoreStars-Superdry-3050ssss.jpg"
           alt="img_alt"
         />
       </div>
