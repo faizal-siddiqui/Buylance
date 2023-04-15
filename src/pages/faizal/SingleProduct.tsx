@@ -31,7 +31,7 @@ const SingleProduct = (props: Props) => {
   useEffect(() => {
     apifn2({
       method: "get",
-      url: `http://localhost:8080/products?_limit=20&_page=${2}`,
+      url: `http://localhost:8080/products?_limit=12&_page=${2}`,
     });
   }, []);
 
@@ -40,7 +40,7 @@ const SingleProduct = (props: Props) => {
       <Navbar />
 
       <Box
-        my={{ lg: "50px", md: "50px", sm: "50px" }}
+        my={{ lg: "160px", md: "90px", sm: "50px" }}
         mx={{ lg: "2%", md: "3%", sm: "4%" }}
       >
         <Box></Box>

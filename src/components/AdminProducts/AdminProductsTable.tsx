@@ -22,7 +22,6 @@ type Props = {
 const AdminProductsTable = ({ products }: Props) => {
   return (
     <Box>
-        <ProductsModal header={"P"} products={products[0]}>Product Details</ProductsModal>
       <table className={styles.table}>
         <thead>
           <tr>
@@ -42,14 +41,15 @@ const AdminProductsTable = ({ products }: Props) => {
                 <td data-label="Name">{prod.name}</td>
                 <td data-label="Price">₹ {prod.price}</td>
                 <td data-label="More Details">
-                  <Button>More..</Button>
+                  <ProductsModal header={"P"} products={prod}>
+                    More..
+                  </ProductsModal>
                 </td>
               </tr>
             );
           })}
         </tbody>
       </table>
-      
     </Box>
   );
 };

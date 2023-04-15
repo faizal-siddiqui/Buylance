@@ -1,7 +1,8 @@
 import { Box, Button, Flex, Grid, GridItem, Text } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ProductsTypo } from "../../constants/ProductsTypo";
+import { getProfile, updateCart } from "../../redux/actions/ProfileAction";
 import { useAppDispatch, useAppSelector } from "../../redux/store";
 import Pincode from "./Pincode";
 import Rating from "./Rating";
@@ -13,20 +14,25 @@ type Props = {
 const style = {};
 
 const ProductDetails = ({ data }: Props) => {
-  const { loading, error, profile } = useAppSelector(
+  const { loading, error, profile, allProfiles } = useAppSelector(
     (store) => store.profileManager
   );
+
+  const id: number = Number(JSON.parse(localStorage.getItem("id") || ""));
   const dispatch: any = useAppDispatch();
 
-  //   const addToCart = () => {
-  //     const id: number = +JSON.parse(localStorage.getItem("id") || "");
-  //     dispatch(
-  //       updateCart(id, {
-  //         ...profile?.cart,
-  //         data,
-  //       })
-  //     );
-  //   };
+  useEffect(() => {
+    dispatch(getProfile(id));
+  }, [dispatch]);
+
+  const addToCart = () => {
+    let updatedCart: ProductsTypo[] | [] = [];
+    const cart: ProductsTypo[] = profile[0]?.cart;
+    if (data) {
+      updatedCart = [...cart, data];
+    }
+    dispatch(updateCart(id, updatedCart));
+  };
 
   return (
     <Box ml={{ lg: "20px", md: "20px", sm: "0px" }}>
@@ -52,7 +58,7 @@ const ProductDetails = ({ data }: Props) => {
       <Text fontSize="18px"> {data?.productDetails}</Text>
       <Link to="#">
         <Button
-          //   onClick={addToCart}
+          onClick={addToCart}
           fontSize="18px"
           my="30px"
           p="30px"

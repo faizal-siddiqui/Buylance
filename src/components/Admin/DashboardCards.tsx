@@ -56,10 +56,10 @@ const DashboardCards = (props: Props) => {
       id: 3,
       label: "Reached checkout",
       percentage: `${addedToCheckout(allProfiles)}`,
-      smallIcon: "./downwardArrow.png",
-      incDec: `${
-        (addedToCart(allProfiles) / addedToCheckout(allProfiles)) * 10
-      } %`,
+      smallIcon: "./upwardArrow.png",
+      incDec: `${Math.ceil(
+        addedToCart(allProfiles) / addedToCheckout(allProfiles)
+      )} %`,
       largeIcon: "./checkout.png",
     },
     {

@@ -6,8 +6,8 @@ export interface AddressType {
   state: string;
   postal_code: string;
   country: string;
-  social:string,
-  email:string
+  social: string;
+  email: string;
 }
 export interface ProfileTypo {
   id: number;

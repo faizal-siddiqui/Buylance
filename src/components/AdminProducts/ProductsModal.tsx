@@ -14,6 +14,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { ProductsTypo } from "../../constants/ProductsTypo";
+import AdminCard from "../../pages/Avinash/Admin/AdminCard";
 
 type Props = {
   children: string;
@@ -40,17 +41,17 @@ function ProductsModal({ children, header, products }: Props) {
           onOpen();
         }}
       >
-        Use Overlay one
+        {children}
       </Button>
       <Modal isCentered isOpen={isOpen} onClose={onClose}>
         {overlay}
         <ModalContent>
-          <ModalHeader>uiasyhdfuiseui</ModalHeader>
+          <ModalHeader>{header}</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
             <Box>
-                <h1>{children}</h1>
-              <Image src={products.images[0]} alt={""} />
+              <h1></h1>
+              <AdminCard prod={products} />
             </Box>
             <Text></Text>
           </ModalBody>

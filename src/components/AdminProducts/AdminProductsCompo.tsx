@@ -1,6 +1,7 @@
 import { Box } from "@chakra-ui/react";
-import React from "react";
-import { useAppSelector } from "../../redux/store";
+import React, { useEffect } from "react";
+import { getProducts } from "../../redux/actions/ProductAction";
+import { useAppDispatch, useAppSelector } from "../../redux/store";
 import SidebarWithHeader from "../Admin/sidebar";
 import AdminProductsTable from "./AdminProductsTable";
 
@@ -8,7 +9,11 @@ type Props = {};
 
 const AdminProductsCompo = (props: Props) => {
   const { products } = useAppSelector((store) => store.productManager);
-  console.log("products:", products);
+  const dispatch: any = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(getProducts());
+  }, [dispatch]);
 
   return (
     <Box>

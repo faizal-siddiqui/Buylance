@@ -24,17 +24,22 @@ import {
 } from "@chakra-ui/react";
 import {
   FiHome,
+  FiTrendingUp,
   FiStar,
   FiSettings,
   FiMenu,
   FiBell,
   FiChevronDown,
+  FiCompass,
   FiUsers,
 } from "react-icons/fi";
 import { MdOutlineInventory } from "react-icons/md";
 import { IconType } from "react-icons";
 import { ReactText } from "react";
-import { Link as Routerlink } from "react-router-dom";
+import AdminPanel from "./AdminPanel";
+import { Link as RouterLink, useNavigate } from "react-router-dom";
+import { useAppDispatch, useAppSelector } from "../../redux/store";
+import { AdminLogout, UserLogout } from "../../redux/actions/ProfileAction";
 
 interface LinkItemProps {
   name: string;
@@ -42,15 +47,13 @@ interface LinkItemProps {
   link: string;
 }
 const LinkItems: Array<LinkItemProps> = [
-  { name: "Dashboard", icon: FiHome, link: "/admin" },
+  { name: "Home", icon: FiHome, link: "/admin" },
   { name: "Users", icon: FiUsers, link: "/admin/users" },
   {
-    name: "Inventory Manage",
+    name: "Products Manage",
     icon: MdOutlineInventory,
     link: "/admin/products",
   },
-  { name: "Favourites", icon: FiStar, link: "" },
-  { name: "Settings", icon: FiSettings, link: "" },
 ];
 
 export default function SidebarWithHeader({
@@ -59,11 +62,9 @@ export default function SidebarWithHeader({
   children: ReactNode;
 }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
-    <Box
-      minH="100vh"
-      bgGradient="linear(cyan.100 0%, teal.100 25%, yellow.100 50%)"
-    >
+    <Box minH="100vh" bg={useColorModeValue("gray.100", "gray.900")}>
       <SidebarContent
         onClose={() => onClose}
         display={{ base: "none", md: "block" }}
@@ -83,11 +84,7 @@ export default function SidebarWithHeader({
       </Drawer>
       {/* mobilenav */}
       <MobileNav onOpen={onOpen} />
-      <Box
-        bgGradient="linear(cyan.100 0%, teal.100 25%, yellow.100 50%)"
-        ml={{ base: 0, md: 60 }}
-        p="4"
-      >
+      <Box ml={{ base: 0, md: 60 }} p="4">
         {children}
       </Box>
     </Box>
@@ -115,9 +112,11 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex>
       {LinkItems.map((link) => (
-        <Routerlink to={link.link} key={link.name}>
-          <NavItem icon={link.icon}>{link.name}</NavItem>
-        </Routerlink>
+        <RouterLink to={`${link.link}`}>
+          <NavItem key={link.name} icon={link.icon}>
+            {link.name}
+          </NavItem>
+        </RouterLink>
       ))}
     </Box>
   );
@@ -167,6 +166,18 @@ interface MobileProps extends FlexProps {
   onOpen: () => void;
 }
 const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
+  const dispatch: any = useAppDispatch();
+  const navigate = useNavigate();
+  const { profile } = useAppSelector((store) => store.profileManager);
+
+  const handleLogout = () => {
+    dispatch(AdminLogout());
+    dispatch(UserLogout());
+    localStorage.clear();
+
+    navigate("/login");
+  };
+
   return (
     <Flex
       ml={{ base: 0, md: 60 }}
@@ -223,7 +234,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
                   spacing="1px"
                   ml="2"
                 >
-                  <Text fontSize="sm">Justina Clark</Text>
+                  <Text fontSize="sm">{profile[0]?.name}</Text>
                   <Text fontSize="xs" color="gray.600">
                     Admin
                   </Text>
@@ -241,7 +252,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
               <MenuItem>Settings</MenuItem>
               <MenuItem>Billing</MenuItem>
               <MenuDivider />
-              <MenuItem>Sign out</MenuItem>
+              <MenuItem onClick={handleLogout}>Sign out</MenuItem>
             </MenuList>
           </Menu>
         </Flex>

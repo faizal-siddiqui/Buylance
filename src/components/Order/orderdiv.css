@@ -1,0 +1,19 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin: 0 auto;
+    width: 80%;
+}
+
+@media (max-width:766px) {
+            
+            .container{
+                grid-template-columns: repeat(1,1fr);
+            }
+            .container>div{
+                height: auto;
+                width: auto;
+                
+            }
+}

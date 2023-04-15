@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionPanel,
   Box,
+  Flex,
   Grid,
   GridItem,
   Image,
@@ -23,7 +24,6 @@ import {
   Tr,
   Icon,
   Button,
-  Flex,
 } from "@chakra-ui/react";
 import React from "react";
 import { ProductsTypo } from "../../constants/ProductsTypo";
@@ -52,7 +52,7 @@ const UsersAccordion = ({ profile }: Props) => {
   };
 
   const totalPriceCalc = (arr: ProductsTypo[]) => {
-    return arr.reduce((acc: number, el: ProductsTypo) => acc + el.price, 0);
+    return arr?.reduce((acc: number, el: ProductsTypo) => acc + el.price, 0);
   };
 
   const CircleIcon = (props: { boxSize: number; color: string }) => (
@@ -80,24 +80,23 @@ const UsersAccordion = ({ profile }: Props) => {
                 sm: "repeat(2, 1fr)",
               }}
             >
-              {/* <GridItem></GridItem> */}
               <GridItem>
-                <Flex align="center">
-                  <Text mr="7px">{profile.name}</Text>
-                  <Text>
-                    {profile.isActive ? (
-                      <CircleIcon boxSize={4} color="green" />
-                    ) : (
-                      <CircleIcon boxSize={4} color="red.400" />
-                    )}
-                  </Text>
-                </Flex>
+                <Text>{profile.name}</Text>
               </GridItem>
               <GridItem>
                 <Text>{profile.email}</Text>
               </GridItem>
               <GridItem>
                 <Text>{profile.mobile}</Text>
+              </GridItem>
+              <GridItem>
+                {/* <Text>
+                  {profile.active ? (
+                    <CircleIcon boxSize={8} color="green" />
+                  ) : (
+                    <CircleIcon boxSize={8} color="red.500" />
+                  )}
+                </Text> */}
               </GridItem>
             </Grid>
           </Box>
