@@ -246,10 +246,7 @@ const Payment = () => {
                   Shipping Address <CheckIcon color={"green.500"} />
                 </Text>
                 <Box w={"70%"} textAlign="left">
-                  {`${profile[0]?.location?.street} ${
-                    profile[0]?.location?.city
-                  } ${profile[0]?.location?.state} ${profile[0]?.location
-                    ?.country} ${profile[0]?.location?.postal_code}`}
+                  {`${profile[0]?.location?.street} ${profile[0]?.location?.city} ${profile[0]?.location?.state} ${profile[0]?.location?.country} ${profile[0]?.location?.postal_code}`}
                 </Box>
               </Box>
             </Stack>
@@ -270,31 +267,33 @@ const Payment = () => {
             </Text>
           </Box>
           <Divider orientation="horizontal" />
-          <Stack direction={{ sm: "column", md: "row" }}>
+          <Flex flexDir={{ lg: "row", md: "row", sm: "column" }}>
             {btnValue.map((val) => (
-              <Button
-                colorScheme="facebook"
-                size={{ base: "xs", md: "sm", lg: "md" }}
-                onClick={() => handleModalClick(val)}
-                leftIcon={
-                  val === "Debit Card" ? (
-                    <BsCreditCard2FrontFill />
-                  ) : val === "UPI" ? (
-                    <Image
-                      objectFit={"contain"}
-                      borderRadius="10"
-                      h={5}
-                      src="https://play-lh.googleusercontent.com/B5cNBA15IxjCT-8UTXEWgiPcGkJ1C07iHKwm2Hbs8xR3PnJvZ0swTag3abdC_Fj5OfnP"
-                    />
-                  ) : (
-                    <BsGlobe2 />
-                  )
-                }
-                key={val}
-                m={10}
-              >
-                {val}
-              </Button>
+              <Box>
+                <Button
+                  colorScheme="facebook"
+                  size={{ base: "xs", md: "sm", lg: "md" }}
+                  onClick={() => handleModalClick(val)}
+                  leftIcon={
+                    val === "Debit Card" ? (
+                      <BsCreditCard2FrontFill />
+                    ) : val === "UPI" ? (
+                      <Image
+                        objectFit={"contain"}
+                        borderRadius="10"
+                        h={5}
+                        src="https://play-lh.googleusercontent.com/B5cNBA15IxjCT-8UTXEWgiPcGkJ1C07iHKwm2Hbs8xR3PnJvZ0swTag3abdC_Fj5OfnP"
+                      />
+                    ) : (
+                      <BsGlobe2 />
+                    )
+                  }
+                  key={val}
+                  m={1}
+                >
+                  {val}
+                </Button>
+              </Box>
             ))}
             <Modal
               initialFocusRef={initialRef}
@@ -402,7 +401,8 @@ const Payment = () => {
                 </ModalContent>
               )}
             </Modal>
-          </Stack>
+            {/* </Stack> */}
+          </Flex>
         </GridItem>
       </Grid>
     </Box>

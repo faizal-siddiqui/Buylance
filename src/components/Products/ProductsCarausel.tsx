@@ -64,7 +64,7 @@ const ProductsCarausel = ({ prod }: Props) => {
             // bgColor="red"
           >
             <Button bgColor={"#f7f09f"} borderRadius="0%" h="100%" w="100%">
-              Add to Cart
+              Buy Now
             </Button>
           </Box>
         ) : (

@@ -85,7 +85,7 @@ const ProductDetails = ({ data }: Props) => {
           bgColor="gold"
           w="60%"
         >
-          BUY NOW
+          ADD TO CART
         </Button>
       </Link>
       <Text>
