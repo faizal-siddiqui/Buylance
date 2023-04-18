@@ -14,6 +14,7 @@
     z-index: 500;
 }
 
+/* * ===================== Navbar =============== */
 .navbar{
     display: flex;
     justify-content: space-between;
@@ -28,11 +29,26 @@
     width: 90px;
 }
 
+.flex{
+    display: flex;
+    align-items: center;
+}
+
+.hide{
+    display: none;
+    cursor: pointer;
+}
+
+.show{
+    display: block;
+    cursor: pointer;
+}
+
 .nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 80%;
+    width: 70%;
     font-size: 18px;
     font-weight: 600;
     list-style: none;
@@ -44,16 +60,39 @@
     display: none;
 }
 
+/** ============= Mega Menu ================== */
 .megamenu{
     position: absolute;
     top: 120%;
-    left: 0;
-    width: 100%;
-    height: 300px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: auto;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.5s;
-    background-color: aqua;
+    transition: all 0.4s;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.megamenu > div{
+    padding: 10px;
+    margin-left: 30%;
+}
+
+.megamenu ul{
+    list-style: none;
+}
+
+.megamenu li{
+    padding: 10px;
+}
+
+.megamenu h3{
+    color: rgb(183, 112, 124);
+    font-size: 20px;
 }
 
 .nav li:hover .megamenu{
@@ -62,15 +101,88 @@
     top: 100%;
 }
 
+/** ==================== Search Dropdown ============= */
+
+.searchDropdown{
+    position: fixed;
+    width: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: auto;
+    top: -100%;
+    height: 100px;  
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    transition: all 0.7s;
+    font-size: 18px;
+    z-index: 1000;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;}
+    
+.searchDropdown input {
+    width: 100%;
+    height: 50px;
+    background-color: #ffdde378;
+    border: 1px solid rgb(198, 76, 155);
+    padding-left: 10px;
+}
+
+.openSearchDropdown{
+    top: 15%;
+}
+
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+    backdrop-filter: blur(2px);
+    z-index: 750;
+}
+
+/** ==================== Cart Div ============= */
+
+.cartSpan{
+    position: relative;
+    font-size: 19px;
+}
+
+.cartCount{
+    position: absolute;
+    top: -93%;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+    background-color: #ffdde3;
+    font-weight: 700;
+}
 
 @media all and (max-width: 650px) {
     .ham{
         display: block;
     }
-
+    
     .logo{
-        padding: 10px;
+        padding: 20px;
     }
+
+    .hide{
+        display: block;
+    }
+    
+    .show{
+        display: none;
+    }
+
+    /** ============= Navbar ================== */
+
 
     .nav{
         position: absolute;
@@ -101,10 +213,20 @@
         background-color: #ffdde3;
     }
 
+    /** ============= Mega Menu ================== */
+
+
     .megamenu{
         top: 0%;
         left: 0;
         height: 100%;
+        width: 100%;
+        left: 0%;
+        transform: translateX(0%);
+    }
+
+    .megamenu > div{
+        margin-left: 0;
     }
 
     .nav li:hover .megamenu{
@@ -112,4 +234,7 @@
         visibility: visible;
         top: 0%
     }
+
+    /** ============= Search Bar ================== */
+
 }
