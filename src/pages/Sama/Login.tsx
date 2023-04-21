@@ -97,22 +97,8 @@ const Login = () => {
     }
   };
 
-  const auths = getAuth();
+  // const auths = getAuth();
   const navigate = useNavigate();
-  const signInWithGoogle = async () => {
-    setAuthing(true);
-
-    signInWithPopup(auths, new GoogleAuthProvider())
-      .then((res: any) => {
-        console.log(res.user.uid);
-        navigate("/");
-      })
-      .catch((err: any) => {
-        console.log(err);
-        setAuthing(false);
-      });
-  };
-
   const handleLogout = () => {
     dispatch(
       ChangeActiveStatus(
@@ -158,7 +144,7 @@ const Login = () => {
 
   return (
     <Box>
-      {/* <Navbar /> */}
+      <Navbar />
       <Box
         h="auto"
         mb={"50px"}
@@ -224,20 +210,7 @@ const Login = () => {
                     bgColor={"blue.500"}>
                     Login
                   </Button>
-                  <HStack>
-                    <Divider />
-                    <Text fontSize="sm" whiteSpace="nowrap" color="muted">
-                      or continue with
-                    </Text>
-                    <Divider />
-                  </HStack>
-                  <Button
-                    bgColor="gold"
-                    onClick={() => signInWithGoogle()}
-                    width="full"
-                  >
-                    <GoogleIcon />
-                  </Button>
+                  
                 </Stack>
               </Stack>
             </Box>

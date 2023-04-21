@@ -84,7 +84,7 @@ function Signup() {
 
   return (
     <div>
-      {/* <Navbar /> */}
+      <Navbar />
       <Box>
           <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}
           borderRadius={"20px"}

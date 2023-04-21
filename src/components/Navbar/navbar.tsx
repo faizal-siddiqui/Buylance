@@ -3,6 +3,7 @@ import "./navbar.css";
 import Topbar from "./Topbar";
 import { Link } from "react-router-dom";
 import { useAppSelector } from "../../redux/store";
+
 function Navbar() {
   const { adminId } = useAppSelector((store) => store.profileManager);
   const [isOpen, setIsOpen] = useState({
