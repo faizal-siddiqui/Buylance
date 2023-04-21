@@ -97,22 +97,8 @@ const Login = () => {
     }
   };
 
-  const auths = getAuth();
+  // const auths = getAuth();
   const navigate = useNavigate();
-  const signInWithGoogle = async () => {
-    setAuthing(true);
-
-    signInWithPopup(auths, new GoogleAuthProvider())
-      .then((res: any) => {
-        console.log(res.user.uid);
-        navigate("/");
-      })
-      .catch((err: any) => {
-        console.log(err);
-        setAuthing(false);
-      });
-  };
-
   const handleLogout = () => {
     dispatch(
       ChangeActiveStatus(
@@ -157,27 +143,27 @@ const Login = () => {
   }
 
   return (
-    <div>
+    <Box>
       <Navbar />
       <Box
-        pt={"140px"}
         h="auto"
-        bgGradient="linear(red.100 0%, orange.100 25%, yellow.100 50%)"
+        mb={"50px"}
       >
         <Container
-          mt="5%"
-          maxW="lg"
-          py={{ base: "12", md: "24" }}
-          px={{ base: "0", sm: "8" }}
-          boxShadow="rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;"
+          pt="50px"
+          mt={"5%"}
+          w={{base:"xs", sm:"sm", md:"md", lg:"lg"}}
+          boxShadow="rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px"
+          borderRadius={"20px"}
         >
           <Stack spacing="8">
             <Stack spacing="6">
               <Stack spacing={{ base: "2", md: "3" }} textAlign="center">
-                <Heading size={{ base: "xs", md: "sm" }}>
-                  Log in to your account
+                <Heading size={{ base: "xs", md: "md" ,lg:"2xl" }} color={"teal"}>
+                  Login
                 </Heading>
-                <HStack spacing="1" justify="center">
+                <HStack spacing="1" justify="center"
+                w={{base:"xs", sm:"sm", md:"md", lg:"lg"}}>
                   <Text color="muted">Don't have an account?</Text>
                   <Link to="/signup">
                     <Button variant="link" colorScheme="blue">
@@ -210,37 +196,28 @@ const Login = () => {
                     onChange={(e) => setPassword(e.target.value)}
                   />
                 </Stack>
-                <HStack justify="space-between">
+                <Stack direction={{base:"column",md:"row"}} gap={"10px"}>
                   <Checkbox defaultChecked>Remember me</Checkbox>
-                  <Button variant="link" colorScheme="blue" size="sm">
+                  <Button textAlign={"left"} variant="link" colorScheme="blue" size="sm" w={"50%"}>
                     Forgot password?
                   </Button>
-                </HStack>
+                </Stack>
                 <Stack spacing="6">
-                  <Button onClick={() => handleCheck()} variant="primary">
-                    Sign in
-                  </Button>
-                  <HStack>
-                    <Divider />
-                    <Text fontSize="sm" whiteSpace="nowrap" color="muted">
-                      or continue with
-                    </Text>
-                    <Divider />
-                  </HStack>
                   <Button
-                    bgColor="gold"
-                    onClick={() => signInWithGoogle()}
-                    width="full"
-                  >
-                    <GoogleIcon />
+                   onClick={() => handleCheck()}
+                    _hover={{color:"black", bgColor:"blue.300"}} 
+                    color={"white"} 
+                    bgColor={"blue.500"}>
+                    Login
                   </Button>
+                  
                 </Stack>
               </Stack>
             </Box>
           </Stack>
         </Container>
       </Box>
-    </div>
+    </Box>
   );
 };
 

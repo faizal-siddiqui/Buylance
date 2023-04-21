@@ -9,6 +9,7 @@ import {
   VisuallyHidden,
   chakra,
   useColorModeValue,
+  Divider
 } from '@chakra-ui/react';
 import { FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa';
 
@@ -57,16 +58,11 @@ export default function LargeWithAppLinksAndSocial() {
     <Box
       bg={useColorModeValue('#ffffff', '#ffffff')}
       color={useColorModeValue('gray.700', 'gray.200')}>
-      <Container as={Stack} maxW={'6xl'} py={10}>
-        <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
-          <Stack align={'flex-start'}>
-            <ListHeader>MY ACCOUNT</ListHeader>
-            <Link href={'#'}>Orders</Link>
-            <Link href={'#'}>Returns/Refunds</Link>
-            <Link href={'#'}>Track Orders</Link>
-            <Link href={'#'}>Frequently Asked Questions</Link>
-          </Stack>
-
+        
+      <Container as={Stack} maxW={'8xl'} py={5}>
+      <Divider border="1px "/>
+        <SimpleGrid columns={{ base: 1, sm: 2, md: 4, lg:6 }} spacing={8}>
+          
           <Stack align={'flex-start'}>
             <ListHeader>POLICIES</ListHeader>
             <Link href={'#'}>Payment Options</Link>
@@ -77,9 +73,14 @@ export default function LargeWithAppLinksAndSocial() {
             <Link href={'#'}>Shipping Policy</Link>
             <Link href={'#'}>Privacy Policy</Link>
 
+          </Stack>
 
-
-
+          <Stack align={'flex-start'}>
+            <ListHeader>MY ACCOUNT</ListHeader>
+            <Link href={'#'}>Orders</Link>
+            <Link href={'#'}>Returns/Refunds</Link>
+            <Link href={'#'}>Track Orders</Link>
+            <Link href={'#'}>Frequently Asked Questions</Link>
           </Stack>
 
           <Stack align={'flex-start'}>

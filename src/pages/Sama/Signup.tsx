@@ -86,29 +86,24 @@ function Signup() {
     <div>
       <Navbar />
       <Box>
-        <Flex
-          boxShadow="rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;"
-          minH={"100vh"}
+          <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}
+          borderRadius={"20px"}
+          bg={useColorModeValue("white", "gray.700")}
+          p={'50px'}
+          boxShadow="rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px"
           align={"center"}
           justify={"center"}
-          mt="5%"
-          bg={useColorModeValue("gray.50", "gray.800")}
-        >
-          <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
-            <Stack align={"center"}>
-              <Heading fontSize={"4xl"} textAlign={"center"}>
+          mt="50px"
+          >
+           
+              <Stack align={"center"}>
+              <Heading color={'teal'} size={{ base: "md",lg:"2xl" }} textAlign={"center"}>
                 Sign up
               </Heading>
-              <Text fontSize={"lg"} color={"gray.600"}>
+              <Text fontSize={{ base: "md",lg:"lg" }} color={"gray.600"}>
                 to enjoy all of our cool features ✌️
               </Text>
-            </Stack>
-            <Box
-              rounded={"lg"}
-              bg={useColorModeValue("white", "gray.700")}
-              boxShadow={"lg"}
-              p={8}
-            >
+             </Stack>
               <Stack spacing={4}>
                 <HStack>
                   <Box>
@@ -151,22 +146,19 @@ function Signup() {
                     size="lg"
                     bg={"blue.400"}
                     color={"white"}
-                    _hover={{
-                      bg: "blue.500",
-                    }}
+                    _hover={{color:"black", bgColor:"blue.300"}} 
                   >
                     Sign up
                   </Button>
                 </Stack>
                 <Stack pt={6}>
                   <Text align={"center"}>
-                    Already a user? <Link to="/login">Login</Link>
+                    Already a user? <Link to="/login">
+                      <Button variant={"link"} colorScheme="blue">Login</Button></Link>
                   </Text>
                 </Stack>
               </Stack>
-            </Box>
           </Stack>
-        </Flex>
       </Box>
     </div>
   );
