@@ -1,4 +1,4 @@
-nav {
+/* nav {
     background-color: #fff;
     padding: 20px;
     border-bottom: 1px solid #e5e5e5;
@@ -101,7 +101,7 @@ nav ul li:hover .sub-menu {
 
 .sub-menu-col ul li a:hover {
     color: #c9048f;
-}
+} */
 
 
 /* hamburger menu */
@@ -111,16 +111,16 @@ nav ul li:hover .sub-menu {
   }
   
   /* hamburger line */
-  .hamburger-line {
+  /* .hamburger-line {
     width: 30px;
     height: 3px;
     margin: 5px 0;
     background-color: #000;
     transition: all 0.3s ease;
-  }
+  } */
   
   /* change the hamburger lines' color and position when the menu is open */
-  .open .hamburger-line:nth-child(1) {
+  /* .open .hamburger-line:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
   }
   
@@ -131,7 +131,7 @@ nav ul li:hover .sub-menu {
   .open .hamburger-line:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
   }
-  
+   */
   /* navbar items */
   nav ul {
     list-style: none; /* remove the bullet points */
@@ -140,7 +140,7 @@ nav ul li:hover .sub-menu {
     display: flex; /* display the items as a flex container */
     align-items: center; /* align the items horizontally */
   }
-  
+/*   
   nav li {
     margin: 0 15px; 
   }
@@ -175,4 +175,4 @@ nav ul li:hover .sub-menu {
         z-index: 1;
         display: none;
     }
-  }
+  } */

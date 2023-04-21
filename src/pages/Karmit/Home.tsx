@@ -4,6 +4,7 @@ import "../../components/Home/CSS/home.css";
 import Footer from "../../components/Footer/footer/footer";
 import Navbar from "../../components/Navbar/navbar";
 import { Link } from "react-router-dom";
+import UpdatedNavbar from "../../components/Navbar/UpdatedNavbar";
 const images = [
   "https://cdn.shopify.com/s/files/1/0420/7073/7058/files/summer_loading_1728x.webp?v=1678446322",
   "https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGZhc2hpb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
@@ -13,7 +14,8 @@ const images = [
 function Home() {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
+      <UpdatedNavbar />
       <div className="carousel">
         <Carousel images={images} interval={5000} />
       </div>
