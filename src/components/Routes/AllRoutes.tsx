@@ -17,6 +17,7 @@ import Signup from "../../pages/Sama/Signup";
 import AdminUsers from "../../pages/faizal/AdminUsers";
 import PrivateRoute from "./PrivateRoute";
 import AdminRoute from "./AdminRoute";
+import NotFound from "../../pages/faizal/NotFound";
 
 type Props = {};
 
@@ -100,6 +101,7 @@ const AllRoutes = (props: Props) => {
             </AdminRoute>
           }
         />
+        <Route path="/*" element={<NotFound />} />
       </Routes>
     </div>
   );
