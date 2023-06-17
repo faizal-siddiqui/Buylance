@@ -5,8 +5,8 @@ import EmptyCart from "./components/EmptyCart";
 import CartProducts from "./components/CartProducts";
 import { Box, Flex } from "@chakra-ui/react";
 import CartTotal from "./components/CartTotal";
-import Navbar from "../../../components/Navbar/navbar";
 import LargeWithAppLinksAndSocial from "../../../components/Footer/footer/footer";
+import UpdatedNavbar from "../../../components/Navbar/UpdatedNavbar";
 
 const Cart = () => {
   const dispatch: any = useAppDispatch();
@@ -28,8 +28,11 @@ const Cart = () => {
   // while products is added to cart-------------------------------------------->
   return (
     <>
-      <Box my={{lg: "150px", md: "100px", sm: "70px"}}>
-        <Navbar />
+      <UpdatedNavbar />
+      <Box
+        my={{ lg: "150px", md: "100px", sm: "100px" }}
+        mx={{ lg: "2%", md: "3%", sm: "4%" }}
+      >
         <Flex
           justifyContent={"space-evenly"}
           flexDirection={{ base: "column", lg: "row" }}

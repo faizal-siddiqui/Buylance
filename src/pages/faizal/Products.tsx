@@ -19,9 +19,9 @@ import { BsSearch } from "react-icons/bs";
 import { useSearchParams } from "react-router-dom";
 import { useApi } from "../../components/Hooks/useApi";
 import SkeletonLoading from "../../components/Products/SkeletonLoading";
-import Navbar from "../../components/Navbar/navbar";
 import LargeWithAppLinksAndSocial from "../../components/Footer/footer/footer";
 import ProductsGrid from "../../components/Products/ProductsGrid";
+import UpdatedNavbar from "../../components/Navbar/UpdatedNavbar";
 
 type Props = {};
 
@@ -123,9 +123,9 @@ const Products = (props: Props) => {
 
   return (
     <Box>
-      <Navbar />
+      <UpdatedNavbar />
       <Box
-        my={{ lg: "150px", md: "100px", sm: "70px" }}
+        my={{ lg: "150px", md: "100px", sm: "100px" }}
         mx={{ lg: "2%", md: "3%", sm: "4%" }}
       >
         <Box my="30px">

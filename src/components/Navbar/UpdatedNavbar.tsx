@@ -41,7 +41,9 @@ const UpdatedNavbar = (props: Props) => {
         </div>
         <div className={styles.flex}>
           <div>
-            <img className={styles.logo} src="./logo.png" alt="logo" />
+            <Link to="/">
+              <img className={styles.logo} src="./logo.png" alt="logo" />
+            </Link>
           </div>
         </div>
         <div className={styles.hide}>
@@ -178,7 +180,7 @@ const UpdatedNavbar = (props: Props) => {
                     <Link to="#">Joggers</Link>
                   </li>
                   <li>
-                    <Link to="#">Jeanss</Link>
+                    <Link to="#">Jeans</Link>
                   </li>
                 </ul>
               </div>

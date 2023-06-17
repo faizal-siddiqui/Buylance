@@ -1,4 +1,4 @@
-import Navbar from "../../../components/Navbar/navbar";
+import UpdatedNavbar from "../../../components/Navbar/UpdatedNavbar";
 import LargeWithAppLinksAndSocial from "../../../components/Footer/footer/footer";
 import React, { useEffect, useState } from "react";
 import {
@@ -78,7 +78,7 @@ const Address = (props: Props) => {
 
   return (
     <>
-      <Navbar />
+      <UpdatedNavbar />
 
       <Box
         my={{ lg: "150px", md: "100px", sm: "70px" }}
