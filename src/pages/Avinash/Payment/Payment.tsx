@@ -39,6 +39,7 @@ import {
   updateCart,
 } from "../../../redux/actions/ProfileAction";
 import { useAppDispatch, useAppSelector } from "../../../redux/store";
+import UpdatedNavbar from "../../../components/Navbar/UpdatedNavbar";
 
 // type userDetail = {
 //   firstName:string,
@@ -133,24 +134,25 @@ const Payment = () => {
     );
   }
   return (
-    <>
-      <UpdatedNavbar />
-      <Box
-        w={{ base: "full", lg: "75%" }}
-        m={"auto"}
-        mt={"100px"}
-        mb="50px"
-        borderRadius={10}
-      >
-        <Heading borderRadius={10} bg="blue.500" p={2} color={"white"} mb={10}>
-          Payment
-        </Heading>
 
-        <Grid
-          templateRows={{ base: "1fr 2fr 1fr 1fr", lg: "repeat(3,1fr)" }}
-          templateColumns={{ base: "100%", md: "100%", lg: "repeat(3, 1fr)" }}
-          gap={2}
-        >
+    <Box
+      w={{ base: "full", lg: "75%" }}
+      m={"auto"}
+      mt={"50px"}
+      mb="50px"
+      borderRadius={10}
+    >
+      <UpdatedNavbar />
+      <Heading borderRadius={10} bg="blue.500" p={2} color={"white"} mb={10}>
+        Payment
+      </Heading>
+
+      <Grid
+        templateRows={{ base: "1fr 2fr 1fr 1fr", lg: "repeat(3,1fr)" }}
+        templateColumns={{ base: "100%", md: "100%", lg: "repeat(3, 1fr)" }}
+        gap={2}
+
+ 
           <GridItem
             colSpan={{ base: 1, lg: 2 }}
             rowSpan={1}

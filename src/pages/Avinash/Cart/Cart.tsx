@@ -27,12 +27,13 @@ const Cart = () => {
 
   // while products is added to cart-------------------------------------------->
   return (
-    <>
+    <>   
       <UpdatedNavbar />
       <Box
         my={{ lg: "150px", md: "100px", sm: "100px" }}
         mx={{ lg: "2%", md: "3%", sm: "4%" }}
       >
+
         <Flex
           justifyContent={"space-evenly"}
           flexDirection={{ base: "column", lg: "row" }}

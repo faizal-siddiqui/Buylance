@@ -2,13 +2,14 @@ import React from "react";
 import "./categories.css";
 import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar/navbar";
+import UpdatedNavbar from "../../components/Navbar/UpdatedNavbar";
 
 type Props = {};
 
 const Categories = (props: Props) => {
   return (
     <div>
-      <Navbar />
+      <UpdatedNavbar />
       <div id="container">
         <h1 id="men">Men</h1>
         <div id="line"></div>
