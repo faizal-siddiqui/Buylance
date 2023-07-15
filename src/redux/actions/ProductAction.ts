@@ -10,19 +10,21 @@ import {
 } from "../types/ProductsTypes";
 import { apiCall } from "./Action.api";
 
-export const getProducts = () => (dispatch: AppDispatch) => {
-  dispatch({ type: PRODUCTS_LOADING });
-  apiCall({
-    method: "get",
-    url: `https://buylance-com.onrender.com/products`,
-  })
-    .then((res) => {
-      dispatch({ type: GET_PRODUCTS_SUCCESS, payload: res });
+export const getProducts =
+  (query = "") =>
+  (dispatch: AppDispatch) => {
+    dispatch({ type: PRODUCTS_LOADING });
+    apiCall({
+      method: "get",
+      url: `https://buylance-com.onrender.com/products?${query}`,
     })
-    .catch((err) => {
-      dispatch({ type: PRODUCTS_ERROR });
-    });
-};
+      .then((res) => {
+        dispatch({ type: GET_PRODUCTS_SUCCESS, payload: res });
+      })
+      .catch((err) => {
+        dispatch({ type: PRODUCTS_ERROR });
+      });
+  };
 
 export const postProducts = (data: ProductsTypo) => (dispatch: AppDispatch) => {
   dispatch({ type: PRODUCTS_LOADING });

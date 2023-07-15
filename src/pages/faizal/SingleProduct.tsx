@@ -5,7 +5,7 @@ import { useParams, useRoutes } from "react-router-dom";
 import LargeWithAppLinksAndSocial from "../../components/Footer/footer/footer";
 import { useApi } from "../../components/Hooks/useApi";
 import { useSingleProductApi } from "../../components/Hooks/useSingleProductApi";
-import Navbar from "../../components/Navbar/navbar";
+import UpdatedNavbar from "../../components/Navbar/UpdatedNavbar";
 import ProductsGrid from "../../components/Products/ProductsGrid";
 import ImagesCompo from "../../components/singleProducts/ImagesCompo";
 import ProductDetails from "../../components/singleProducts/ProductDetails";
@@ -41,7 +41,7 @@ const SingleProduct = (props: Props) => {
       <UpdatedNavbar />
 
       <Box
-        my={{ lg: "160px", md: "90px", sm: "50px" }}
+        my={{ lg: "160px", md: "90px", sm: "100px" }}
         mx={{ lg: "2%", md: "3%", sm: "4%" }}
       >
         <Box></Box>

@@ -27,6 +27,7 @@
 
 .logo{
     width: 90px;
+    cursor: pointer;
 }
 
 .flex{
@@ -58,6 +59,7 @@
     font-size: 25px;
     /* padding: 10px; */
     display: none;
+    cursor: pointer;
 }
 
 /** ============= Mega Menu ================== */
@@ -66,7 +68,7 @@
     top: 120%;
     left: 50%;
     transform: translateX(-50%);
-    width: 70%;
+    width: 50%;
     height: auto;
     opacity: 0;
     visibility: hidden;
@@ -79,7 +81,7 @@
 
 .megamenu > div{
     padding: 10px;
-    margin-left: 30%;
+    margin: 1%;
 }
 
 .megamenu ul{
@@ -87,7 +89,13 @@
 }
 
 .megamenu li{
-    padding: 10px;
+    padding: 7px;
+    margin-top: 3px;
+}
+
+.megamenu li:hover{
+    background-color: #ffdde3;
+    cursor: pointer;
 }
 
 .megamenu h3{
@@ -164,6 +172,15 @@
     font-weight: 700;
 }
 
+
+
+@media all and (min-width: 651px) and (max-width: 750px) {
+    .megamenu{
+        width: 70%;
+    }
+}
+
+
 @media all and (max-width: 650px) {
     .ham{
         display: block;
@@ -219,7 +236,7 @@
     .megamenu{
         top: 0%;
         left: 0;
-        height: 100%;
+        height: 330px;
         width: 100%;
         left: 0%;
         transform: translateX(0%);
