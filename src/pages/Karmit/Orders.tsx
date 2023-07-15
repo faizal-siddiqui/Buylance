@@ -8,6 +8,7 @@ import { useAppDispatch, useAppSelector } from "../../redux/store";
 import Navbar from "../../components/Navbar/navbar";
 import Footer from "../../components/Footer/footer/footer";
 import "../../components/Order/orderdiv.css";
+import UpdatedNavbar from "../../components/Navbar/UpdatedNavbar";
 const Orders = () => {
   const dispatch: any = useAppDispatch();
   const { profile } = useAppSelector((store) => store.profileManager);
@@ -28,7 +29,7 @@ const Orders = () => {
   }, []);
   return (
     <div>
-      <Navbar />
+      <UpdatedNavbar />
       <h1
         style={{
           color: "#c9048f",

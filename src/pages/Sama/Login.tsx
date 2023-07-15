@@ -22,8 +22,9 @@ import axios from "axios";
 import { useToast } from "@chakra-ui/react";
 import "firebase/auth";
 import { ProfileTypo } from "../../constants/ProfileTypo";
-import Navbar from "../../components/Navbar/navbar";
+import UpdatedNavbar from "../../components/Navbar/UpdatedNavbar";
 import { useAppDispatch, useAppSelector } from "../../redux/store";
+import Footer from "../../components/Footer/footer/footer";
 
 import {
   AdminLogin,
@@ -34,11 +35,12 @@ import {
   ChangeActiveStatus,
 } from "../../redux/actions/ProfileAction";
 
+
 const Login = () => {
   const toast = useToast();
-  const [authing, setAuthing] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [auth,setauth]= useState(false);
   const dispatch: any = useAppDispatch();
 
   // const { adminAuth, auth } = useAppSelector((store) => store.profileManager);
@@ -62,10 +64,20 @@ const Login = () => {
           localStorage.setItem("id", `${el.id}`);
           // console.log(localStorage.getItem("id"));
           dispatch(ChangeActiveStatus(Number(el.id), true));
-
+          setauth(true);
           navigate("/");
+      
         }
       });
+      if(!auth){
+        toast({
+          title: "User not found !",
+          description: "Please Signup !",
+          status: "error",
+          duration: 2000,
+          isClosable: true,
+        });
+      }
     } catch (error) {
       toast({
         title: "Signup Failed.",
@@ -120,7 +132,7 @@ const Login = () => {
         h="100vh"
         bgGradient="linear(red.100 0%, orange.100 25%, yellow.100 50%)"
       >
-        <Navbar />
+        <UpdatedNavbar />
         <Box w="fit-content" m="auto">
           <Box
             m="auto"
@@ -144,15 +156,13 @@ const Login = () => {
 
   return (
     <Box>
-      <Navbar />
-      <Box
-        h="auto"
-        mb={"50px"}
-      >
+      <UpdatedNavbar />
+     
         <Container
-          pt="50px"
-          mt={"5%"}
-          w={{base:"xs", sm:"sm", md:"md", lg:"lg"}}
+          p="5px"
+          mt={"50px"}
+          mb={"50px"}
+          w={{base:"xs", md:"md"}}
           boxShadow="rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px"
           borderRadius={"20px"}
         >
@@ -215,8 +225,8 @@ const Login = () => {
               </Stack>
             </Box>
           </Stack>
-        </Container>
-      </Box>
+        </Container> 
+        <Footer/>
     </Box>
   );
 };

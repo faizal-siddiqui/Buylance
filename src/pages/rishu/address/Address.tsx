@@ -1,6 +1,7 @@
 import Navbar from "../../../components/Navbar/navbar";
 import LargeWithAppLinksAndSocial from "../../../components/Footer/footer/footer";
 import React, { useEffect, useState } from "react";
+import UpdatedNavbar from "../../../components/Navbar/UpdatedNavbar";
 import {
   Progress,
   Box,
@@ -11,6 +12,7 @@ import {
   GridItem,
   FormLabel,
   Input,
+  Center,
   Select,
 } from "@chakra-ui/react";
 
@@ -78,10 +80,10 @@ const Address = (props: Props) => {
 
   return (
     <>
-      <Navbar />
+      <UpdatedNavbar />
 
       <Box
-        my={{ lg: "150px", md: "100px", sm: "70px" }}
+        // my={{ lg: "150px", md: "100px", sm: "70px" }}
         borderWidth="1px"
         rounded="lg"
         shadow="xl"
@@ -90,13 +92,6 @@ const Address = (props: Props) => {
         m="50px auto"
         as="form"
       >
-        <Progress
-          hasStripe
-          value={progress}
-          mb="5%"
-          mx="5%"
-          isAnimated
-        ></Progress>
         {
           <>
             {" "}
@@ -111,6 +106,8 @@ const Address = (props: Props) => {
             >
               Shipping Address
             </Heading>
+            <Flex alignItems={"center"} gap="15px" mt={"15px"}>
+
             <FormControl as={GridItem} colSpan={6}>
               <FormLabel
                 htmlFor="street_address"
@@ -137,6 +134,35 @@ const Address = (props: Props) => {
                 onChange={handleChange}
               />
             </FormControl>
+
+
+            <FormControl as={GridItem} colSpan={6}>
+              <FormLabel
+                htmlFor="mobile no"
+                fontSize="sm"
+                color="teal.500"
+                fontWeight="bold"
+                _dark={{
+                  color: "gray.50",
+                }}
+                mt="2%"
+              >
+                Mobile No
+              </FormLabel>
+              <Input
+                type="number"
+                name="mobile"
+                id="street_address"
+                autoComplete="street-address"
+                focusBorderColor="brand.400"
+                shadow="sm"
+                size="sm"
+                w="full"
+                rounded="md"
+                onChange={handleChange}
+              />
+            </FormControl>
+            </Flex>
             <Flex alignItems={"center"} gap="15px" mt={"15px"}>
               <FormControl as={GridItem} colSpan={[6, 6, null, 2]}>
                 <FormLabel
@@ -232,7 +258,7 @@ const Address = (props: Props) => {
                   State / Province
                 </FormLabel>
                 <Select
-                  color="blue.500"
+                  color="teal.500"
                   fontWeight="bold"
                   id="country"
                   name="country"
@@ -261,6 +287,7 @@ const Address = (props: Props) => {
             </Flex>
           </>
         }
+        <Center>
         <Button
           isLoading={profileState.loading}
           loadingText="Submitting"
@@ -275,6 +302,7 @@ const Address = (props: Props) => {
         >
           Proceed To Payment
         </Button>
+        </Center>
       </Box>
 
       <LargeWithAppLinksAndSocial />

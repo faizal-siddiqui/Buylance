@@ -21,7 +21,8 @@ import { useToast } from "@chakra-ui/react";
 import { useAppDispatch, useAppSelector } from "../../redux/store";
 import { postProfile } from "../../redux/actions/ProfileAction";
 import { AddressType } from "../../constants/ProfileTypo";
-import Navbar from "../../components/Navbar/navbar";
+import UpdatedNavbar from "../../components/Navbar/UpdatedNavbar";
+import Footer from "../../components/Footer/footer/footer";
 
 function Signup() {
   const toast = useToast();
@@ -84,16 +85,18 @@ function Signup() {
 
   return (
     <div>
-      <Navbar />
+      <UpdatedNavbar />
       <Box>
-          <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}
+          <Stack spacing={8} mx={"auto"} py={12} px={6}
+          w={{base:"xs", md:"md"}}
           borderRadius={"20px"}
           bg={useColorModeValue("white", "gray.700")}
-          p={'50px'}
+          p={'10px'}
           boxShadow="rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px"
           align={"center"}
           justify={"center"}
           mt="50px"
+          mb={"50px"}
           >
            
               <Stack align={"center"}>
@@ -160,6 +163,7 @@ function Signup() {
               </Stack>
           </Stack>
       </Box>
+      <Footer/>
     </div>
   );
 }

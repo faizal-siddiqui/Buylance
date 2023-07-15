@@ -39,6 +39,7 @@ import {
   updateCart,
 } from "../../../redux/actions/ProfileAction";
 import { useAppDispatch, useAppSelector } from "../../../redux/store";
+import UpdatedNavbar from "../../../components/Navbar/UpdatedNavbar";
 
 // type userDetail = {
 //   firstName:string,
@@ -140,7 +141,7 @@ const Payment = () => {
       mb="50px"
       borderRadius={10}
     >
-      <Navbar />
+      <UpdatedNavbar />
       <Heading borderRadius={10} bg="blue.500" p={2} color={"white"} mb={10}>
         Payment
       </Heading>
