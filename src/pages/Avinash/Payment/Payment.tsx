@@ -9,11 +9,6 @@ import {
   HStack,
   Image,
   Stack,
-  Tab,
-  TabList,
-  TabPanel,
-  TabPanels,
-  Tabs,
   Text,
   useDisclosure,
   Button,
@@ -39,7 +34,6 @@ import {
   updateCart,
 } from "../../../redux/actions/ProfileAction";
 import { useAppDispatch, useAppSelector } from "../../../redux/store";
-import UpdatedNavbar from "../../../components/Navbar/UpdatedNavbar";
 
 // type userDetail = {
 //   firstName:string,
@@ -134,7 +128,7 @@ const Payment = () => {
     );
   }
   return (
-
+ <>
     <Box
       w={{ base: "full", lg: "75%" }}
       m={"auto"}
@@ -152,7 +146,7 @@ const Payment = () => {
         templateColumns={{ base: "100%", md: "100%", lg: "repeat(3, 1fr)" }}
         gap={2}
 
- 
+      >
           <GridItem
             colSpan={{ base: 1, lg: 2 }}
             rowSpan={1}

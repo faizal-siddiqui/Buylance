@@ -11,7 +11,7 @@ import ImagesCompo from "../../components/singleProducts/ImagesCompo";
 import ProductDetails from "../../components/singleProducts/ProductDetails";
 import { ProductsTypo } from "../../constants/ProductsTypo";
 import SkeletonLoading from "../../components/Products/SkeletonLoading";
-import UpdatedNavbar from "../../components/Navbar/UpdatedNavbar";
+
 
 type Props = {};
 

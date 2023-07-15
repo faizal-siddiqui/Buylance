@@ -1,7 +1,6 @@
 import UpdatedNavbar from "../../../components/Navbar/UpdatedNavbar";
 import LargeWithAppLinksAndSocial from "../../../components/Footer/footer/footer";
 import React, { useEffect, useState } from "react";
-import UpdatedNavbar from "../../../components/Navbar/UpdatedNavbar";
 import {
   Progress,
   Box,
